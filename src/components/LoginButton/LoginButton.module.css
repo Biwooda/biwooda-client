@@ -5,6 +5,11 @@
   border-radius: 10px;
   background-color: var(--grey-scale-0);
   border: 1px solid var(--grey-scale-20);
+  cursor: pointer;
+}
+
+.button:active {
+  filter: brightness(0.8);
 }
 
 .icon {
