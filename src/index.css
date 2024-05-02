@@ -34,11 +34,25 @@
   --text-lg: 1rem;
   --text-md: 0.875rem;
   --text-md: 0.75rem;
+
+  --button-text-lg: 1.187rem;
+  --button-text-ml: 1.125rem;
+  --button-text-md: 1rem;
+  --button-text-sm: 0.875rem;
+
+  --caption-md: 0.875rem;
+  --caption-sm: 0.813rem;
 }
 
 /* reset */
 html,
 body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 div {
   margin: 0;
   padding: 0;
