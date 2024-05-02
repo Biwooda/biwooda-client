@@ -3,7 +3,7 @@ import biwoodaLogo from '../../assets/logo.svg';
 import umbrella from '../../assets/umbrella.svg';
 import LoginButton from '../../components/LoginButton/LoginButton';
 import buttonStyles from '../../constants';
-import styles from './Login.module.css';
+import styles from './LoginPage.module.css';
 
 export default function LoginPage() {
   return (
