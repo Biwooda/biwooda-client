@@ -105,3 +105,16 @@ body {
     'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
   background-color: rgb(202, 202, 202);
 }
+
+button {
+  border: none;
+  outline: none;
+}
+
+input {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
