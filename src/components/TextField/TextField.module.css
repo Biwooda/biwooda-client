@@ -1,0 +1,26 @@
+.label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--grey-scale-90);
+  font: var(--text-md);
+  letter-spacing: var(--text-md-letter-spacing);
+  margin-bottom: 3px;
+}
+
+.field {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--grey-scale-30);
+  box-sizing: border-box;
+  color: var(--grey-scale-90);
+}
+
+.field::placeholder {
+  color: var(--grey-scale-30);
+}
+
+.field:focus {
+  border: 1px solid var(--grey-scale-90);
+}
