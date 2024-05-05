@@ -67,13 +67,15 @@
   text-align: center;
   margin-top: 14px;
   color: var(--grey-scale-60);
-  font-size: var(--caption-md);
+  font: var(--caption-md);
+  letter-spacing: var(--caption-md-letter-spacing);
 }
 
 .signUp {
   margin-left: 8px;
   color: var(--primary-skyblue);
-  font-size: var(--button-text-sm);
+  font: var(--button-text-sm);
+  letter-spacing: var(--button-text-sm-letter-spacing);
   text-decoration: none;
   cursor: pointer;
 }

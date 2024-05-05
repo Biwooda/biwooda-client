@@ -8,7 +8,7 @@
   --deep-skyblue: #0087d1;
   --point-yellow: #ffeb36;
   --error: #ff5151;
-  --ok: #33EA2FF;
+  --ok: #3ea2ff;
   --skyblue: #1cafff;
   --alert-under-5: #ff6644;
   --grey-scale-0: #ffffff;
@@ -24,24 +24,62 @@
   --grey-scale-90: #22323b;
   --grey-scale-100: #000000;
 
+  /* 
+레귤러:400
+미디엄:500
+세미볼드:600
+볼드:700
+ */
+
   /* font */
-  --title-exlg: 1.81rem;
-  --title-lg: 1.56rem;
-  --title-ml: 1.37rem;
-  --title-md: 1.25rem;
-  --title-sm: 1.06rem;
+  --title-exlg: 700 1.8125rem/2.0625rem 'Pretendard Variable', sans-serif;
+  --title-lg: 700 1.5625rem/2.0625rem 'Pretendard Variable', sans-serif;
+  --title-md-2: 700 1.375rem/1.875rem 'Pretendard Variable', sans-serif;
+  --title-md: 600 1.25rem/1.75rem 'Pretendard Variable', sans-serif;
+  --title-sm: 700 1.0625rem/1.375rem 'Pretendard Variable', sans-serif;
 
-  --text-lg: 1rem;
-  --text-md: 0.875rem;
-  --text-md: 0.75rem;
+  --text-lg: 500 1rem/1.375rem 'Pretendard Variable', sans-serif;
+  --text-lg-emphasis: 700 1rem/1.3125rem 'Pretendard Variable', sans-serif;
+  --text-md: 500 0.875rem/1.25rem 'Pretendard Variable', sans-serif;
+  --text-md-emphasis: 600 0.875rem/1.25rem 'Pretendard Variable', sans-serif;
+  --text-sm: 500 0.75rem/1.1875rem 'Pretendard Variable', sans-serif;
+  --text-sm: 700 0.75rem/1rem 'Pretendard Variable', sans-serif;
 
-  --button-text-lg: 1.187rem;
-  --button-text-ml: 1.125rem;
-  --button-text-md: 1rem;
-  --button-text-sm: 0.875rem;
+  --label-lg: 700 0.875rem/1.25rem 'Pretendard Variable', sans-serif;
+  --label-md: 700 0.75rem/1rem 'Pretendard Variable', sans-serif;
 
-  --caption-md: 0.875rem;
-  --caption-sm: 0.813rem;
+  --button-text-lg: 700 1.1875rem/1.5rem 'Pretendard Variable', sans-serif;
+  --button-text-md-2: 700 1.125rem/1.5rem 'Pretendard Variable', sans-serif;
+  --button-text-md: 600 1rem/1.5rem 'Pretendard Variable', sans-serif;
+  --button-text-sm: 600 0.875rem/1.25rem 'Pretendard Variable', sans-serif;
+
+  --caption-md: 500 0.875rem/1rem 'Pretendard Variable', sans-serif;
+  --caption-sm: 400 0.8125rem/0.875rem 'Pretendard Variable', sans-serif;
+
+  /* letter spacing */
+  --title-exlg-letter-spacing: 0%;
+  --title-lg-letter-spacing: 0%;
+  --title-md-2-letter-spacing: -0.5%;
+  --title-md-letter-spacing: -1%;
+  --title-sm-letter-spacing: 1%;
+
+  --text-lg-letter-spacing: -1%;
+  --text-lg-emphasis-letter-spacing: 1%;
+  --text-md-letter-spacing: 0%;
+  --text-md-emphasis-letter-spacing: 1%;
+  --text-sm-letter-spacing: 0%;
+  --text-sm-emphasis-letter-spacing: 1%;
+
+  --label-lg-letter-spacing: 0%;
+  --label-md-letter-spacing: 0%;
+
+  --button-text-lg-letter-spacing: 2%;
+  --button-text-md2-letter-spacing: 1.2%;
+  --button-text-md-letter-spacing: 0%;
+  --button-text-sm-letter-spacing: -1%;
+
+  --caption-md-letter-spacing: -0.5%;
+  --caption-sm-letter-spacing: -1%;
 }
 
 /* reset */
