@@ -1,10 +1,10 @@
 import './App.css';
-import LoginPage from './pages/LoginPage/LoginPage';
+import EmailLoginPage from './pages/EmailLoginPage/EmailLoginPage';
 
 function App() {
   return (
     <div className='App'>
-      <LoginPage />
+      <EmailLoginPage />
     </div>
   );
 }
