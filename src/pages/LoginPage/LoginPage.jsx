@@ -2,6 +2,7 @@ import React from 'react';
 import biwoodaLogo from '../../assets/logo.svg';
 import umbrella from '../../assets/umbrella.svg';
 import LoginButton from '../../components/LoginButton/LoginButton';
+import Title from '../../components/Title/Title';
 import buttonStyles from '../../constants';
 import styles from './LoginPage.module.css';
 
@@ -16,10 +17,10 @@ export default function LoginPage() {
         <div className={styles.logo}>
           <img src={biwoodaLogo} alt='logo' />
         </div>
-        <h1 className={styles.title}>시작해볼까요?</h1>
-        <div className={styles.description}>
-          공유 우산 서비스 비우다와 함께해요
-        </div>
+        <Title
+          title='시작해볼까요?'
+          description='공유 우산 서비스 비우다와 함께해요'
+        />
       </div>
       <div className={styles.bottom}>
         <div className={styles.login_buttons}>

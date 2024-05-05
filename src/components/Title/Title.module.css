@@ -1,0 +1,18 @@
+.titleContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.title {
+  color: var(--primary-skyblue);
+  font: var(--title-exlg);
+  letter-spacing: var(--title-exlg-letter-spacing);
+  margin-left: 2px;
+}
+
+.description {
+  color: var(--grey-scale-75);
+  font: var(--text-lg);
+  letter-spacing: var(--text-lg-letter-spacing);
+}

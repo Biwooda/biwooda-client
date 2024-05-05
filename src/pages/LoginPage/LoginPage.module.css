@@ -40,17 +40,6 @@
   margin-bottom: 29px;
 }
 
-.title {
-  color: var(--primary-skyblue);
-  font-size: var(--title-exlg);
-  margin-bottom: 4px;
-}
-
-.description {
-  color: var(--grey-scale-75);
-  font-size: var(--text-lg);
-}
-
 .bottom {
   flex: 1;
   animation-duration: 1s;
