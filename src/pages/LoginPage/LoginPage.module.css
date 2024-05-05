@@ -58,10 +58,10 @@
 }
 
 .login_buttons {
-  height: 181px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .info {
@@ -82,8 +82,8 @@
 }
 
 @media screen and (max-width: 400px) {
-  .login_buttons {
-    height: 145px;
+  html {
+    font-size: 14px;
   }
 }
 
