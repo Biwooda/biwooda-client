@@ -12,6 +12,7 @@
   position: absolute;
   right: -5px;
   top: 50px;
+  text-align: right;
   animation: login-slidein-right-to-left 1s;
 }
 
@@ -87,10 +88,6 @@
 }
 
 @media screen and (max-width: 380px) {
-  .umbrella {
-    text-align: right;
-  }
-
   .umbrella img {
     width: 80%;
   }
