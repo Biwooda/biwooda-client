@@ -19,12 +19,12 @@
 .dim {
   position: absolute;
   width: 100%;
-  height: 624px;
+  height: 600px;
   left: 0;
   top: -50px;
   background: linear-gradient(
     156.5deg,
-    #ffffff 36.23%,
+    #ffffff 37.5%,
     rgba(255, 255, 255, 0) 69.57%
   );
   mix-blend-mode: normal;
