@@ -5,6 +5,7 @@ import App from './App';
 import './index.css';
 import EmailLoginPage from './pages/EmailLoginPage/EmailLoginPage';
 import LoginPage from './pages/LoginPage/LoginPage';
+import SignUpPage from './pages/SignUpPage/SignUpPage';
 import reportWebVitals from './reportWebVitals';
 
 const router = createBrowserRouter([
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: '/login/email',
         element: <EmailLoginPage />,
+      },
+      {
+        path: '/sign-up',
+        element: <SignUpPage />,
       },
     ],
   },

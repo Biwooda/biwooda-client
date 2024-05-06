@@ -1,0 +1,16 @@
+.container {
+  padding: 0 23px;
+}
+
+.back {
+  padding: 10px 0;
+  margin-bottom: 29px;
+}
+
+.back img {
+  cursor: pointer;
+}
+
+.signUpForm {
+  margin-top: 38px;
+}
