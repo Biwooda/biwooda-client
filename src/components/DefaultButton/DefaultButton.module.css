@@ -1,0 +1,23 @@
+.button {
+  width: 100%;
+  padding: 14px 0;
+  border-radius: 6px;
+  background-color: var(--primary-skyblue);
+  color: var(--grey-scale-0);
+  font: var(--button-text-sm);
+  cursor: pointer;
+}
+
+.button:active {
+  filter: brightness(0.8);
+}
+
+.button:disabled {
+  background-color: var(--grey-scale-20);
+  color: #8b9ba4;
+  cursor: default;
+}
+
+.button:disabled:active {
+  filter: none;
+}
