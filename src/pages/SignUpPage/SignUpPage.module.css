@@ -12,5 +12,29 @@
 }
 
 .signUpForm {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
   margin-top: 38px;
+}
+
+.codeButton {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 6px;
+  margin-bottom: 20px;
+}
+
+.sendCodeButton {
+  flex: 1;
+}
+
+.resendCodeButton {
+  width: 23%;
+}
+
+.passwordFieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
