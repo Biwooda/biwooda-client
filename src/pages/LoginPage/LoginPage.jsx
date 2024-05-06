@@ -33,9 +33,9 @@ export default function LoginPage() {
         </div>
         <div className={styles.info}>
           비우다가 처음이신가요?
-          <a className={styles.signUp} href='/'>
+          <Link to='/sign-up' className={styles.signUp}>
             회원가입하기
-          </a>
+          </Link>
         </div>
       </div>
     </section>

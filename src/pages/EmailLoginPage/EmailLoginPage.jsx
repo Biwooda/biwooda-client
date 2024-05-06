@@ -6,7 +6,7 @@ import FeedbackMessage from '../../components/FeedbackMessage/FeedbackMessage';
 import PasswordField from '../../components/PasswordField/PasswordField';
 import TextField from '../../components/TextField/TextField';
 import Title from '../../components/Title/Title';
-import { FEEDBACK_MESSAGE } from '../../constants/message';
+import { LOGIN_FEEDBACK_MESSAGE } from '../../constants/message';
 import { checkEmailFormat, checkPasswordFormat } from '../../utils/checkFormat';
 import styles from './EmailLoginPage.module.css';
 
@@ -40,8 +40,8 @@ export default function EmailLoginPage() {
               <FeedbackMessage
                 message={
                   checkEmailFormat(formData.email)
-                    ? FEEDBACK_MESSAGE.emailPass
-                    : FEEDBACK_MESSAGE.emailFail
+                    ? LOGIN_FEEDBACK_MESSAGE.emailPass
+                    : LOGIN_FEEDBACK_MESSAGE.emailFail
                 }
                 condition={checkEmailFormat(formData.email)}
               />
@@ -56,8 +56,8 @@ export default function EmailLoginPage() {
               <FeedbackMessage
                 message={
                   checkPasswordFormat(formData.password)
-                    ? FEEDBACK_MESSAGE.passwordPass
-                    : FEEDBACK_MESSAGE.passwordFail
+                    ? LOGIN_FEEDBACK_MESSAGE.passwordPass
+                    : LOGIN_FEEDBACK_MESSAGE.passwordFail
                 }
                 condition={checkPasswordFormat(formData.password)}
               />

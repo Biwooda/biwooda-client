@@ -1,3 +1,4 @@
 import buttonStyles from './loginButton';
-import { FEEDBACK_MESSAGE } from './message';
-export { FEEDBACK_MESSAGE, buttonStyles };
+import { LOGIN_FEEDBACK_MESSAGE, SIGN_UP_FEEDBACK_MESSAGE } from './message';
+
+export { LOGIN_FEEDBACK_MESSAGE, SIGN_UP_FEEDBACK_MESSAGE, buttonStyles };
