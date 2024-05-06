@@ -12,6 +12,8 @@ const SIGN_UP_FEEDBACK_MESSAGE = {
   codePass: '확인 완료',
   passwordPass: '가능한 비밀번호입니다',
   passwordFail: '8자리 이상의 비밀번호를 만들어주세요',
+  repasswordPass: '비밀번호가 일치합니다',
+  repasswordFail: '일치하지 않는 비밀번호입니다',
 };
 
 export { LOGIN_FEEDBACK_MESSAGE, SIGN_UP_FEEDBACK_MESSAGE };
