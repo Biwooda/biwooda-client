@@ -1,0 +1,11 @@
+.pass {
+  color: var(--ok);
+  font: var(--caption-sm);
+  letter-spacing: var(--caption-sm-letter-spacing);
+}
+
+.fail {
+  color: var(--error);
+  font: var(--caption-sm);
+  letter-spacing: var(--caption-sm-letter-spacing);
+}

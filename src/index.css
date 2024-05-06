@@ -1,0 +1,120 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+
+:root {
+  /* color */
+  --primary-green: #0bff99;
+  --primary-skyblue: #38b9ff;
+  --secondary-skyblue: #88cbff;
+  --description-skyblue: #00a1fc;
+  --point-blue: #0069bf;
+  --deep-skyblue: #0087d1;
+  --point-yellow: #ffeb36;
+  --error: #ff5151;
+  --ok: #3ea2ff;
+  --skyblue: #1cafff;
+  --alert-under-5: #ff6644;
+  --grey-scale-0: #ffffff;
+  --grey-scale-10: #ecf6fb;
+  --grey-scale-15: #d9e2e8;
+  --grey-scale-20: #ccd8df;
+  --grey-scale-25: #a9bac6;
+  --grey-scale-30: #92a5b3;
+  --grey-scale-40: #7b93a4;
+  --grey-scale-45: #657d8b;
+  --grey-scale-60: #4c5c65;
+  --grey-scale-75: #3e4e5b;
+  --grey-scale-90: #22323b;
+  --grey-scale-100: #000000;
+
+  /* 
+레귤러:400
+미디엄:500
+세미볼드:600
+볼드:700
+ */
+
+  /* font */
+  --title-exlg: 700 1.8125rem/2.0625rem 'Pretendard Variable', sans-serif;
+  --title-lg: 700 1.5625rem/2.0625rem 'Pretendard Variable', sans-serif;
+  --title-md-2: 700 1.375rem/1.875rem 'Pretendard Variable', sans-serif;
+  --title-md: 600 1.25rem/1.75rem 'Pretendard Variable', sans-serif;
+  --title-sm: 700 1.0625rem/1.375rem 'Pretendard Variable', sans-serif;
+
+  --text-lg: 500 1rem/1.375rem 'Pretendard Variable', sans-serif;
+  --text-lg-emphasis: 700 1rem/1.3125rem 'Pretendard Variable', sans-serif;
+  --text-md: 500 0.875rem/1.25rem 'Pretendard Variable', sans-serif;
+  --text-md-emphasis: 600 0.875rem/1.25rem 'Pretendard Variable', sans-serif;
+  --text-sm: 500 0.75rem/1.1875rem 'Pretendard Variable', sans-serif;
+  --text-sm: 700 0.75rem/1rem 'Pretendard Variable', sans-serif;
+
+  --label-lg: 700 0.875rem/1.25rem 'Pretendard Variable', sans-serif;
+  --label-md: 700 0.75rem/1rem 'Pretendard Variable', sans-serif;
+
+  --button-text-lg: 700 1.1875rem/1.5rem 'Pretendard Variable', sans-serif;
+  --button-text-md-2: 700 1.125rem/1.5rem 'Pretendard Variable', sans-serif;
+  --button-text-md: 600 1rem/1.5rem 'Pretendard Variable', sans-serif;
+  --button-text-sm: 600 0.875rem/1.25rem 'Pretendard Variable', sans-serif;
+
+  --caption-md: 500 0.875rem/1rem 'Pretendard Variable', sans-serif;
+  --caption-sm: 400 0.8125rem/0.875rem 'Pretendard Variable', sans-serif;
+
+  /* letter spacing */
+  --title-exlg-letter-spacing: 0%;
+  --title-lg-letter-spacing: 0%;
+  --title-md-2-letter-spacing: -0.5%;
+  --title-md-letter-spacing: -1%;
+  --title-sm-letter-spacing: 1%;
+
+  --text-lg-letter-spacing: -1%;
+  --text-lg-emphasis-letter-spacing: 1%;
+  --text-md-letter-spacing: 0%;
+  --text-md-emphasis-letter-spacing: 1%;
+  --text-sm-letter-spacing: 0%;
+  --text-sm-emphasis-letter-spacing: 1%;
+
+  --label-lg-letter-spacing: 0%;
+  --label-md-letter-spacing: 0%;
+
+  --button-text-lg-letter-spacing: 2%;
+  --button-text-md2-letter-spacing: 1.2%;
+  --button-text-md-letter-spacing: 0%;
+  --button-text-sm-letter-spacing: -1%;
+
+  --caption-md-letter-spacing: -0.5%;
+  --caption-sm-letter-spacing: -1%;
+}
+
+/* reset */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Pretendard Variable', Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  background-color: rgb(202, 202, 202);
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+input {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
