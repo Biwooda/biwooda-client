@@ -5,6 +5,7 @@ import App from './App';
 import './index.css';
 import EmailLoginPage from './pages/EmailLoginPage/EmailLoginPage';
 import LoginPage from './pages/LoginPage/LoginPage';
+import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 import reportWebVitals from './reportWebVitals';
 
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: '/sign-up',
         element: <SignUpPage />,
+      },
+      {
+        path: '/reset-password',
+        element: <ResetPasswordPage />,
       },
     ],
   },

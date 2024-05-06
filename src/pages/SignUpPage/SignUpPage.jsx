@@ -23,7 +23,6 @@ export default function SignUpPage() {
     setFormData({ ...formData, [name]: value });
   };
   const navigate = useNavigate();
-  console.log(formData);
 
   return (
     <section className={styles.container}>

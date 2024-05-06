@@ -1,0 +1,19 @@
+.codeFieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.codeButton {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 6px;
+}
+
+.sendCodeButton {
+  flex: 1;
+}
+
+.resendCodeButton {
+  width: 23%;
+}
