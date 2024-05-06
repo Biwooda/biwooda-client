@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import backArrow from '../../assets/back_arrow.svg';
 import emailLg from '../../assets/email_lg.svg';
 import FeedbackMessage from '../../components/FeedbackMessage/FeedbackMessage';
@@ -15,11 +16,11 @@ export default function EmailLoginPage() {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
-
+  const navigate = useNavigate();
   return (
     <section className={styles.container} onChange={handleChange}>
       <div className={styles.back}>
-        <img src={backArrow} alt='back' />
+        <img src={backArrow} alt='back' onClick={() => navigate(-1)} />
       </div>
       <Title
         icon={emailLg}

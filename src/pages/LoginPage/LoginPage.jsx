@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import biwoodaLogo from '../../assets/logo.svg';
 import umbrella from '../../assets/umbrella.svg';
 import LoginButton from '../../components/LoginButton/LoginButton';
@@ -25,7 +26,9 @@ export default function LoginPage() {
       <div className={styles.bottom}>
         <div className={styles.login_buttons}>
           {buttonStyles.map((style) => (
-            <LoginButton key={style.id} {...style} />
+            <Link to='/login/email'>
+              <LoginButton key={style.id} {...style} />
+            </Link>
           ))}
         </div>
         <div className={styles.info}>

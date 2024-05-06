@@ -7,6 +7,10 @@
   margin-bottom: 29px;
 }
 
+.back img {
+  cursor: pointer;
+}
+
 .loginForm {
   display: flex;
   flex-direction: column;

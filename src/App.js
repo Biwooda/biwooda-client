@@ -1,10 +1,10 @@
+import { Outlet } from 'react-router-dom';
 import './App.css';
-import EmailLoginPage from './pages/EmailLoginPage/EmailLoginPage';
 
 function App() {
   return (
     <div className='App'>
-      <EmailLoginPage />
+      <Outlet />
     </div>
   );
 }
