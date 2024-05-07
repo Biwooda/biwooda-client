@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import backArrow from '../../assets/back_arrow.svg';
-import symbolLg from '../../assets/symbol_lg.svg';
 import DefaultButton from '../../components/DefaultButton/DefaultButton';
 import EmailVerification from '../../components/EmailVerification/EmailVerification';
 import PasswordVerification from '../../components/PasswordVerification/PasswordVerification';
-import Title from '../../components/Title/Title';
+import { SIGN_UP_PAGE_TITLE } from '../../constants';
 import useFunnel from '../../hooks/useFunnel';
-import styles from './SignUpPage.module.css';
+import SubPage from '../../pages/SubPage/SubPage';
 
 export default function SignUpPage() {
   const [Funnel, setStep] = useFunnel('code');
@@ -19,38 +16,29 @@ export default function SignUpPage() {
   });
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
-  const navigate = useNavigate();
 
   return (
-    <section className={styles.container}>
-      <div className={styles.back}>
-        <img src={backArrow} alt='back' onClick={() => navigate(-1)} />
-      </div>
-      <Title
-        icon={symbolLg}
-        title='회원가입하기'
-        description='빠르게 회원가입해봐요'
-      />
-      <div className={styles.signUpForm} onChange={handleChange}>
-        <Funnel>
-          <Funnel.Step name='code'>
-            <EmailVerification formData={formData} />
-            <DefaultButton
-              text='이메일 회원가입 완료하기'
-              onClick={() => setStep('password')}
-            />
-          </Funnel.Step>
-          <Funnel.Step name='password'>
-            <PasswordVerification formData={formData} />
-            <DefaultButton
-              text='이메일 회원가입 완료하기'
-              onClick={() => setStep('code')}
-            />
-          </Funnel.Step>
-        </Funnel>
-      </div>
-    </section>
+    <Funnel>
+      <Funnel.Step name='code'>
+        <SubPage title={SIGN_UP_PAGE_TITLE.step1}>
+          <EmailVerification data={formData} onChange={handleChange} />
+          <DefaultButton
+            text='이메일 회원가입 완료하기'
+            onClick={() => setStep('password')}
+          />
+        </SubPage>
+      </Funnel.Step>
+      <Funnel.Step name='password'>
+        <SubPage title={SIGN_UP_PAGE_TITLE.step2}>
+          <PasswordVerification data={formData} onChange={handleChange} />
+          <DefaultButton
+            text='이메일 회원가입 완료하기'
+            onClick={() => setStep('code')}
+          />
+        </SubPage>
+      </Funnel.Step>
+    </Funnel>
   );
 }
