@@ -6,30 +6,30 @@ import { SIGN_UP_FEEDBACK_MESSAGE } from '../../constants';
 import { checkEmailFormat } from '../../utils/checkFormat';
 import styles from './EmailVerification.module.css';
 
-export default function EmailVerification({ formData, setStep }) {
+export default function EmailVerification({ data }) {
   return (
     <div className={styles.codeFieldset}>
       <div>
         <TextField
           name='email'
           label='이메일'
-          value={formData.email}
+          value={data.email}
           placeholder='이메일을 입력해주세요'
         >
           <FeedbackMessage
             message={
-              checkEmailFormat(formData.email)
+              checkEmailFormat(data.email)
                 ? SIGN_UP_FEEDBACK_MESSAGE.emailPass
                 : SIGN_UP_FEEDBACK_MESSAGE.emailFail
             }
-            condition={checkEmailFormat(formData.email)}
+            condition={checkEmailFormat(data.email)}
           />
         </TextField>
         <div className={styles.codeButton}>
           <div className={styles.sendCodeButton}>
             <DefaultButton
               text='이메일로 인증번호 전송'
-              disabled={!checkEmailFormat(formData.email)}
+              disabled={!checkEmailFormat(data.email)}
             />
           </div>
           <div className={styles.resendCodeButton}>
@@ -40,7 +40,7 @@ export default function EmailVerification({ formData, setStep }) {
       <TextField
         name='code'
         label='인증번호'
-        value={formData.code}
+        value={data.code}
         placeholder='인증번호를 입력해주세요'
       >
         <FeedbackMessage message='확인 완료' condition={true} />
