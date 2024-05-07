@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import backArrow from '../../assets/back_arrow.svg';
 import emailLg from '../../assets/email_lg.svg';
+import DefaultButton from '../../components/DefaultButton/DefaultButton';
 import FeedbackMessage from '../../components/FeedbackMessage/FeedbackMessage';
 import PasswordField from '../../components/PasswordField/PasswordField';
 import TextField from '../../components/TextField/TextField';
@@ -71,17 +72,15 @@ export default function EmailLoginPage() {
           </div>
         </div>
         <div>
-          <button
-            className={styles.loginButton}
+          <DefaultButton
+            text='이메일로 로그인하기'
             disabled={
               !(
                 checkEmailFormat(formData.email) &&
                 checkPasswordFormat(formData.password)
               )
             }
-          >
-            이메일로 로그인하기
-          </button>
+          />
         </div>
       </div>
     </section>
