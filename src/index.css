@@ -118,3 +118,9 @@ input {
 a {
   text-decoration: none;
 }
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 14px;
+  }
+}

@@ -1,8 +1,8 @@
 .button {
-  padding: 14px 20px;
+  padding: 0.875rem 1.25rem;
   display: flex;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   background-color: var(--grey-scale-0);
   border: 1px solid var(--grey-scale-20);
   cursor: pointer;
@@ -17,25 +17,14 @@
   align-items: center;
 }
 
+.icon img {
+  width: 1.6875rem;
+}
+
 .text {
   flex: 1;
   text-align: center;
   color: var(--grey-scale-90);
   font: var(--button-text-md);
   letter-spacing: var(--button-text-md-letter-spacing);
-}
-
-@media screen and (max-width: 400px) {
-  .button {
-    padding: 12px 16px;
-  }
-
-  .text {
-    font: var(--button-text-sm);
-    letter-spacing: var(--button-text-sm-letter-spacing);
-  }
-
-  .icon img {
-    width: 20px;
-  }
 }

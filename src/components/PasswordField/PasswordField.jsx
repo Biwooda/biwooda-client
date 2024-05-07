@@ -30,7 +30,12 @@ export default function PasswordField({
             onChange={onChange}
             placeholder={placeholder}
           />
-          <img src={openEyes} alt='opendEyes' onClick={handleClick} />
+          <img
+            className={styles.eyesIcon}
+            src={openEyes}
+            alt='opendEyes'
+            onClick={handleClick}
+          />
         </div>
       ) : (
         <div className={styles.field}>
@@ -42,7 +47,12 @@ export default function PasswordField({
             onChange={onChange}
             placeholder={placeholder}
           />
-          <img src={closedEyes} alt='closedEyes' onClick={handleClick} />
+          <img
+            className={styles.eyesIcon}
+            src={closedEyes}
+            alt='closedEyes'
+            onClick={handleClick}
+          />
         </div>
       )}
     </div>
