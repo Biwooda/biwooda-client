@@ -6,10 +6,11 @@ import DefaultButton from '../../components/DefaultButton/DefaultButton.jsx';
 import EmailVerification from '../../components/EmailVerification/EmailVerification.jsx';
 import PasswordVerification from '../../components/PasswordVerification/PasswordVerification.jsx';
 import Title from '../../components/Title/Title.jsx';
+import useFunnel from '../../hooks/useFunnel';
 import styles from './ResetPasswordPage.module.css';
 
 export default function ResetPasswordPage() {
-  const [step, setStep] = useState('code');
+  const [Funnel, setStep] = useFunnel('code');
   const [formData, setFormData] = useState({
     email: '',
     code: '',
@@ -33,21 +34,19 @@ export default function ResetPasswordPage() {
         description={'회원가입 입력했던 이메일을 입력해주세요'}
       />
       <div className={styles.resetPasswordForm} onChange={handleChange}>
-        {step === 'code' && (
-          <>
+        <Funnel>
+          <Funnel.Step name='code'>
             <EmailVerification formData={formData} />
             <DefaultButton text='확인' onClick={() => setStep('password')} />
-          </>
-        )}
-        {step === 'password' && (
-          <>
+          </Funnel.Step>
+          <Funnel.Step name='password'>
             <PasswordVerification formData={formData} />
             <DefaultButton
               text='비밀번호 재설정 완료'
               onClick={() => setStep('code')}
             />
-          </>
-        )}
+          </Funnel.Step>
+        </Funnel>
       </div>
     </section>
   );
