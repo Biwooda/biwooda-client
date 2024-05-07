@@ -2,19 +2,19 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 18px;
+  gap: 1.125rem;
 }
 
 .info {
   text-align: center;
-  margin-top: 14px;
+  margin-top: 0.875rem;
   color: var(--grey-scale-60);
   font: var(--caption-md);
   letter-spacing: var(--caption-md-letter-spacing);
 }
 
 .reset {
-  margin-left: 8px;
+  margin-left: 0.5rem;
   color: var(--primary-skyblue);
   font: var(--button-text-sm);
   letter-spacing: var(--button-text-sm-letter-spacing);

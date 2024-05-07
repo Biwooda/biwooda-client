@@ -1,14 +1,14 @@
 .titleContainer {
   display: flex;
   align-items: center;
-  margin-bottom: 4px;
+  margin-bottom: 0.25rem;
 }
 
 .title {
   color: var(--primary-skyblue);
   font: var(--title-exlg);
   letter-spacing: var(--title-exlg-letter-spacing);
-  margin-left: 2px;
+  margin-left: 0.125rem;
 }
 
 .description {

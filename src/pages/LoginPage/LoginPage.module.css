@@ -1,7 +1,7 @@
 .login {
   position: relative;
   height: 100%;
-  padding: 0 23px;
+  padding: 0 1.4375rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -10,8 +10,8 @@
 
 .umbrella {
   position: absolute;
-  right: -5px;
-  top: 50px;
+  right: -0.3125rem;
+  top: 3.125rem;
   text-align: right;
   animation: login-slidein-right-to-left 1s;
 }
@@ -19,13 +19,13 @@
 .dim {
   position: absolute;
   width: 100%;
-  height: 600px;
+  height: 34rem;
   left: 0;
-  top: -50px;
+  top: -3.125rem;
   background: linear-gradient(
     156.5deg,
-    #ffffff 37.5%,
-    rgba(255, 255, 255, 0) 69.57%
+    #ffffff 42.3%,
+    rgba(255, 255, 255, 0) 71.23%
   );
   mix-blend-mode: normal;
 }
@@ -36,8 +36,8 @@
 }
 
 .logo {
-  padding: 13px 0;
-  margin-bottom: 29px;
+  padding: 0.8125rem 0;
+  margin-bottom: 1.8125rem;
 }
 
 .bottom {
@@ -55,25 +55,19 @@
 
 .info {
   text-align: center;
-  margin-top: 14px;
+  margin-top: 0.875rem;
   color: var(--grey-scale-60);
   font: var(--caption-md);
   letter-spacing: var(--caption-md-letter-spacing);
 }
 
 .signUp {
-  margin-left: 8px;
+  margin-left: 0.5rem;
   color: var(--primary-skyblue);
   font: var(--button-text-sm);
   letter-spacing: var(--button-text-sm-letter-spacing);
   text-decoration: none;
   cursor: pointer;
-}
-
-@media screen and (max-width: 400px) {
-  html {
-    font-size: 14px;
-  }
 }
 
 @media screen and (max-width: 380px) {
@@ -84,11 +78,11 @@
 
 @keyframes login-slidein-right-to-left {
   0% {
-    transform: translateX(400px) rotate(60deg);
+    transform: translateX(25rem) rotate(60deg);
   }
 
   50% {
-    transform: translateX(400px) rotate(60deg);
+    transform: translateX(25rem) rotate(60deg);
   }
 
   80% {
@@ -110,7 +104,7 @@
   }
 
   80% {
-    transform: translateY(-10px);
+    transform: translateY(-0.625rem);
   }
 
   100% {
