@@ -1,0 +1,22 @@
+.container {
+  height: 100%;
+  padding: 0 23px;
+}
+
+.back {
+  display: flex;
+  padding: 10px 0;
+  margin-bottom: 29px;
+}
+
+.back img {
+  cursor: pointer;
+}
+
+.content {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 38px;
+}
