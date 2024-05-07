@@ -5,7 +5,7 @@ import { SIGN_UP_FEEDBACK_MESSAGE } from '../../constants';
 import { checkPasswordFormat } from '../../utils/checkFormat';
 import styles from './PasswordVerification.module.css';
 
-export default function PasswordVerification({ data }) {
+export default function PasswordVerification({ data, onChange }) {
   return (
     <div className={styles.passwordFieldset}>
       <PasswordField
@@ -13,6 +13,7 @@ export default function PasswordVerification({ data }) {
         label='비밀번호'
         value={data.password}
         placeholder='비밀번호를 입력해주세요'
+        onChange={onChange}
       >
         <FeedbackMessage
           message={
@@ -28,6 +29,7 @@ export default function PasswordVerification({ data }) {
         label='비밀번호 재입력'
         value={data.rePassword}
         placeholder='비밀번호를 재입력해주세요'
+        onChange={onChange}
       >
         <FeedbackMessage
           message={

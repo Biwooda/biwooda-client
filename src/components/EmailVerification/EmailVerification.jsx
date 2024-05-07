@@ -6,7 +6,7 @@ import { SIGN_UP_FEEDBACK_MESSAGE } from '../../constants';
 import { checkEmailFormat } from '../../utils/checkFormat';
 import styles from './EmailVerification.module.css';
 
-export default function EmailVerification({ data }) {
+export default function EmailVerification({ data, onChange }) {
   return (
     <div className={styles.codeFieldset}>
       <div>
@@ -15,6 +15,7 @@ export default function EmailVerification({ data }) {
           label='이메일'
           value={data.email}
           placeholder='이메일을 입력해주세요'
+          onChange={onChange}
         >
           <FeedbackMessage
             message={
@@ -42,6 +43,7 @@ export default function EmailVerification({ data }) {
         label='인증번호'
         value={data.code}
         placeholder='인증번호를 입력해주세요'
+        onChange={onChange}
       >
         <FeedbackMessage message='확인 완료' condition={true} />
       </TextField>

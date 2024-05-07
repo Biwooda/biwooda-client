@@ -7,6 +7,7 @@ export default function PasswordField({
   label,
   name,
   value,
+  onChange,
   placeholder,
   children,
 }) {
@@ -26,6 +27,7 @@ export default function PasswordField({
             type='text'
             name={name}
             value={value}
+            onChange={onChange}
             placeholder={placeholder}
           />
           <img src={openEyes} alt='opendEyes' onClick={handleClick} />
@@ -37,6 +39,7 @@ export default function PasswordField({
             type='password'
             name={name}
             value={value}
+            onChange={onChange}
             placeholder={placeholder}
           />
           <img src={closedEyes} alt='closedEyes' onClick={handleClick} />
