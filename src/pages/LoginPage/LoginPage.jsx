@@ -26,7 +26,7 @@ export default function LoginPage() {
       <div className={styles.bottom}>
         <div className={styles.login_buttons}>
           {buttonStyles.map((style) => (
-            <Link to='/login/email'>
+            <Link key={style.id} to='/login/email'>
               <LoginButton key={style.id} {...style} />
             </Link>
           ))}

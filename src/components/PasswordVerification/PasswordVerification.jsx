@@ -33,11 +33,11 @@ export default function PasswordVerification({ data, onChange }) {
       >
         <FeedbackMessage
           message={
-            data.password === data.repassword
+            data.password === data.rePassword
               ? SIGN_UP_FEEDBACK_MESSAGE.repasswordPass
               : SIGN_UP_FEEDBACK_MESSAGE.repasswordFail
           }
-          condition={data.password === data.repassword}
+          condition={data.password === data.rePassword}
         />
       </PasswordField>
     </div>
