@@ -1,28 +1,8 @@
-.container {
-  padding: 0 23px;
-}
-
-.back {
-  padding: 10px 0;
-  margin-bottom: 29px;
-}
-
-.back img {
-  cursor: pointer;
-}
-
-.loginForm {
-  display: flex;
-  flex-direction: column;
-  gap: 217px;
-}
-
 .fieldset {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 18px;
-  margin-top: 29px;
 }
 
 .info {
@@ -39,28 +19,4 @@
   font: var(--button-text-sm);
   letter-spacing: var(--button-text-sm-letter-spacing);
   text-decoration: none;
-}
-
-.loginButton {
-  width: 100%;
-  padding: 20px 0;
-  background-color: var(--primary-skyblue);
-  border-radius: 10px;
-  color: var(--grey-scale-0);
-  font: var(--button-text-lg);
-  letter-spacing: var(--button-text-lg-letter-spacing);
-  cursor: pointer;
-}
-
-.loginButton:active {
-  filter: brightness(0.8);
-}
-
-.loginButton:disabled {
-  background-color: var(--grey-scale-20);
-  cursor: default;
-}
-
-.loginButton:disabled:active {
-  filter: none;
 }
