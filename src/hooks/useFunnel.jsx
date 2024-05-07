@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 export default function useFunnel(start) {
   const [step, setStep] = useState(start);
 
-  const Step = ({ children }) => {
-    return <>{children}</>;
-  };
+  const Funnel = useCallback(
+    ({ children }) => {
+      const targetStep = children.find(
+        (childrenStep) => childrenStep.props.name === step
+      );
+      return targetStep;
+    },
+    [step]
+  );
 
-  const Funnel = ({ children }) => {
-    const targetStep = children.find(
-      (childrenStep) => childrenStep.props.name === step
-    );
-    return targetStep;
-  };
+  const Step = useCallback(({ children }) => {
+    return <>{children}</>;
+  }, []);
 
   Funnel.Step = Step;
 

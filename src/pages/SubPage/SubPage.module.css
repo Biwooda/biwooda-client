@@ -4,6 +4,7 @@
 }
 
 .back {
+  display: flex;
   padding: 10px 0;
   margin-bottom: 29px;
 }
@@ -12,7 +13,7 @@
   cursor: pointer;
 }
 
-.resetPasswordForm {
+.content {
   height: 60%;
   display: flex;
   flex-direction: column;

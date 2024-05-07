@@ -5,37 +5,39 @@ import { SIGN_UP_FEEDBACK_MESSAGE } from '../../constants';
 import { checkPasswordFormat } from '../../utils/checkFormat';
 import styles from './PasswordVerification.module.css';
 
-export default function PasswordVerification({ formData }) {
+export default function PasswordVerification({ data, onChange }) {
   return (
     <div className={styles.passwordFieldset}>
       <PasswordField
         name='password'
         label='비밀번호'
-        value={formData.password}
+        value={data.password}
         placeholder='비밀번호를 입력해주세요'
+        onChange={onChange}
       >
         <FeedbackMessage
           message={
-            checkPasswordFormat(formData.password)
+            checkPasswordFormat(data.password)
               ? SIGN_UP_FEEDBACK_MESSAGE.passwordPass
               : SIGN_UP_FEEDBACK_MESSAGE.passwordFail
           }
-          condition={checkPasswordFormat(formData.password)}
+          condition={checkPasswordFormat(data.password)}
         />
       </PasswordField>
       <PasswordField
-        name='repassword'
+        name='rePassword'
         label='비밀번호 재입력'
-        value={formData.repassword}
+        value={data.rePassword}
         placeholder='비밀번호를 재입력해주세요'
+        onChange={onChange}
       >
         <FeedbackMessage
           message={
-            formData.password === formData.repassword
+            data.password === data.repassword
               ? SIGN_UP_FEEDBACK_MESSAGE.repasswordPass
               : SIGN_UP_FEEDBACK_MESSAGE.repasswordFail
           }
-          condition={formData.password === formData.repassword}
+          condition={data.password === data.repassword}
         />
       </PasswordField>
     </div>
