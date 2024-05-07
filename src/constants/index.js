@@ -1,8 +1,13 @@
 import buttonStyles from './loginButton';
 import { LOGIN_FEEDBACK_MESSAGE, SIGN_UP_FEEDBACK_MESSAGE } from './message';
-import { RESET_PASSWORD_PAGE_TITLE, SIGN_UP_PAGE_TITLE } from './title';
+import {
+  EMAIL_LOGIN_PAGE_TITLE,
+  RESET_PASSWORD_PAGE_TITLE,
+  SIGN_UP_PAGE_TITLE,
+} from './title';
 
 export {
+  EMAIL_LOGIN_PAGE_TITLE,
   LOGIN_FEEDBACK_MESSAGE,
   RESET_PASSWORD_PAGE_TITLE,
   SIGN_UP_FEEDBACK_MESSAGE,
