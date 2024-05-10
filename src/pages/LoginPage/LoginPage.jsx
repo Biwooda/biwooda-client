@@ -41,15 +41,11 @@ export default function LoginPage() {
           >
             네이버로 로그인하기
           </LoginButton.Button>
-          <LoginButton.Button
-            label='email'
-            icon={emailLogo}
-            onClick={() => {
-              console.log('email');
-            }}
-          >
-            이메일로 로그인하기
-          </LoginButton.Button>
+          <Link to='/login/email'>
+            <LoginButton.Button label='email' icon={emailLogo}>
+              이메일로 로그인하기
+            </LoginButton.Button>
+          </Link>
         </LoginButton>
         <div className={styles.info}>
           비우다가 처음이신가요?
