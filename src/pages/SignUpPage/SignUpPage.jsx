@@ -5,6 +5,7 @@ import PasswordVerification from '../../components/PasswordVerification/Password
 import { SIGN_UP_PAGE_TITLE } from '../../constants';
 import useFunnel from '../../hooks/useFunnel';
 import SubPage from '../../pages/SubPage/SubPage';
+import { checkEmailFormat, checkPasswordFormat } from '../../utils/checkFormat';
 
 export default function SignUpPage() {
   const [Funnel, setStep] = useFunnel('code');
@@ -25,8 +26,9 @@ export default function SignUpPage() {
         <SubPage title={SIGN_UP_PAGE_TITLE.step1}>
           <EmailVerification data={formData} onChange={handleChange} />
           <DefaultButton
-            text='이메일 회원가입 완료하기'
+            text='확인'
             onClick={() => setStep('password')}
+            disabled={!checkEmailFormat(formData.email) || !formData.code}
           />
         </SubPage>
       </Funnel.Step>
@@ -35,7 +37,10 @@ export default function SignUpPage() {
           <PasswordVerification data={formData} onChange={handleChange} />
           <DefaultButton
             text='이메일 회원가입 완료하기'
-            onClick={() => setStep('code')}
+            disabled={
+              !checkPasswordFormat(formData.password) ||
+              formData.password !== formData.rePassword
+            }
           />
         </SubPage>
       </Funnel.Step>
