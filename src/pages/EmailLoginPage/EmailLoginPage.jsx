@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import DefaultButton from '../../components/DefaultButton/DefaultButton';
 import FeedbackMessage from '../../components/FeedbackMessage/FeedbackMessage';
 import PasswordField from '../../components/PasswordField/PasswordField';
@@ -57,9 +58,9 @@ export default function EmailLoginPage() {
         </div>
         <div className={styles.info}>
           비밀번호를 잊으셨나요?
-          <a className={styles.reset} href='/'>
+          <Link to='/reset-password' className={styles.reset}>
             비밀번호 재설정하기
-          </a>
+          </Link>
         </div>
       </div>
       <div>
