@@ -1,36 +1,56 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import biwoodaLogo from '../../assets/logo.svg';
-import umbrella from '../../assets/umbrella.svg';
+import emailLogo from '../../assets/email.svg';
+import kakaoLogo from '../../assets/kakao.svg';
+import naverLogo from '../../assets/naver.svg';
 import LoginButton from '../../components/LoginButton/LoginButton';
+import Logo from '../../components/Logo/Logo';
 import Title from '../../components/Title/Title';
-import { buttonStyles } from '../../constants';
+import Umbrella from '../../components/Umbrella/Umbrella';
 import styles from './LoginPage.module.css';
 
 export default function LoginPage() {
   return (
     <section className={styles.login}>
-      <div className={styles.umbrella}>
-        <img src={umbrella} alt='umbrella' />
-      </div>
-      <div className={styles.dim}></div>
       <div className={styles.top}>
-        <div className={styles.logo}>
-          <img src={biwoodaLogo} alt='logo' />
-        </div>
+        <Logo />
         <Title
           title='시작해볼까요?'
           description='공유 우산 서비스 비우다와 함께해요'
         />
       </div>
       <div className={styles.bottom}>
-        <div className={styles.login_buttons}>
-          {buttonStyles.map((style) => (
-            <Link key={style.id} to='/login/email'>
-              <LoginButton key={style.id} {...style} />
-            </Link>
-          ))}
-        </div>
+        <LoginButton>
+          <LoginButton.Button
+            label='kakao'
+            icon={kakaoLogo}
+            backgroundColor='#FEE500'
+            onClick={() => {
+              console.log('kakao');
+            }}
+          >
+            카카오로 로그인하기
+          </LoginButton.Button>
+          <LoginButton.Button
+            label='naver'
+            icon={naverLogo}
+            backgroundColor='#59C150'
+            onClick={() => {
+              console.log('naver');
+            }}
+          >
+            네이버로 로그인하기
+          </LoginButton.Button>
+          <LoginButton.Button
+            label='email'
+            icon={emailLogo}
+            onClick={() => {
+              console.log('email');
+            }}
+          >
+            이메일로 로그인하기
+          </LoginButton.Button>
+        </LoginButton>
         <div className={styles.info}>
           비우다가 처음이신가요?
           <Link to='/sign-up' className={styles.signUp}>
@@ -38,6 +58,7 @@ export default function LoginPage() {
           </Link>
         </div>
       </div>
+      <Umbrella />
     </section>
   );
 }
