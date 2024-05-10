@@ -4,7 +4,9 @@ import EmailVerification from '../../components/EmailVerification/EmailVerificat
 import PasswordVerification from '../../components/PasswordVerification/PasswordVerification.jsx';
 import { RESET_PASSWORD_PAGE_TITLE } from '../../constants/index.js';
 import useFunnel from '../../hooks/useFunnel';
+import { checkEmailFormat, checkPasswordFormat } from '../../utils/checkFormat';
 import SubPage from '../SubPage/SubPage';
+
 export default function ResetPasswordPage() {
   const [formData, setFormData] = useState({
     email: '',
@@ -23,7 +25,11 @@ export default function ResetPasswordPage() {
       <Funnel.Step name='code'>
         <SubPage title={RESET_PASSWORD_PAGE_TITLE.step1}>
           <EmailVerification data={formData} onChange={handleChange} />
-          <DefaultButton text='확인' onClick={() => setStep('password')} />
+          <DefaultButton
+            text='확인'
+            onClick={() => setStep('password')}
+            disabled={!checkEmailFormat(formData.email) || !formData.code}
+          />
         </SubPage>
       </Funnel.Step>
       <Funnel.Step name='password'>
@@ -31,7 +37,10 @@ export default function ResetPasswordPage() {
           <PasswordVerification data={formData} onChange={handleChange} />
           <DefaultButton
             text='비밀번호 재설정 완료'
-            onClick={() => setStep('code')}
+            disabled={
+              !checkPasswordFormat(formData.password) ||
+              formData.password !== formData.rePassword
+            }
           />
         </SubPage>
       </Funnel.Step>
