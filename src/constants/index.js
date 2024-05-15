@@ -1,3 +1,4 @@
+import { center, level, markers } from './map';
 import { LOGIN_FEEDBACK_MESSAGE, SIGN_UP_FEEDBACK_MESSAGE } from './message';
 import {
   EMAIL_LOGIN_PAGE_TITLE,
@@ -11,4 +12,7 @@ export {
   RESET_PASSWORD_PAGE_TITLE,
   SIGN_UP_FEEDBACK_MESSAGE,
   SIGN_UP_PAGE_TITLE,
+  center,
+  level,
+  markers,
 };

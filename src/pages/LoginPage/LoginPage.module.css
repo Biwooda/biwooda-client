@@ -13,6 +13,11 @@
   z-index: 1;
 }
 
+.logo {
+  padding: 0.8125rem 0;
+  margin-bottom: 1.8125rem;
+}
+
 .bottom {
   flex: 1;
   animation-duration: 1s;

@@ -5,6 +5,7 @@ import App from './App';
 import './index.css';
 import EmailLoginPage from './pages/EmailLoginPage/EmailLoginPage';
 import LoginPage from './pages/LoginPage/LoginPage';
+import MainPage from './pages/MainPage/MainPage';
 import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 import reportWebVitals from './reportWebVitals';
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
     path: '/',
     element: <App />,
     children: [
+      {
+        path: '/',
+        element: <MainPage />,
+      },
       {
         path: '/login',
         element: <LoginPage />,
