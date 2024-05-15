@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DefaultButton from '../../components/DefaultButton/DefaultButton';
 import FeedbackMessage from '../../components/FeedbackMessage/FeedbackMessage';
 import TextField from '../../components/TextField/TextField';
@@ -7,6 +7,12 @@ import { checkEmailFormat } from '../../utils/checkFormat';
 import styles from './EmailVerification.module.css';
 
 export default function EmailVerification({ data, onChange }) {
+  const [isSended, setIsSended] = useState(false);
+  const handleChange = (event) => {
+    setIsSended(false);
+    onChange(event);
+  };
+
   return (
     <div className={styles.codeFieldset}>
       <div>
@@ -15,7 +21,7 @@ export default function EmailVerification({ data, onChange }) {
           label='이메일'
           value={data.email}
           placeholder='이메일을 입력해주세요'
-          onChange={onChange}
+          onChange={handleChange}
         >
           <FeedbackMessage
             message={
@@ -30,12 +36,15 @@ export default function EmailVerification({ data, onChange }) {
           <div className={styles.sendCodeButton}>
             <DefaultButton
               text='이메일로 인증번호 전송'
-              disabled={!checkEmailFormat(data.email)}
+              onClick={() => setIsSended(true)}
+              disabled={!checkEmailFormat(data.email) || isSended}
             />
           </div>
-          <div className={styles.resendCodeButton}>
-            <DefaultButton text='재발송' />
-          </div>
+          {isSended && (
+            <div className={styles.resendCodeButton}>
+              <DefaultButton text='재발송' />
+            </div>
+          )}
         </div>
       </div>
       <TextField
