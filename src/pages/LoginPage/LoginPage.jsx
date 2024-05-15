@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import emailLogo from '../../assets/email.svg';
 import kakaoLogo from '../../assets/kakao.svg';
+import biwoodaLogo from '../../assets/logo.svg';
 import naverLogo from '../../assets/naver.svg';
 import LoginButton from '../../components/LoginButton/LoginButton';
-import Logo from '../../components/Logo/Logo';
 import Title from '../../components/Title/Title';
 import Umbrella from '../../components/Umbrella/Umbrella';
 import styles from './LoginPage.module.css';
@@ -13,7 +13,9 @@ export default function LoginPage() {
   return (
     <section className={styles.login}>
       <div className={styles.top}>
-        <Logo />
+        <div className={styles.logo}>
+          <img src={biwoodaLogo} alt='logo' />
+        </div>
         <Title
           title='시작해볼까요?'
           description='공유 우산 서비스 비우다와 함께해요'
