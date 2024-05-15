@@ -1,6 +1,6 @@
 import React from 'react';
 import FeedbackMessage from '../../components/FeedbackMessage/FeedbackMessage';
-import PasswordField from '../../components/PasswordField/PasswordField';
+import InputField from '../../components/InputField/InputField';
 import { SIGN_UP_FEEDBACK_MESSAGE } from '../../constants';
 import { checkPasswordFormat } from '../../utils/checkFormat';
 import styles from './PasswordVerification.module.css';
@@ -8,7 +8,7 @@ import styles from './PasswordVerification.module.css';
 export default function PasswordVerification({ data, onChange }) {
   return (
     <div className={styles.passwordFieldset}>
-      <PasswordField
+      <InputField.Password
         name='password'
         label='비밀번호'
         value={data.password}
@@ -23,8 +23,8 @@ export default function PasswordVerification({ data, onChange }) {
           }
           condition={checkPasswordFormat(data.password)}
         />
-      </PasswordField>
-      <PasswordField
+      </InputField.Password>
+      <InputField.Password
         name='rePassword'
         label='비밀번호 재입력'
         value={data.rePassword}
@@ -39,7 +39,7 @@ export default function PasswordVerification({ data, onChange }) {
           }
           condition={data.password === data.rePassword}
         />
-      </PasswordField>
+      </InputField.Password>
     </div>
   );
 }

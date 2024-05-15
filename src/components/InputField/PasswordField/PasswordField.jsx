@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import closedEyes from '../../assets/close_eyes.svg';
-import openEyes from '../../assets/open_eyes.svg';
+import closedEyes from '../../../assets/close_eyes.svg';
+import openEyes from '../../../assets/open_eyes.svg';
 import styles from './PasswordField.module.css';
 
 export default function PasswordField({
