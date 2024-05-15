@@ -34,7 +34,7 @@ export default function LoginPage() {
           <LoginButton
             label='naver'
             icon={naverLogo}
-            backgroundColor='#59C150'
+            backgroundColor='#03C75A'
             onClick={() => {
               console.log('naver');
             }}
