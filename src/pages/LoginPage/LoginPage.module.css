@@ -19,6 +19,13 @@
   animation-name: login-slidein-bottom-to-top;
 }
 
+.loginButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
 .info {
   text-align: center;
   margin-top: 0.875rem;
