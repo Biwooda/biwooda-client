@@ -15,15 +15,17 @@ export default function TextField({
         <label htmlFor={name}>{label}</label>
         {value && children}
       </div>
-      <input
-        id={name}
-        className={styles.field}
-        type='text'
-        name={name}
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder}
-      />
+      <div className={styles.field}>
+        <input
+          id={name}
+          className={styles.text}
+          type='text'
+          name={name}
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
+        />
+      </div>
     </div>
   );
 }

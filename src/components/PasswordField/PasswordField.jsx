@@ -23,6 +23,7 @@ export default function PasswordField({
       {isViewd ? (
         <div className={styles.field}>
           <input
+            id={name}
             className={styles.password}
             type='text'
             name={name}
@@ -40,6 +41,7 @@ export default function PasswordField({
       ) : (
         <div className={styles.field}>
           <input
+            id={name}
             className={styles.password}
             type='password'
             name={name}

@@ -9,18 +9,24 @@
 }
 
 .field {
-  width: 100%;
-  padding: 0.8125rem 1rem;
-  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
   border: 1px solid var(--grey-scale-30);
-  box-sizing: border-box;
-  color: var(--grey-scale-90);
 }
 
-.field::placeholder {
+.text {
+  height: 2rem;
+  padding: 0;
+  border: none;
+  color: var(--grey-scale-90);
+  font: var(--text-lg);
+  letter-spacing: var(--text-lg-letter-spacing);
+}
+
+.text::placeholder {
   color: var(--grey-scale-30);
 }
 
-.field:focus {
+.field:has(.text:focus) {
   border: 1px solid var(--grey-scale-90);
 }
