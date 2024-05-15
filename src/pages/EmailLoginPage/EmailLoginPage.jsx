@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import DefaultButton from '../../components/DefaultButton/DefaultButton';
+import CTAButton from '../../components/CTAButton/CTAButton';
 import FeedbackMessage from '../../components/FeedbackMessage/FeedbackMessage';
 import PasswordField from '../../components/PasswordField/PasswordField';
 import TextField from '../../components/TextField/TextField';
@@ -64,7 +64,7 @@ export default function EmailLoginPage() {
         </div>
       </div>
       <div>
-        <DefaultButton
+        <CTAButton
           text='이메일로 로그인하기'
           disabled={
             !(

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DefaultButton from '../../components/DefaultButton/DefaultButton';
+import CTAButton from '../../components/CTAButton/CTAButton';
 import EmailVerification from '../../components/EmailVerification/EmailVerification';
 import PasswordVerification from '../../components/PasswordVerification/PasswordVerification';
 import { SIGN_UP_PAGE_TITLE } from '../../constants';
@@ -25,7 +25,7 @@ export default function SignUpPage() {
       <Funnel.Step name='code'>
         <SubPage title={SIGN_UP_PAGE_TITLE.step1}>
           <EmailVerification data={formData} onChange={handleChange} />
-          <DefaultButton
+          <CTAButton
             text='확인'
             onClick={() => setStep('password')}
             disabled={!checkEmailFormat(formData.email) || !formData.code}
@@ -35,7 +35,7 @@ export default function SignUpPage() {
       <Funnel.Step name='password'>
         <SubPage title={SIGN_UP_PAGE_TITLE.step2}>
           <PasswordVerification data={formData} onChange={handleChange} />
-          <DefaultButton
+          <CTAButton
             text='이메일 회원가입 완료하기'
             disabled={
               !checkPasswordFormat(formData.password) ||

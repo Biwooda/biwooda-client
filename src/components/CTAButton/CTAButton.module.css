@@ -1,0 +1,23 @@
+.button {
+  width: 100%;
+  padding: 1.25rem 0;
+  border-radius: 0.625rem;
+  background: var(--primary-skyblue);
+  color: white;
+  font: var(--button-text-md-2);
+  cursor: pointer;
+}
+
+.button:active {
+  filter: brightness(0.8);
+}
+
+.button:disabled {
+  background-color: var(--grey-scale-20);
+  color: var(--grey-scale-60);
+  cursor: default;
+}
+
+.button:disabled:active {
+  filter: none;
+}

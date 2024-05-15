@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DefaultButton from '../../components/DefaultButton/DefaultButton.jsx';
+import CTAButton from '../../components/CTAButton/CTAButton.jsx';
 import EmailVerification from '../../components/EmailVerification/EmailVerification.jsx';
 import PasswordVerification from '../../components/PasswordVerification/PasswordVerification.jsx';
 import { RESET_PASSWORD_PAGE_TITLE } from '../../constants/index.js';
@@ -25,7 +25,7 @@ export default function ResetPasswordPage() {
       <Funnel.Step name='code'>
         <SubPage title={RESET_PASSWORD_PAGE_TITLE.step1}>
           <EmailVerification data={formData} onChange={handleChange} />
-          <DefaultButton
+          <CTAButton
             text='확인'
             onClick={() => setStep('password')}
             disabled={!checkEmailFormat(formData.email) || !formData.code}
@@ -35,7 +35,7 @@ export default function ResetPasswordPage() {
       <Funnel.Step name='password'>
         <SubPage title={RESET_PASSWORD_PAGE_TITLE.step2}>
           <PasswordVerification data={formData} onChange={handleChange} />
-          <DefaultButton
+          <CTAButton
             text='비밀번호 재설정 완료'
             disabled={
               !checkPasswordFormat(formData.password) ||
