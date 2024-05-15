@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
-import CTAButton from '../../components/CTAButton/CTAButton';
 import EmailVerification from '../../components/EmailVerification/EmailVerification';
 import PasswordVerification from '../../components/PasswordVerification/PasswordVerification';
 import { SIGN_UP_PAGE_TITLE } from '../../constants';
-import useFunnel from '../../hooks/useFunnel';
 import SubPage from '../../pages/SubPage/SubPage';
-import { checkEmailFormat, checkPasswordFormat } from '../../utils/checkFormat';
+import styles from './SignUpPage.module.css';
 
 export default function SignUpPage() {
-  const [Funnel, setStep] = useFunnel('code');
   const [formData, setFormData] = useState({
     email: '',
     code: '',
@@ -21,29 +18,13 @@ export default function SignUpPage() {
   };
 
   return (
-    <Funnel>
-      <Funnel.Step name='code'>
-        <SubPage title={SIGN_UP_PAGE_TITLE.step1}>
-          <EmailVerification data={formData} onChange={handleChange} />
-          <CTAButton
-            text='확인'
-            onClick={() => setStep('password')}
-            disabled={!checkEmailFormat(formData.email) || !formData.code}
-          />
-        </SubPage>
-      </Funnel.Step>
-      <Funnel.Step name='password'>
-        <SubPage title={SIGN_UP_PAGE_TITLE.step2}>
+    <SubPage title={SIGN_UP_PAGE_TITLE.step1}>
+      <div className={styles.container}>
+        <EmailVerification data={formData} onChange={handleChange} />
+        <div className={styles.passwordFieldset}>
           <PasswordVerification data={formData} onChange={handleChange} />
-          <CTAButton
-            text='이메일 회원가입 완료하기'
-            disabled={
-              !checkPasswordFormat(formData.password) ||
-              formData.password !== formData.rePassword
-            }
-          />
-        </SubPage>
-      </Funnel.Step>
-    </Funnel>
+        </div>
+      </div>
+    </SubPage>
   );
 }
