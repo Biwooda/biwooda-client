@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import CTAButton from '../../components/CTAButton/CTAButton';
 import EmailVerification from '../../components/EmailVerification/EmailVerification';
 import PasswordVerification from '../../components/PasswordVerification/PasswordVerification';
@@ -8,12 +8,14 @@ import { checkPasswordFormat } from '../../utils/checkFormat';
 import styles from './SignUpPage.module.css';
 
 export default function SignUpPage() {
+  const scrollRef = useRef();
   const [formData, setFormData] = useState({
     email: '',
     code: '',
     password: '',
     rePassword: '',
   });
+  const [code, setCode] = useState();
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -22,19 +24,37 @@ export default function SignUpPage() {
   return (
     <SubPage title={SIGN_UP_PAGE_TITLE.step1}>
       <div className={styles.container}>
-        <EmailVerification data={formData} onChange={handleChange} />
-        <div className={styles.passwordFieldset}>
+        <div className={styles.emailFieldset}>
+          <EmailVerification
+            data={formData}
+            code={code}
+            setCode={setCode}
+            onChange={(event) => {
+              handleChange(event);
+              const { name, value } = event.target;
+
+              if (name === 'code' && value === code) {
+                setTimeout(() => {
+                  scrollRef.current.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                  });
+                }, 300);
+              }
+            }}
+          />
+        </div>
+        <div className={styles.passwordFieldset} ref={scrollRef}>
           <PasswordVerification data={formData} onChange={handleChange} />
         </div>
       </div>
-      <CTAButton
-        text='이메일 회원가입 완료하기'
-        onClick={() => console.log('success sign up!')}
-        disabled={
-          !checkPasswordFormat(formData.password) ||
-          formData.password !== formData.rePassword
-        }
-      />
+      {checkPasswordFormat(formData.password) &&
+        formData.password === formData.rePassword && (
+          <CTAButton
+            text='이메일 회원가입 완료하기'
+            onClick={() => console.log('success sign up!')}
+          />
+        )}
     </SubPage>
   );
 }

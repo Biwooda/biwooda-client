@@ -1,9 +1,11 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  overflow-y: hidden;
+}
+
+.emailFieldset {
+  height: 100%;
 }
 
 .passwordFieldset {
-  margin-top: 30px;
+  height: 100%;
 }

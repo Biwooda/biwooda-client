@@ -8,7 +8,7 @@ import toTime from '../../utils/convertNumberToTime';
 import InputField from '../InputField/InputField';
 import styles from './EmailVerification.module.css';
 
-export default function EmailVerification({ data, onChange }) {
+export default function EmailVerification({ data, code, setCode, onChange }) {
   const [time, startTimer, clearTimer] = useTimer(180);
   const [isDisabled, setDisabled] = useState(false);
   const [isSended, setIsSended] = useState(false);
@@ -19,19 +19,21 @@ export default function EmailVerification({ data, onChange }) {
   };
 
   const onSendCode = () => {
+    setCode('1111');
     setDisabled(true);
     setIsSended(true);
     startTimer();
   };
 
   const onResendCode = () => {
+    setCode('1111');
     setVerification(false);
     startTimer();
   };
 
   const checkCode = (event) => {
     onChange(event);
-    if (event.target.value === '1111') {
+    if (event.target.value === code) {
       setVerification(true);
       clearTimer();
     }
