@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import DefaultButton from '../../components/DefaultButton/DefaultButton';
+import CTAButton from '../../components/CTAButton/CTAButton';
 import FeedbackMessage from '../../components/FeedbackMessage/FeedbackMessage';
-import PasswordField from '../../components/PasswordField/PasswordField';
-import TextField from '../../components/TextField/TextField';
+import InputField from '../../components/InputField/InputField';
 import {
   EMAIL_LOGIN_PAGE_TITLE,
   LOGIN_FEEDBACK_MESSAGE,
@@ -23,7 +22,7 @@ export default function EmailLoginPage() {
     <SubPage title={EMAIL_LOGIN_PAGE_TITLE}>
       <div>
         <div className={styles.fieldset}>
-          <TextField
+          <InputField.Text
             label='이메일'
             name='email'
             value={formData.email}
@@ -38,8 +37,8 @@ export default function EmailLoginPage() {
               }
               condition={checkEmailFormat(formData.email)}
             />
-          </TextField>
-          <PasswordField
+          </InputField.Text>
+          <InputField.Password
             label='비밀번호'
             name='password'
             value={formData.password}
@@ -54,7 +53,7 @@ export default function EmailLoginPage() {
               }
               condition={checkPasswordFormat(formData.password)}
             />
-          </PasswordField>
+          </InputField.Password>
         </div>
         <div className={styles.info}>
           비밀번호를 잊으셨나요?
@@ -64,7 +63,7 @@ export default function EmailLoginPage() {
         </div>
       </div>
       <div>
-        <DefaultButton
+        <CTAButton
           text='이메일로 로그인하기'
           disabled={
             !(

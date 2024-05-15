@@ -2,14 +2,11 @@ import React from 'react';
 import getTextColorByBackgroundColor from '../../utils/getTextColorByBackgroundColor';
 import styles from './LoginButton.module.css';
 
-export default function LoginButton({ children }) {
-  return <div className={styles.loginButtons}>{children}</div>;
-}
-
-function Button({
+export default function LoginButton({
   label,
   icon,
   backgroundColor = '#ffffff',
+  color,
   onClick,
   children,
 }) {
@@ -27,12 +24,12 @@ function Button({
       </div>
       <div
         className={styles.text}
-        style={{ color: getTextColorByBackgroundColor(backgroundColor) }}
+        style={{
+          color: color ?? getTextColorByBackgroundColor(backgroundColor),
+        }}
       >
         {children}
       </div>
     </div>
   );
 }
-
-LoginButton.Button = Button;

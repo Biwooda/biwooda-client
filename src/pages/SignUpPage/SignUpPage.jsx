@@ -1,49 +1,60 @@
-import React, { useState } from 'react';
-import DefaultButton from '../../components/DefaultButton/DefaultButton';
+import React, { useRef, useState } from 'react';
+import CTAButton from '../../components/CTAButton/CTAButton';
 import EmailVerification from '../../components/EmailVerification/EmailVerification';
 import PasswordVerification from '../../components/PasswordVerification/PasswordVerification';
 import { SIGN_UP_PAGE_TITLE } from '../../constants';
-import useFunnel from '../../hooks/useFunnel';
 import SubPage from '../../pages/SubPage/SubPage';
-import { checkEmailFormat, checkPasswordFormat } from '../../utils/checkFormat';
+import { checkPasswordFormat } from '../../utils/checkFormat';
+import styles from './SignUpPage.module.css';
 
 export default function SignUpPage() {
-  const [Funnel, setStep] = useFunnel('code');
+  const scrollRef = useRef();
   const [formData, setFormData] = useState({
     email: '',
     code: '',
     password: '',
     rePassword: '',
   });
+  const [code, setCode] = useState();
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
-    <Funnel>
-      <Funnel.Step name='code'>
-        <SubPage title={SIGN_UP_PAGE_TITLE.step1}>
-          <EmailVerification data={formData} onChange={handleChange} />
-          <DefaultButton
-            text='확인'
-            onClick={() => setStep('password')}
-            disabled={!checkEmailFormat(formData.email) || !formData.code}
+    <SubPage title={SIGN_UP_PAGE_TITLE.step1}>
+      <div className={styles.container}>
+        <div className={styles.emailFieldset}>
+          <EmailVerification
+            data={formData}
+            code={code}
+            setCode={setCode}
+            onChange={(event) => {
+              handleChange(event);
+              const { name, value } = event.target;
+
+              if (name === 'code' && value === code) {
+                setTimeout(() => {
+                  scrollRef.current.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                  });
+                }, 300);
+              }
+            }}
           />
-        </SubPage>
-      </Funnel.Step>
-      <Funnel.Step name='password'>
-        <SubPage title={SIGN_UP_PAGE_TITLE.step2}>
+        </div>
+        <div className={styles.passwordFieldset} ref={scrollRef}>
           <PasswordVerification data={formData} onChange={handleChange} />
-          <DefaultButton
+        </div>
+      </div>
+      {checkPasswordFormat(formData.password) &&
+        formData.password === formData.rePassword && (
+          <CTAButton
             text='이메일 회원가입 완료하기'
-            disabled={
-              !checkPasswordFormat(formData.password) ||
-              formData.password !== formData.rePassword
-            }
+            onClick={() => console.log('success sign up!')}
           />
-        </SubPage>
-      </Funnel.Step>
-    </Funnel>
+        )}
+    </SubPage>
   );
 }

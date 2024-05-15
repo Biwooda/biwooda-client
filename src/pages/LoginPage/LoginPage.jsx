@@ -20,8 +20,8 @@ export default function LoginPage() {
         />
       </div>
       <div className={styles.bottom}>
-        <LoginButton>
-          <LoginButton.Button
+        <div className={styles.loginButtons}>
+          <LoginButton
             label='kakao'
             icon={kakaoLogo}
             backgroundColor='#FEE500'
@@ -30,23 +30,23 @@ export default function LoginPage() {
             }}
           >
             카카오로 로그인하기
-          </LoginButton.Button>
-          <LoginButton.Button
+          </LoginButton>
+          <LoginButton
             label='naver'
             icon={naverLogo}
-            backgroundColor='#59C150'
+            backgroundColor='#03C75A'
             onClick={() => {
               console.log('naver');
             }}
           >
             네이버로 로그인하기
-          </LoginButton.Button>
+          </LoginButton>
           <Link to='/login/email'>
-            <LoginButton.Button label='email' icon={emailLogo}>
+            <LoginButton label='email' icon={emailLogo} color='#1CAFFF'>
               이메일로 로그인하기
-            </LoginButton.Button>
+            </LoginButton>
           </Link>
-        </LoginButton>
+        </div>
         <div className={styles.info}>
           비우다가 처음이신가요?
           <Link to='/sign-up' className={styles.signUp}>
