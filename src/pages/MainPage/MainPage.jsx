@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import lego from '../../assets/lego.json';
 import biwoodaLogo from '../../assets/logo.svg';
 import menu from '../../assets/menu.svg';
 import mypageIcon from '../../assets/mypage.svg';
+import Animation from '../../components/Loading/Loading';
+import NaverMapWithMarker from '../../components/NaverMap/NaverMap';
 import styles from './MainPage.module.css';
 
 export default function MainPage() {
+  const [isLoading, setIsLoading] = useState();
+
+  useEffect(() => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+
+  if (isLoading) return <Animation animationData={lego} />;
+
   return (
     <section>
       <nav className={styles.nav}>
@@ -18,6 +32,7 @@ export default function MainPage() {
           <img src={mypageIcon} alt='mypage_icon' />
         </div>
       </nav>
+      <NaverMapWithMarker />
     </section>
   );
 }
