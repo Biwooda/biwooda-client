@@ -39,7 +39,7 @@ export default function SignUpPage() {
                     behavior: 'smooth',
                     block: 'start',
                   });
-                }, 300);
+                }, 150);
               }
             }}
           />
@@ -49,7 +49,8 @@ export default function SignUpPage() {
         </div>
       </div>
       {checkPasswordFormat(formData.password) &&
-        formData.password === formData.rePassword && (
+        formData.password === formData.rePassword &&
+        formData.code === code && (
           <CTAButton
             text='이메일 회원가입 완료하기'
             onClick={() => console.log('success sign up!')}
