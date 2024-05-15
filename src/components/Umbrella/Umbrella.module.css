@@ -6,6 +6,10 @@
   animation: login-slidein-right-to-left 1s;
 }
 
+.umbrella img {
+  width: 22.25rem;
+}
+
 .dim {
   position: absolute;
   width: 100%;
