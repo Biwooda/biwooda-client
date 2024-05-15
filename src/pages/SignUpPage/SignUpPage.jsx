@@ -39,7 +39,7 @@ export default function SignUpPage() {
                     behavior: 'smooth',
                     block: 'start',
                   });
-                }, 150);
+                }, 300);
               }
             }}
           />
