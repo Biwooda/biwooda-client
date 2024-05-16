@@ -14,14 +14,14 @@
   --skyblue: #1cafff;
   --alert-under-5: #ff6644;
   --grey-scale-0: #ffffff;
-  --grey-scale-10: #ecf6fb;
+  --grey-scale-10: #eaf8fc;
   --grey-scale-15: #d9e2e8;
   --grey-scale-20: #ccd8df;
   --grey-scale-25: #a9bac6;
   --grey-scale-30: #92a5b3;
   --grey-scale-40: #7b93a4;
   --grey-scale-45: #657d8b;
-  --grey-scale-60: #4c5c65;
+  --grey-scale-60: #516875;
   --grey-scale-75: #3e4e5b;
   --grey-scale-90: #22323b;
   --grey-scale-100: #000000;
@@ -34,29 +34,29 @@
  */
 
   /* font */
-  --title-exlg: 700 1.8125rem/2.0625rem 'Pretendard Variable', sans-serif;
-  --title-lg: 700 1.5625rem/2.0625rem 'Pretendard Variable', sans-serif;
-  --title-md-2: 700 1.375rem/1.875rem 'Pretendard Variable', sans-serif;
-  --title-md: 600 1.25rem/1.75rem 'Pretendard Variable', sans-serif;
-  --title-sm: 700 1.0625rem/1.375rem 'Pretendard Variable', sans-serif;
+  --title-exlg: 700 1.8125rem/2.0625rem 'Pretendard', sans-serif;
+  --title-lg: 700 1.5625rem/2.0625rem 'Pretendard', sans-serif;
+  --title-md-2: 700 1.375rem/1.875rem 'Pretendard', sans-serif;
+  --title-md: 600 1.25rem/1.75rem 'Pretendard', sans-serif;
+  --title-sm: 700 1.0625rem/1.375rem 'Pretendard', sans-serif;
 
-  --text-lg: 500 1rem/1.375rem 'Pretendard Variable', sans-serif;
-  --text-lg-emphasis: 700 1rem/1.3125rem 'Pretendard Variable', sans-serif;
-  --text-md: 500 0.875rem/1.25rem 'Pretendard Variable', sans-serif;
-  --text-md-emphasis: 600 0.875rem/1.25rem 'Pretendard Variable', sans-serif;
-  --text-sm: 500 0.75rem/1.1875rem 'Pretendard Variable', sans-serif;
-  --text-sm: 700 0.75rem/1rem 'Pretendard Variable', sans-serif;
+  --text-lg: 500 1rem/1.375rem 'Pretendard', sans-serif;
+  --text-lg-emphasis: 700 1rem/1.3125rem 'Pretendard', sans-serif;
+  --text-md: 500 0.875rem/1.25rem 'Pretendard', sans-serif;
+  --text-md-emphasis: 600 0.875rem/1.25rem 'Pretendard', sans-serif;
+  --text-sm: 500 0.75rem/1.1875rem 'Pretendard', sans-serif;
+  --text-sm: 700 0.75rem/1rem 'Pretendard', sans-serif;
 
-  --label-lg: 700 0.875rem/1.25rem 'Pretendard Variable', sans-serif;
-  --label-md: 700 0.75rem/1rem 'Pretendard Variable', sans-serif;
+  --label-lg: 700 0.875rem/1.25rem 'Pretendard', sans-serif;
+  --label-md: 700 0.75rem/1rem 'Pretendard', sans-serif;
 
-  --button-text-lg: 700 1.1875rem/1.5rem 'Pretendard Variable', sans-serif;
-  --button-text-md-2: 700 1.125rem/1.5rem 'Pretendard Variable', sans-serif;
-  --button-text-md: 600 1rem/1.5rem 'Pretendard Variable', sans-serif;
-  --button-text-sm: 600 0.875rem/1.25rem 'Pretendard Variable', sans-serif;
+  --button-text-lg: 700 1.1875rem/1.5rem 'Pretendard', sans-serif;
+  --button-text-md-2: 700 1.125rem/1.5rem 'Pretendard', sans-serif;
+  --button-text-md: 600 1rem/1.5rem 'Pretendard', sans-serif;
+  --button-text-sm: 600 0.875rem/1.25rem 'Pretendard', sans-serif;
 
-  --caption-md: 500 0.875rem/1rem 'Pretendard Variable', sans-serif;
-  --caption-sm: 400 0.8125rem/0.875rem 'Pretendard Variable', sans-serif;
+  --caption-md: 500 0.875rem/1rem 'Pretendard', sans-serif;
+  --caption-sm: 400 0.8125rem/0.875rem 'Pretendard', sans-serif;
 
   /* letter spacing */
   --title-exlg-letter-spacing: 0%;
