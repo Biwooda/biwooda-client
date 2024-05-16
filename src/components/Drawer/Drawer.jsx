@@ -1,5 +1,5 @@
 import React from 'react';
-import close from '../../assets/close.svg';
+import { Link } from 'react-router-dom';
 import faq from '../../assets/faq.svg';
 import guidelines from '../../assets/guidelines.svg';
 import logout from '../../assets/logout.svg';
@@ -7,6 +7,7 @@ import notice from '../../assets/notice.svg';
 import rightArrow from '../../assets/right_arrow.svg';
 import serviceCenter from '../../assets/service_center.svg';
 import waterdropSm from '../../assets/waterdrop_sm.svg';
+import Toolbar from '../Toolbar/Toolbar';
 import styles from './Drawer.module.css';
 
 export default function Drawer({
@@ -17,13 +18,11 @@ export default function Drawer({
 }) {
   return (
     <section className={styles.container}>
-      <nav className={styles.nav}>
-        <img
-          src={close}
-          alt='close_icon'
-          onClick={() => setOpenDrawer(false)}
-        />
-      </nav>
+      <Toolbar.Close
+        onClose={() => {
+          setOpenDrawer(false);
+        }}
+      />
       <div
         className={styles.banner}
         style={{
@@ -52,22 +51,22 @@ export default function Drawer({
         )}
       </div>
       <div className={styles.menu}>
-        <div className={styles.item}>
+        <Link to='/notice' className={styles.item}>
           <img src={notice} alt='notice_icon' />
           공지사항
-        </div>
-        <div className={styles.item}>
+        </Link>
+        <Link to='/' className={styles.item}>
           <img src={guidelines} alt='guidelines_icon' />
           서비스 이용안내
-        </div>
-        <div className={styles.item}>
+        </Link>
+        <Link to='/' className={styles.item}>
           <img src={serviceCenter} alt='service_center_icon' />
           고객센터
-        </div>
-        <div className={styles.item}>
+        </Link>
+        <Link to='/' className={styles.item}>
           <img src={faq} alt='faq_icon' />
           FAQ
-        </div>
+        </Link>
         {isLogin && (
           <div className={styles.item} onClick={() => setIsLogin(false)}>
             <img src={logout} alt='logout_icon' />
