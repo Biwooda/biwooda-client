@@ -7,22 +7,13 @@ import notice from '../../assets/notice.svg';
 import rightArrow from '../../assets/right_arrow.svg';
 import serviceCenter from '../../assets/service_center.svg';
 import waterdropSm from '../../assets/waterdrop_sm.svg';
-import Toolbar from '../Toolbar/Toolbar';
+import CloseToolbar from '../Toolbar/CloseToolbar/CloseToolbar';
 import styles from './Drawer.module.css';
 
-export default function Drawer({
-  isLogin,
-  nickname,
-  setOpenDrawer,
-  setIsLogin,
-}) {
+export default function Drawer({ isLogin, nickname, setIsLogin }) {
   return (
     <section className={styles.container}>
-      <Toolbar.Close
-        onClose={() => {
-          setOpenDrawer(false);
-        }}
-      />
+      <CloseToolbar />
       <div
         className={styles.banner}
         style={{
