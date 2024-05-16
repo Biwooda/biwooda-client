@@ -1,0 +1,66 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--grey-scale-0);
+}
+
+.nav {
+  padding: 0.4375rem 0;
+  padding-right: 1.25rem;
+  text-align: right;
+}
+
+.nav img {
+  width: 2.25rem;
+}
+
+.banner {
+  height: 11.0625rem;
+  padding-top: 2.375rem;
+  padding-left: 2.75rem;
+  background-color: var(--primary-skyblue);
+  box-sizing: border-box;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+  margin-bottom: 0.875rem;
+  color: var(--grey-scale-0);
+  font: var(--button-text-lg);
+  letter-spacing: var(--button-text-lg-letter-spacing);
+  word-break: keep-all;
+  line-height: 2rem;
+}
+
+.loginButton {
+  display: flex;
+  align-items: center;
+  gap: 0.09375rem;
+  padding: 0.46875rem 1.59375rem;
+  border-radius: 2rem;
+  font: var(--button-text-lg-emphasis);
+  letter-spacing: var(--button-text-lg-emphasis-letter-spacing);
+  color: var(--grey-scale-0);
+  background: linear-gradient(90deg, #0bff99 10.5%, #87d5ff 98%);
+  cursor: pointer;
+}
+
+.menu {
+  padding: 0 1.4375rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.0625rem 1.125rem;
+  border-bottom: var(--grey-scale-10) 1px solid;
+  font: var(--text-lg-emphasis);
+  letter-spacing: var(--text-lg-emphasis-letter-spacing);
+  color: var(--grey-scale-60);
+}
