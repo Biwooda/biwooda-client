@@ -1,0 +1,35 @@
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.4375rem;
+  font: var(--text-sm);
+  letter-spacing: var(--text-sm-letter-spacing);
+  color: var(--grey-scale-60);
+  text-align: center;
+  border-bottom: var(--grey-scale-15) 1px solid;
+}
+
+.listItem:first-child {
+  background-color: var(--grey-scale-10);
+}
+
+.category {
+  width: 2rem;
+}
+
+.title {
+  flex: 1;
+}
+
+.date {
+  width: 3.5rem;
+  white-space: pre-wrap;
+}
+
+.category,
+.title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
