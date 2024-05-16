@@ -6,6 +6,7 @@ import './index.css';
 import EmailLoginPage from './pages/EmailLoginPage/EmailLoginPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import MainPage from './pages/MainPage/MainPage';
+import NoticePage from './pages/NoticePage/NoticePage';
 import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 import reportWebVitals from './reportWebVitals';
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: '/reset-password',
         element: <ResetPasswordPage />,
+      },
+      {
+        path: '/notice',
+        element: <NoticePage />,
       },
     ],
   },

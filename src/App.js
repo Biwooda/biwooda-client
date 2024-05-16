@@ -1,11 +1,14 @@
 import { Outlet } from 'react-router-dom';
 import './App.css';
+import { DrawerContextProvider } from './contexts/DrawerContext';
 
 function App() {
   return (
-    <div className='App'>
-      <Outlet />
-    </div>
+    <DrawerContextProvider>
+      <div className='App'>
+        <Outlet />
+      </div>
+    </DrawerContextProvider>
   );
 }
 

@@ -1,0 +1,23 @@
+.nav {
+  display: flex;
+  align-items: center;
+  padding: 0.4375rem 0;
+  padding-right: 1.25rem;
+}
+
+.box {
+  width: 2.25rem;
+}
+
+.title {
+  flex: 1;
+  text-align: center;
+  font: var(--title-sm);
+  letter-spacing: var(--title-sm-letter-spacing);
+  color: var(--primary-skyblue);
+}
+
+.close {
+  width: 2.25rem;
+  margin-left: auto;
+}
