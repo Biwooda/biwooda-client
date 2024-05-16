@@ -3,11 +3,14 @@ import lego from '../../assets/lego.json';
 import biwoodaLogo from '../../assets/logo.svg';
 import menu from '../../assets/menu.svg';
 import mypageIcon from '../../assets/mypage.svg';
+import Drawer from '../../components/Drawer/Drawer';
 import Animation from '../../components/Loading/Loading';
 import NaverMapWithMarker from '../../components/NaverMap/NaverMap';
 import styles from './MainPage.module.css';
 
 export default function MainPage() {
+  const [isLogin, setIsLogin] = useState(false);
+  const [openDrawer, setOpenDrawer] = useState(false);
   const [isLoading, setIsLoading] = useState();
 
   useEffect(() => {
@@ -22,7 +25,7 @@ export default function MainPage() {
   return (
     <section>
       <nav className={styles.nav}>
-        <div className={styles.menu}>
+        <div className={styles.menu} onClick={() => setOpenDrawer(true)}>
           <img src={menu} alt='menu_icon' />
         </div>
         <div className={styles.logo}>
@@ -33,6 +36,14 @@ export default function MainPage() {
         </div>
       </nav>
       <NaverMapWithMarker />
+      {openDrawer && (
+        <Drawer
+          isLogin={isLogin}
+          nickname='비우다'
+          setOpenDrawer={setOpenDrawer}
+          setIsLogin={setIsLogin}
+        />
+      )}
     </section>
   );
 }
