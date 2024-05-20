@@ -35,7 +35,7 @@ const markers = [
     lng: 126.964952,
     amount: 0,
     size: { width: 42, height: 52 },
-    url: '/marker.svg',
+    url: '/disable_maker.svg',
   },
   {
     id: 5,
