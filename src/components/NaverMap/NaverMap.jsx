@@ -12,7 +12,7 @@ export default function NaverMapWithMarker() {
   const handleMarkerClick = (index) => {
     const updatedMarkers = markerInfos.map((marker, i) => ({
       ...marker,
-      size: i === index ? { width: 80, height: 95 } : marker.size,
+      size: i === index ? { width: 90, height: 123 } : marker.size,
       url: i === index ? '/select_marker.svg' : marker.url,
       amount: i === index ? '' : marker.amount,
     }));
@@ -31,10 +31,17 @@ export default function NaverMapWithMarker() {
               key={index}
               position={{ lat: marker.lat, lng: marker.lng }}
               onClick={() => handleMarkerClick(index)}
-              icon={{
-                content: `<div name='marker' style="display: flex; justify-content: center; align-items: center; width: ${marker.size.width}px; height: ${marker.size.height}px; background:  url(${marker.url}) no-repeat center/cover;"><span style="color: white; transform: translateY(-5px);">${marker.amount}</span></div>`,
-                size: marker.size,
-              }}
+              icon={
+                marker.amount === 0
+                  ? {
+                      content: `<div name='marker' style="display: flex; justify-content: center; align-items: center; width: ${marker.size.width}px; height: ${marker.size.height}px; background:  url(${marker.url}) no-repeat center/cover;"><span style="color: #92A5B3; font-weight:700; transform: translateY(-5px);">${marker.amount}</span></div>`,
+                      size: marker.size,
+                    }
+                  : {
+                      content: `<div name='marker' style="display: flex; justify-content: center; align-items: center; width: ${marker.size.width}px; height: ${marker.size.height}px; background:  url(${marker.url}) no-repeat center/cover;"><span style="color: white; font-weight:700; transform: translateY(-5px);">${marker.amount}</span></div>`,
+                      size: marker.size,
+                    }
+              }
             />
           ))}
         </NaverMap>
