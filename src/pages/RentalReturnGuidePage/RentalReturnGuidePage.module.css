@@ -1,0 +1,37 @@
+.container {
+  padding: 0 23px;
+}
+
+.content {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: 0.2s transform ease-in-out;
+}
+
+.cell img {
+  width: calc(100vw - 23 * 2px);
+}
+
+.navigator {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  height: 10px;
+  margin-bottom: 60px;
+}
+
+.dot {
+  width: 7.6px;
+  height: 7.6px;
+  border-radius: 10px;
+  background-color: var(--grey-scale-20);
+}
+
+.dot.active {
+  background-color: var(--grey-scale-45);
+}
