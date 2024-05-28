@@ -23,7 +23,7 @@ export default function Drawer({ isLogin, nickname, setIsLogin }) {
       >
         {isLogin ? (
           <div className={styles.title} style={{ width: '6.25rem' }}>
-            {nickname}님 반갑습니다
+            {nickname}님 <span style={{ 'font-whieght': 600 }}>반갑습니다</span>
           </div>
         ) : (
           <>
@@ -46,7 +46,7 @@ export default function Drawer({ isLogin, nickname, setIsLogin }) {
           <img src={notice} alt='notice_icon' />
           공지사항
         </Link>
-        <Link to='/' className={styles.item}>
+        <Link to='/guideline' className={styles.item}>
           <img src={guidelines} alt='guidelines_icon' />
           서비스 이용안내
         </Link>
