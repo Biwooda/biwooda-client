@@ -9,8 +9,10 @@ export default function CustomerSupportPage() {
   const underlineRef = useRef();
 
   return (
-    <section className={styles.container}>
-      <BackToolbar title='고객센터' onPrev={() => navigate('/')} />
+    <section>
+      <div className={styles.toolbar}>
+        <BackToolbar title='고객센터' onPrev={() => navigate('/')} />
+      </div>
       <div className={styles.tabBar}>
         <div className={styles.tabs}>
           <Link
