@@ -21,7 +21,7 @@ export default function NaverMapWithMarker() {
 
   return (
     <NavermapsProvider ncpClientId={process.env.REACT_APP_NAVER_MAP_CLIENT_ID}>
-      <MapDiv style={{ width: '100%', height: '800px' }}>
+      <MapDiv style={{ width: '100%', height: '1000px' }}>
         <NaverMap
           defaultCenter={{ lat: center.lat, lng: center.lng }}
           defaultZoom={level}
