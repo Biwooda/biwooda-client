@@ -1,0 +1,14 @@
+.title {
+  width: 50%;
+}
+
+.order,
+.date,
+.state {
+  flex: 1;
+}
+
+.date,
+.state {
+  flex: 2;
+}
