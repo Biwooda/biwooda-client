@@ -26,9 +26,13 @@ export default function NoticePage() {
         <div>제목</div>
         <div>게시일자</div>
       </BlueLabel>
-      <div className={styles.listContainer}>
-        {datas.map((data) => (
-          <ListItem {...data} />
+      <div>
+        {datas.map(({ category, title, date }) => (
+          <ListItem first>
+            <div className={styles.category}>{category}</div>
+            <div className={styles.title}>{title}</div>
+            <div className={styles.date}>{date}</div>
+          </ListItem>
         ))}
       </div>
     </section>

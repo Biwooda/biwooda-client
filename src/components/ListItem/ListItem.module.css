@@ -10,26 +10,6 @@
   border-bottom: var(--grey-scale-15) 1px solid;
 }
 
-.listItem:first-child {
+.checkFirst:first-child {
   background-color: var(--grey-scale-10);
-}
-
-.category {
-  width: 2rem;
-}
-
-.title {
-  flex: 1;
-}
-
-.date {
-  width: 3.5rem;
-  white-space: pre-wrap;
-}
-
-.category,
-.title {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
 }

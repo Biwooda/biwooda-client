@@ -1,12 +1,10 @@
 import React from 'react';
 import styles from './ListItem.module.css';
 
-export default function ListItem({ category, title, date }) {
+export default function ListItem({ first, children }) {
   return (
-    <div className={styles.listItem}>
-      <div className={styles.category}>{category}</div>
-      <div className={styles.title}>{title}</div>
-      <div className={styles.date}>{date}</div>
+    <div className={`${styles.listItem} ${first && styles.checkFirst}`}>
+      {children}
     </div>
   );
 }
