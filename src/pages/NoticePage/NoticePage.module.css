@@ -1,18 +1,17 @@
-.category {
-  width: 2rem;
+.title {
+  width: 250px;
 }
 
-.title {
+.category,
+.date {
   flex: 1;
 }
 
 .date {
-  width: 3.5rem;
   white-space: pre-wrap;
 }
 
-.category,
-.title {
+.clip {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;

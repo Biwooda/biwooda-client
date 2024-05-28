@@ -22,15 +22,17 @@ export default function NoticePage() {
     <section>
       <CloseToolbar title='공지사항' />
       <BlueLabel>
-        <div>카테고리</div>
-        <div>제목</div>
-        <div>게시일자</div>
+        <div className={styles.category}>카테고리</div>
+        <div className={styles.title}>제목</div>
+        <div className={styles.date}>게시일자</div>
       </BlueLabel>
       <div>
         {datas.map(({ category, title, date }) => (
           <ListItem first>
-            <div className={styles.category}>{category}</div>
-            <div className={styles.title}>{title}</div>
+            <div className={`${styles.category} ${styles.clip}`}>
+              {category}
+            </div>
+            <div className={`${styles.title} ${styles.clip}`}>{title}</div>
             <div className={styles.date}>{date}</div>
           </ListItem>
         ))}
