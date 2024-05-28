@@ -1,0 +1,73 @@
+/* common */
+.snackbar {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--grey-scale-90);
+  box-sizing: border-box;
+}
+
+.text {
+  font: var(--text-md);
+  color: var(--grey-scale-0);
+  line-height: 1.25rem;
+}
+
+.actionButtonDiv {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+
+.actionButton {
+  padding: 0;
+  background-color: transparent;
+  font: var(--text-md-emphasis);
+  cursor: pointer;
+}
+
+.blueButton {
+  color: var(--primary-skyblue);
+}
+
+.greyButton {
+  color: var(--grey-scale-40);
+}
+
+/* action */
+
+.actionContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actionContainer .text {
+  width: 80%;
+  word-break: keep-all;
+}
+
+/* long action */
+.longActionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+}
+
+/* decision */
+.decisionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.3125rem;
+}
+
+.decisionContainer .text {
+  margin-top: 0.875rem;
+  text-align: center;
+}
+
+.decisionContainer .actionButtonDiv {
+  margin-right: 0.25rem;
+  margin-bottom: 0.5rem;
+}
