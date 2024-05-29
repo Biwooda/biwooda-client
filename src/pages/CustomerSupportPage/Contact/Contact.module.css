@@ -97,3 +97,38 @@
 .inquiryButton {
   flex: 2;
 }
+
+/* caution */
+.caution {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.cautionTitleDiv {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.cautionTitle {
+  font: var(--text-sm-emphasis);
+  color: var(--grey-scale-40);
+}
+
+.arrow {
+  transition: 200ms transform ease;
+}
+
+.description {
+  opacity: 0;
+  font: var(--text-sm);
+  color: var(--grey-scale-40);
+  transition: 200ms opacity ease;
+  margin-bottom: 40px;
+}
+
+.description p {
+  margin: 0;
+  padding: 0;
+}

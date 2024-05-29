@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import camera from '../../../assets/camera.svg';
+import downArrow from '../../../assets/down_arrow.svg';
 import DefaultButton from '../../../components/DefaultButton/DefaultButton';
 import InputField from '../../../components/InputField/InputField';
 import Select from '../../../components/Select/Select';
@@ -33,6 +34,10 @@ export default function Contact() {
     }
     setFiles(Array.from(target.files));
   };
+
+  const [isOpen, setIsOpen] = useState(false);
+  const boxRef = useRef();
+  const arrowRef = useRef();
 
   return (
     <section className={styles.container}>
@@ -96,6 +101,34 @@ export default function Contact() {
           <div className={styles.inquiryButton}>
             <DefaultButton text='문의하기' />
           </div>
+        </div>
+      </div>
+      <div className={styles.caution}>
+        <div className={styles.cautionTitleDiv}>
+          <div className={styles.cautionTitle}>분실/훼손 신고 주의사항</div>
+          <img
+            ref={arrowRef}
+            className={styles.arrow}
+            src={downArrow}
+            alt='arrow icon'
+            onClick={() => {
+              setIsOpen((prev) => !prev);
+              arrowRef.current.style = `transform: ${
+                isOpen ? 'rotate(0deg) translateY(-1px)' : 'rotate(180deg)'
+              }`;
+              boxRef.current.style = `opacity: ${isOpen ? 0 : 1}`;
+            }}
+          />
+        </div>
+        <div ref={boxRef} className={styles.description}>
+          <p>
+            1) 분실/훼손이 발생한 경위를 자세히 작성해주세요. <br />
+            (날짜, 장소, 분실/훼손 사유 등)
+          </p>
+          <p>
+            2) 훼손 신고의 경우 사진 첨부 시 훼손 부위가 명확히 보이도록
+            찍어주세요.
+          </p>
         </div>
       </div>
     </section>
