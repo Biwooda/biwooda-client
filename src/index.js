@@ -9,6 +9,7 @@ import ContactHistory from './pages/CustomerSupportPage/ContactHistory/ContactHi
 import CustomerSupportPage from './pages/CustomerSupportPage/CustomerSupportPage';
 import EmailLoginPage from './pages/EmailLoginPage/EmailLoginPage';
 import GuidelinePage from './pages/GuidelinePage/GuidelinePage';
+import InboxPage from './pages/InboxPage/InboxPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import MainPage from './pages/MainPage/MainPage';
 import MyPage from './pages/MyPage/MyPage';
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: '/rental-history',
         element: <RentalHistoryPage />,
+      },
+      {
+        path: '/inbox',
+        element: <InboxPage />,
       },
       {
         path: '/login',

@@ -34,7 +34,7 @@ export default function MyPage() {
             <div className={styles.name}>{name}님</div>
             <Chip />
           </div>
-          <Link to='/'>
+          <Link to='/inbox'>
             <div className={styles.bell}>
               <img src={bell} alt='알림종' />
               <p className={styles.alertCount}>{alertList.length}</p>
