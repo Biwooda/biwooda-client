@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import camera from '../../../assets/camera.svg';
 import DefaultButton from '../../../components/DefaultButton/DefaultButton';
+import InputField from '../../../components/InputField/InputField';
 import Select from '../../../components/Select/Select';
 import styles from './Contact.module.css';
 
@@ -59,6 +60,14 @@ export default function Contact() {
           </div>
         ))}
       </div>
+      <InputField.Text
+        label='제목'
+        name='title'
+        value={formData.title}
+        onChange={handleChange}
+        placeholder='제목을 15자 이내로 작성해주세요'
+        maxLength='15'
+      />
       <Select
         id='select'
         value={formData.category}
