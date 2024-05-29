@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 0 23px;
+}
+
+.imageContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 40px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.fileInput label {
+  width: 5.875rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  border-radius: 7px;
+  border: 3px solid transparent;
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(90deg, #0bff99 31%, #38b9ff 98%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-sizing: border-box;
+}
+
+.fileInput input {
+  display: none;
+}
+
+.amount {
+  font: var(--caption-md);
+  color: var(--grey-scale-30);
+}
+
+.imageWrapper {
+  width: 4rem;
+  height: 4rem;
+}
+
+.image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 7px;
+  object-fit: cover;
+}
