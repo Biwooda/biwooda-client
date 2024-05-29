@@ -21,3 +21,11 @@
 .button:disabled:active {
   filter: none;
 }
+
+.greyButton {
+  background-color: var(--grey-scale-20);
+}
+
+.greyText {
+  color: var(--grey-scale-40);
+}

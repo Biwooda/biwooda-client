@@ -8,3 +8,16 @@ export default function DefaultButton({ text, onClick, disabled }) {
     </button>
   );
 }
+
+function DefaultGreyButton({ text, onClick }) {
+  return (
+    <button
+      className={`${styles.button} ${styles.greyButton}`}
+      onClick={onClick}
+    >
+      <div className={`${styles.text} ${styles.greyText}`}>{text}</div>
+    </button>
+  );
+}
+
+DefaultButton.Grey = DefaultGreyButton;
