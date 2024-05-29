@@ -1,3 +1,9 @@
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--grey-scale-0);
+}
+
 .toolbar {
   padding: 0 23px;
 }
