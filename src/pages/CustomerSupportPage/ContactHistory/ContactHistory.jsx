@@ -1,5 +1,5 @@
 import React from 'react';
-import BlueLabel from '../../../components/BlueLabel/BlueLabel';
+import ListIndex from '../../../components/ListIndex/ListIndex';
 import ListItem from '../../../components/ListItem/ListItem';
 import styles from './ContactHistory.module.css';
 
@@ -23,12 +23,12 @@ const datas = [
 export default function ContactHistory() {
   return (
     <section>
-      <BlueLabel>
+      <ListIndex>
         <div className={styles.order}>순번</div>
         <div className={styles.title}>제목</div>
         <div className={styles.date}>문의 일자</div>
         <div className={styles.state}>처리상태</div>
-      </BlueLabel>
+      </ListIndex>
       <div>
         {datas.map(({ key, order, title, date, state }) => (
           <ListItem key={key}>

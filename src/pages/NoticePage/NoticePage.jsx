@@ -1,5 +1,5 @@
 import React from 'react';
-import BlueLabel from '../../components/BlueLabel/BlueLabel';
+import ListIndex from '../../components/ListIndex/ListIndex';
 import ListItem from '../../components/ListItem/ListItem';
 import CloseToolbar from '../../components/Toolbar/CloseToolbar/CloseToolbar';
 import styles from './NoticePage.module.css';
@@ -21,11 +21,11 @@ export default function NoticePage() {
   return (
     <section>
       <CloseToolbar title='공지사항' />
-      <BlueLabel>
+      <ListIndex>
         <div className={styles.category}>카테고리</div>
         <div className={styles.title}>제목</div>
         <div className={styles.date}>게시일자</div>
-      </BlueLabel>
+      </ListIndex>
       <div>
         {datas.map(({ category, title, date }) => (
           <ListItem first>
