@@ -44,3 +44,14 @@
   top: -7px;
   right: -10px;
 }
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.0625rem 1.125rem;
+  border-bottom: var(--grey-scale-10) 1px solid;
+  font: var(--text-lg-emphasis);
+  letter-spacing: var(--text-lg-emphasis-letter-spacing);
+  color: var(--grey-scale-60);
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import accountDeletion from '../../assets/account_deletion.svg';
 import bell from '../../assets/bell.svg';
+import history from '../../assets/history.svg';
 import Chip from '../../components/Chip/Chip';
 import RentalCard from '../../components/RentalCard/RentalCard';
 import BackToolbar from '../../components/Toolbar/BackToolbar/BackToolbar';
@@ -40,7 +42,16 @@ export default function MyPage() {
           </Link>
         </div>
         <RentalCard />
-        <div className={styles.menu}></div>
+        <div className={styles.menu}>
+          <Link to='/rental-history' className={styles.item}>
+            <img src={history} alt='notice_icon' />
+            비우다 이용 내역
+          </Link>
+          <div className={styles.item} onClick={() => {}}>
+            <img src={accountDeletion} alt='회원탈퇴' />
+            회원 탈퇴하기
+          </div>
+        </div>
       </div>
     </section>
   );
