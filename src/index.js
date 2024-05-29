@@ -13,6 +13,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import MainPage from './pages/MainPage/MainPage';
 import MyPage from './pages/MyPage/MyPage';
 import NoticePage from './pages/NoticePage/NoticePage';
+import RentalHistoryPage from './pages/RentalHistoryPage/RentalHistoryPage';
 import RentalReturnGuidePage from './pages/RentalReturnGuidePage/RentalReturnGuidePage';
 import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
 import ServiceTime from './pages/ServiceTime/ServiceTime';
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: '/mypage',
         element: <MyPage />,
+      },
+      {
+        path: '/rental-history',
+        element: <RentalHistoryPage />,
       },
       {
         path: '/login',
