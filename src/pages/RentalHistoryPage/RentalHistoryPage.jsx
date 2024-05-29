@@ -6,6 +6,8 @@ import styles from './RentalHistoryPage.module.css';
 
 const datas = [
   {
+    key: 1,
+
     ticket: '당일권',
     rentalDate: '23.06.23 13.08.25',
     dueDate: '23.06.23 13.08.25',
@@ -14,6 +16,8 @@ const datas = [
     fee: '',
   },
   {
+    key: 2,
+
     ticket: '당일권',
     rentalDate: '23.06.23 13.08.25',
     dueDate: '23.06.23 13.08.25',
@@ -22,6 +26,8 @@ const datas = [
     fee: '800원',
   },
   {
+    key: 3,
+
     ticket: '당일권',
     rentalDate: '23.06.23 13.08.25',
     dueDate: '23.06.23 13.08.25',
@@ -30,6 +36,8 @@ const datas = [
     fee: '800원',
   },
   {
+    key: 4,
+
     ticket: '당일권',
     rentalDate: '23.06.23 13.08.25',
     dueDate: '23.06.23 13.08.25',
@@ -55,8 +63,8 @@ export default function RentalHistoryPage() {
       </ListIndex>
       <div>
         {datas.map(
-          ({ ticket, rentalDate, dueDate, location, lateFee, fee }) => (
-            <ListItem>
+          ({ key, ticket, rentalDate, dueDate, location, lateFee, fee }) => (
+            <ListItem key={key}>
               <div className={styles.ticket}>{ticket}</div>
               <div className={styles.rentalDate}>{rentalDate}</div>
               <div className={styles.dueDate}>{dueDate}</div>
