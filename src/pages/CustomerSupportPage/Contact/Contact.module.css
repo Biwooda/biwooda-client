@@ -50,3 +50,50 @@
   border-radius: 7px;
   object-fit: cover;
 }
+
+/* textarea */
+.label {
+  display: block;
+  font: var(--text-md);
+  letter-spacing: var(--text-md-letter-spacing);
+  color: var(--grey-scale-90);
+  margin-bottom: 0.1875rem;
+}
+
+.textarea {
+  width: 100%;
+  height: 12.5rem;
+  padding: 0.8125rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--grey-scale-30);
+  font: var(--text-lg);
+  color: var(--grey-scale-90);
+  letter-spacing: var(--text-lg-letter-spacing);
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.textarea::placeholder {
+  color: var(--grey-scale-20);
+}
+
+.textarea:focus {
+  border-color: var(--grey-scale-90);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.cancleButton {
+  flex: 1;
+}
+
+.inquiryButton {
+  flex: 2;
+}

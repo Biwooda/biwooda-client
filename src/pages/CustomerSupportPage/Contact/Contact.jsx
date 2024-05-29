@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import camera from '../../../assets/camera.svg';
+import DefaultButton from '../../../components/DefaultButton/DefaultButton';
 import Select from '../../../components/Select/Select';
 import styles from './Contact.module.css';
 
@@ -18,6 +19,10 @@ export default function Contact() {
     category: undefined,
     text: '',
   });
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const [files, setFiles] = useState([]);
   const handleImage = ({ target }) => {
@@ -60,6 +65,30 @@ export default function Contact() {
         setValue={setFormData}
         options={options}
       />
+      <div>
+        <div>
+          <label className={styles.label} htmlFor='textarea'>
+            글 본문
+          </label>
+          <textarea
+            id='textarea'
+            className={styles.textarea}
+            name='text'
+            value={formData.text}
+            placeholder='500자 이내로 작성해주세요'
+            maxLength='500'
+            onChange={handleChange}
+          ></textarea>
+        </div>
+        <div className={styles.buttons}>
+          <div className={styles.cancleButton}>
+            <DefaultButton.Grey text='취소' />
+          </div>
+          <div className={styles.inquiryButton}>
+            <DefaultButton text='문의하기' />
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
