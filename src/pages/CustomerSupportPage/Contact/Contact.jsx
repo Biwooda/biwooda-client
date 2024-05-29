@@ -1,8 +1,24 @@
 import React, { useState } from 'react';
 import camera from '../../../assets/camera.svg';
+import Select from '../../../components/Select/Select';
 import styles from './Contact.module.css';
 
+const options = [
+  '우산을 잃어버렸어요',
+  '우산이 고장났어요',
+  '패널티 요금 관련',
+  '보관함 오류',
+  '웹사이트에 오류가 있어요',
+  '기타 문제',
+];
+
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    title: '',
+    category: undefined,
+    text: '',
+  });
+
   const [files, setFiles] = useState([]);
   const handleImage = ({ target }) => {
     if (target.files.length > 10) {
@@ -38,6 +54,12 @@ export default function Contact() {
           </div>
         ))}
       </div>
+      <Select
+        id='select'
+        value={formData.category}
+        setValue={setFormData}
+        options={options}
+      />
     </section>
   );
 }
