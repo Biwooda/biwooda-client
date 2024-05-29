@@ -4,6 +4,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import './index.css';
 import CautionPage from './pages/CautionPage/CautionPage';
+import Contact from './pages/CustomerSupportPage/Contact/Contact';
+import ContactHistory from './pages/CustomerSupportPage/ContactHistory/ContactHistory';
+import CustomerSupportPage from './pages/CustomerSupportPage/CustomerSupportPage';
 import EmailLoginPage from './pages/EmailLoginPage/EmailLoginPage';
 import GuidelinePage from './pages/GuidelinePage/GuidelinePage';
 import LoginPage from './pages/LoginPage/LoginPage';
@@ -59,6 +62,20 @@ const router = createBrowserRouter([
       {
         path: '/service-time',
         element: <ServiceTime />,
+      },
+      {
+        path: '/customer-support',
+        element: <CustomerSupportPage />,
+        children: [
+          {
+            index: true,
+            element: <Contact />,
+          },
+          {
+            path: 'contact-history',
+            element: <ContactHistory />,
+          },
+        ],
       },
     ],
   },

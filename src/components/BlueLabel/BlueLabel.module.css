@@ -1,0 +1,10 @@
+.listTitleContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1.6875rem;
+  text-align: center;
+  font: var(--text-sm-emphasis);
+  letter-spacing: var(--text-sm-emphasis-letter-spacing);
+  background: var(--primary-skyblue);
+  color: var(--grey-scale-0);
+}
