@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import lego from '../../assets/lego.json';
 import biwoodaLogo from '../../assets/logo.svg';
 import menu from '../../assets/menu.svg';
@@ -32,9 +33,9 @@ export default function MainPage() {
         <div className={styles.logo}>
           <img src={biwoodaLogo} alt='logo' />
         </div>
-        <div className={styles.mypage}>
+        <Link to='/mypage' className={styles.mypage}>
           <img src={mypageIcon} alt='mypage_icon' />
-        </div>
+        </Link>
       </nav>
       <NaverMapWithMarker />
       {isOpen && (

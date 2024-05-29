@@ -11,6 +11,7 @@ import EmailLoginPage from './pages/EmailLoginPage/EmailLoginPage';
 import GuidelinePage from './pages/GuidelinePage/GuidelinePage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import MainPage from './pages/MainPage/MainPage';
+import MyPage from './pages/MyPage/MyPage';
 import NoticePage from './pages/NoticePage/NoticePage';
 import RentalReturnGuidePage from './pages/RentalReturnGuidePage/RentalReturnGuidePage';
 import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <MainPage />,
+      },
+      {
+        path: '/mypage',
+        element: <MyPage />,
       },
       {
         path: '/login',
