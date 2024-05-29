@@ -1,0 +1,50 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 12px;
+  background-color: var(--grey-scale-0);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1),
+    0px 0px 9px rgba(46, 76, 92, 0.01), 0px 0px 8px rgba(46, 76, 92, 0.03),
+    0px 0px 6px rgba(46, 76, 92, 0.05), 0px 0px 3px rgba(46, 76, 92, 0.06);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 13px 0 13px 23px;
+}
+
+.state {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font: var(--label-lg);
+  letter-spacing: var(--label-lg-letter-spacing);
+  color: var(--skyblue);
+}
+
+.overdue .state {
+  color: var(--alert-under-5);
+}
+
+.due {
+  font: var(--text-sm);
+  letter-spacing: var(--text-sm-letter-spacing);
+  color: var(--grey-scale-60);
+}
+
+.date {
+  color: var(--skyblue);
+}
+
+.overdue .date {
+  color: var(--alert-under-5);
+}
+
+.move {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 22px;
+}

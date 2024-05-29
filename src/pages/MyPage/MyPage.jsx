@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import bell from '../../assets/bell.svg';
 import Chip from '../../components/Chip/Chip';
+import RentalCard from '../../components/RentalCard/RentalCard';
 import BackToolbar from '../../components/Toolbar/BackToolbar/BackToolbar';
 import styles from './MyPage.module.css';
 
@@ -38,7 +39,7 @@ export default function MyPage() {
             </div>
           </Link>
         </div>
-        <div className={styles.retalState}></div>
+        <RentalCard />
         <div className={styles.menu}></div>
       </div>
     </section>
