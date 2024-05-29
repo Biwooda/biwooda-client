@@ -1,0 +1,15 @@
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.875rem;
+  border-radius: 2rem;
+  background-color: var(--primary-skyblue);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  color: var(--grey-scale-0);
+}
+
+.tag.overdue {
+  background-color: var(--alert-under-5);
+}

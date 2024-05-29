@@ -9,9 +9,12 @@ import ContactHistory from './pages/CustomerSupportPage/ContactHistory/ContactHi
 import CustomerSupportPage from './pages/CustomerSupportPage/CustomerSupportPage';
 import EmailLoginPage from './pages/EmailLoginPage/EmailLoginPage';
 import GuidelinePage from './pages/GuidelinePage/GuidelinePage';
+import InboxPage from './pages/InboxPage/InboxPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import MainPage from './pages/MainPage/MainPage';
+import MyPage from './pages/MyPage/MyPage';
 import NoticePage from './pages/NoticePage/NoticePage';
+import RentalHistoryPage from './pages/RentalHistoryPage/RentalHistoryPage';
 import RentalReturnGuidePage from './pages/RentalReturnGuidePage/RentalReturnGuidePage';
 import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
 import ServiceTime from './pages/ServiceTime/ServiceTime';
@@ -26,6 +29,18 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <MainPage />,
+      },
+      {
+        path: '/mypage',
+        element: <MyPage />,
+      },
+      {
+        path: '/rental-history',
+        element: <RentalHistoryPage />,
+      },
+      {
+        path: '/inbox',
+        element: <InboxPage />,
       },
       {
         path: '/login',

@@ -1,0 +1,16 @@
+.toolbar {
+  padding: 0 1.4375rem;
+}
+
+.ticket,
+.rentalDate,
+.dueDate,
+.location,
+.lateFee,
+.fee {
+  flex: 1;
+}
+
+.location {
+  word-break: keep-all;
+}
