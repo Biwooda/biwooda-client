@@ -14,6 +14,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import MainPage from './pages/MainPage/MainPage';
 import MyPage from './pages/MyPage/MyPage';
 import NoticePage from './pages/NoticePage/NoticePage';
+import QrScanner from './pages/QrScanner/QrScanner';
 import RentalHistoryPage from './pages/RentalHistoryPage/RentalHistoryPage';
 import RentalReturnGuidePage from './pages/RentalReturnGuidePage/RentalReturnGuidePage';
 import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
@@ -91,6 +92,10 @@ const router = createBrowserRouter([
             element: <ContactHistory />,
           },
         ],
+      },
+      {
+        path: '/qr-scan',
+        element: <QrScanner />,
       },
     ],
   },
