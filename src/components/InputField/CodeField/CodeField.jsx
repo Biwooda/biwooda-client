@@ -26,7 +26,7 @@ export default function TextField({
           value={value}
           onChange={onChange}
           placeholder={placeholder}
-          tabindex='-1'
+          tabIndex='-1'
         />
       </div>
     </div>
