@@ -30,7 +30,7 @@ export default function PasswordField({
             value={value}
             onChange={onChange}
             placeholder={placeholder}
-            tabindex='-1'
+            tabIndex='-1'
           />
           <img
             className={styles.eyesIcon}
@@ -49,7 +49,7 @@ export default function PasswordField({
             value={value}
             onChange={onChange}
             placeholder={placeholder}
-            tabindex='-1'
+            tabIndex='-1'
           />
           <img
             className={styles.eyesIcon}
