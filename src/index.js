@@ -16,6 +16,7 @@ import MyPage from './pages/MyPage/MyPage';
 import NoticePage from './pages/NoticePage/NoticePage';
 import QrScanner from './pages/QrScanner/QrScanner';
 import RentalHistoryPage from './pages/RentalHistoryPage/RentalHistoryPage';
+import RentalPage from './pages/RentalPage/RentalPage';
 import RentalReturnGuidePage from './pages/RentalReturnGuidePage/RentalReturnGuidePage';
 import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
 import ServiceTime from './pages/ServiceTime/ServiceTime';
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: '/mypage',
         element: <MyPage />,
+      },
+      {
+        path: '/rental',
+        element: <RentalPage />,
       },
       {
         path: '/rental-history',

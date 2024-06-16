@@ -1,0 +1,4 @@
+.rdrDefinedRangesWrapper,
+.rdrDateDisplayWrapper {
+  display: none; /* static range 메뉴 숨기기 */
+}
