@@ -4,8 +4,15 @@
   border-radius: 0.625rem;
   background: var(--primary-skyblue);
   color: white;
+  border: 2px solid var(--primary-skyblue);
   font: var(--button-text-md-2);
   cursor: pointer;
+}
+
+.button.white {
+  background-color: var(--grey-scale-0);
+  color: var(--grey-scale-45);
+  border: 2px solid var(--grey-scale-15);
 }
 
 .button:active {
