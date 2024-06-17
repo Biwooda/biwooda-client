@@ -18,7 +18,7 @@ export default function MainPage() {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 500);
   }, []);
 
   if (isLoading) return <Animation animationData={lego} />;
