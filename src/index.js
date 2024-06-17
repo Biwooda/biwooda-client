@@ -16,6 +16,9 @@ import MyPage from './pages/MyPage/MyPage';
 import NoticePage from './pages/NoticePage/NoticePage';
 import QrScanner from './pages/QrScanner/QrScanner';
 import RentalHistoryPage from './pages/RentalHistoryPage/RentalHistoryPage';
+import RentalCalendar from './pages/RentalPage/RentalCalendar/RentalCalendar';
+import RentalPage from './pages/RentalPage/RentalPage';
+import RentalPay from './pages/RentalPage/RentalPay/RentalPay';
 import RentalReturnGuidePage from './pages/RentalReturnGuidePage/RentalReturnGuidePage';
 import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
 import ServiceTime from './pages/ServiceTime/ServiceTime';
@@ -34,6 +37,20 @@ const router = createBrowserRouter([
       {
         path: '/mypage',
         element: <MyPage />,
+      },
+      {
+        path: '/rental',
+        element: <RentalPage />,
+        children: [
+          {
+            path: 'calendar',
+            element: <RentalCalendar />,
+          },
+          {
+            path: 'pay',
+            element: <RentalPay />,
+          },
+        ],
       },
       {
         path: '/rental-history',
