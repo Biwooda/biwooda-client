@@ -1,0 +1,18 @@
+.title {
+  font: var(--title-lg);
+  color: var(--grey-scale-75);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cancel {
+  width: 33%;
+}
+
+.next {
+  flex: 1;
+}

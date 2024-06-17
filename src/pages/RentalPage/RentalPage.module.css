@@ -2,16 +2,15 @@
   padding: 0 1.4375rem;
 }
 
-.buttons {
+.wrapper {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 2.3125rem;
 }
 
-.cancel {
-  width: 33%;
-}
-
-.next {
-  flex: 1;
+.content {
+  height: 33rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

@@ -5,7 +5,7 @@ import 'react-date-range/dist/theme/default.css';
 import './CustomCalendar.css';
 import styles from './CustomCalendar.module.css';
 
-export default function CustomCalendar() {
+export default function CustomCalendar({ selectEndDate }) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const [endDate, setEndDate] = useState(today);
@@ -24,6 +24,7 @@ export default function CustomCalendar() {
       return;
     }
 
+    selectEndDate([today, endDate]);
     setEndDate(endDate);
   };
 
