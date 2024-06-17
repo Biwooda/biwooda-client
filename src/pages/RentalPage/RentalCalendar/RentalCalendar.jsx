@@ -14,7 +14,10 @@ export default function RentalCalendar() {
     <>
       <div>
         <h2 className={styles.title}>대여 날짜 선택하기</h2>
-        <CustomCalendar selectEndDate={setRentalPeriod} />
+        <div className={styles.calendar}>
+          <div className={styles.label}>대여하고자 하는 날을 클릭!</div>
+          <CustomCalendar selectEndDate={setRentalPeriod} />
+        </div>
       </div>
       <div className={styles.buttons}>
         <div className={styles.cancel}>

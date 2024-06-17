@@ -7,8 +7,6 @@ import styles from './Caution.module.css';
 export default function Caution({ init }) {
   const [isOpen, setIsOpen] = useState(init);
 
-  console.log(isOpen);
-
   return (
     <div className={styles.content}>
       <div className={styles.label}>

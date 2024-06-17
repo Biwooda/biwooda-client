@@ -2,3 +2,23 @@
   display: flex;
   justify-content: center;
 }
+
+.customNavigator {
+  margin-top: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shownDate {
+  font: var(--text-lg);
+  color: var(--grey-scale-60);
+}
+
+.monthButton {
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent;
+  cursor: pointer;
+}

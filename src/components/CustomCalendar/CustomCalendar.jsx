@@ -1,7 +1,10 @@
+import { addMonths, format, subMonths } from 'date-fns';
 import React, { useState } from 'react';
 import { DateRangePicker } from 'react-date-range';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
+import nextMonth from '../../assets/next.svg';
+import prevMonth from '../../assets/prev.svg';
 import './CustomCalendar.css';
 import styles from './CustomCalendar.module.css';
 
@@ -39,8 +42,28 @@ export default function CustomCalendar({ selectEndDate }) {
           },
         ]}
         onChange={handleSelect}
+        navigatorRenderer={(focusedDate, changeShownDate) => (
+          <CustomNavigator
+            date={focusedDate}
+            onNext={() => changeShownDate(addMonths(focusedDate, 1))}
+            onPrev={() => changeShownDate(subMonths(focusedDate, 1))}
+          />
+        )}
+        weekdayDisplayFormat='E'
         showSelectionPreview={true}
       />
     </div>
   );
 }
+
+const CustomNavigator = ({ date, onNext, onPrev }) => (
+  <div className={styles.customNavigator}>
+    <button className={styles.monthButton} onClick={onPrev}>
+      <img src={prevMonth} alt='prev month' />
+    </button>
+    <span className={styles.shownDate}>{format(date, 'yyyy년 M월')}</span>
+    <button className={styles.monthButton} onClick={onNext}>
+      <img src={nextMonth} alt='next month' />
+    </button>
+  </div>
+);
