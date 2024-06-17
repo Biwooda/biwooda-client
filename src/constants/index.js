@@ -1,3 +1,4 @@
+import GUIDE from './guide';
 import RENTAL_RETURN_IMAGE from './imgSrc';
 import { center, level, markers } from './map';
 import { LOGIN_FEEDBACK_MESSAGE, SIGN_UP_FEEDBACK_MESSAGE } from './message';
@@ -9,6 +10,7 @@ import {
 
 export {
   EMAIL_LOGIN_PAGE_TITLE,
+  GUIDE,
   LOGIN_FEEDBACK_MESSAGE,
   RENTAL_RETURN_IMAGE,
   RESET_PASSWORD_PAGE_TITLE,

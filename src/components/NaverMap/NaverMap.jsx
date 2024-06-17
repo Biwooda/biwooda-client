@@ -7,7 +7,7 @@ import {
 } from 'react-naver-maps';
 import { center, level, markers as markerInfos } from '../../constants';
 
-export default function NaverMapWithMarker() {
+export default function NaverMapWithMarker({ setFocusedMarker }) {
   const [markers, setMarkers] = useState(markerInfos);
   const handleMarkerClick = (index) => {
     const updatedMarkers = markerInfos.map((marker, i) => ({
@@ -17,6 +17,7 @@ export default function NaverMapWithMarker() {
       amount: i === index ? '' : marker.amount,
     }));
     setMarkers(updatedMarkers);
+    setFocusedMarker(markerInfos[index]);
   };
 
   return (
