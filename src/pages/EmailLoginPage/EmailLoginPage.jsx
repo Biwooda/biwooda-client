@@ -64,14 +64,15 @@ export default function EmailLoginPage() {
       </div>
       <div>
         <CTAButton
-          text='이메일로 로그인하기'
           disabled={
             !(
               checkEmailFormat(formData.email) &&
               checkPasswordFormat(formData.password)
             )
           }
-        />
+        >
+          이메일로 로그인하기
+        </CTAButton>
       </div>
     </SubPage>
   );

@@ -51,10 +51,9 @@ export default function SignUpPage() {
       {checkPasswordFormat(formData.password) &&
         formData.password === formData.rePassword &&
         formData.code === code && (
-          <CTAButton
-            text='이메일 회원가입 완료하기'
-            onClick={() => console.log('success sign up!')}
-          />
+          <CTAButton onClick={() => console.log('success sign up!')}>
+            이메일 회원가입 완료하기
+          </CTAButton>
         )}
     </SubPage>
   );

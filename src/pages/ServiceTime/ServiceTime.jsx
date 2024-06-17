@@ -18,7 +18,7 @@ export default function ServiceTime() {
           공유 우산을 대여해볼까요?
         </p>
       </div>
-      <CTAButton text='공유 우산 대여하러 가기' />
+      <CTAButton>공유 우산 대여하러 가기</CTAButton>
     </section>
   );
 }
