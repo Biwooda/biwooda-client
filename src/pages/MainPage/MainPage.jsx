@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import lego from '../../assets/lego.json';
-import biwoodaLogo from '../../assets/logo.svg';
 import longArrow from '../../assets/long_arrow.svg';
-import menu from '../../assets/menu.svg';
-import mypageIcon from '../../assets/mypage.svg';
 import rightArrowGrey from '../../assets/right_arrow_grey.svg';
 import symbolSm from '../../assets/symbol_sm.svg';
-import BottomSheet from '../../components/BottomSheet/BottomSheet';
+import useBottomSheet from '../../components/BottomSheet/BottomSheet';
 import CTAButton from '../../components/CTAButton/CTAButton';
 import Drawer from '../../components/Drawer/Drawer';
 import Animation from '../../components/Loading/Loading';
+import Navbar from '../../components/Navbar/Navbar';
 import NaverMapWithMarker from '../../components/NaverMap/NaverMap';
 import { GUIDE } from '../../constants';
 import { useDrawerContext } from '../../contexts/DrawerContext';
@@ -20,35 +18,38 @@ export default function MainPage() {
   const [isLogin, setIsLogin] = useState(false);
   const [isLoading, setIsLoading] = useState();
   const [focusedMarker, setFocusedMarker] = useState();
+  const { BottomSheetWrapper } = useBottomSheet(focusedMarker);
+  const mainRef = useRef(null);
+  const handleBottomSheet = () => {
+    setFocusedMarker(null);
+  };
 
   useEffect(() => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-    }, 500);
+    }, 1000);
+
+    const mainElement = mainRef.current;
+
+    return () => {
+      if (mainElement) {
+        mainElement.removeEventListener('click', handleBottomSheet);
+      }
+    };
   }, []);
 
   if (isLoading) return <Animation animationData={lego} />;
 
   return (
-    <section>
-      <nav className={styles.nav}>
-        <div className={styles.menu} onClick={toggleDrawer}>
-          <img src={menu} alt='menu_icon' />
-        </div>
-        <div className={styles.logo}>
-          <img src={biwoodaLogo} alt='logo' />
-        </div>
-        <div className={styles.mypage}>
-          <img src={mypageIcon} alt='mypage_icon' />
-        </div>
-      </nav>
+    <section ref={mainRef} onClick={handleBottomSheet}>
+      <Navbar toggleDrawer={toggleDrawer} />
       <NaverMapWithMarker setFocusedMarker={setFocusedMarker} />
       {isOpen && (
         <Drawer isLogin={isLogin} nickname='비우다' setIsLogin={setIsLogin} />
       )}
       {focusedMarker && (
-        <BottomSheet>
+        <BottomSheetWrapper>
           <div className={styles.info}>
             <div className={styles.location}>
               숙명여대 {focusedMarker.label} 앞
@@ -71,11 +72,8 @@ export default function MainPage() {
             </button>
           </div>
           <CTAButton>스캔하고 대여하기</CTAButton>
-        </BottomSheet>
+        </BottomSheetWrapper>
       )}
-      {/* <BottomSheet>
-        <CTAButton type='white'>반납하기</CTAButton>
-      </BottomSheet> */}
     </section>
   );
 }
