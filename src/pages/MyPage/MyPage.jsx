@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import accountDeletion from '../../assets/account_deletion.svg';
 import bell from '../../assets/bell.svg';
 import history from '../../assets/history.svg';
@@ -24,11 +24,10 @@ const alertList = [
 
 export default function MyPage() {
   const { user } = useUserContext();
-  const navigate = useNavigate();
 
   return (
     <section className={styles.container}>
-      <BackToolbar title='마이페이지' onPrev={() => navigate(-1)} />
+      <BackToolbar title='마이페이지' />
       <div className={styles.content}>
         <div className={styles.top}>
           <div className={styles.profile}>

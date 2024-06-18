@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 import CTAButton from '../../components/CTAButton/CTAButton';
 import BackToolbar from '../../components/Toolbar/BackToolbar/BackToolbar';
 import { RENTAL_RETURN_IMAGE } from '../../constants';
@@ -10,7 +9,6 @@ const CAROUSEL_LENGTH = RENTAL_RETURN_IMAGE.length - 1;
 export default function RentalReturnGuidePage() {
   const carouselRef = useRef();
   const navigatorRef = useRef();
-  const navigate = useNavigate();
   let current = 0;
 
   const nextEvent = () => {
@@ -31,7 +29,7 @@ export default function RentalReturnGuidePage() {
 
   return (
     <section className={styles.container}>
-      <BackToolbar title='대여&반납 방법' onPrev={() => navigate(-1)} />
+      <BackToolbar title='대여&반납 방법' />
       <div className={styles.content}>
         <div className={styles.carousel} ref={carouselRef}>
           {RENTAL_RETURN_IMAGE.map((src) => (
