@@ -1,18 +1,17 @@
 import React, { useRef, useState } from 'react';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import BackToolbar from '../../components/Toolbar/BackToolbar/BackToolbar';
 import styles from './CustomerSupportPage.module.css';
 
 export default function CustomerSupportPage() {
   const [tab, setTab] = useState('Tab1');
-  const navigate = useNavigate();
   const underlineRef = useRef();
 
   return (
     <section className={styles.container}>
       <div className={styles.header}>
         <div className={styles.toolbar}>
-          <BackToolbar title='고객센터' onPrev={() => navigate('/')} />
+          <BackToolbar title='고객센터' />
         </div>
         <div className={styles.tabBar}>
           <div className={styles.tabs}>

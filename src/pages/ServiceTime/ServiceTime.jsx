@@ -1,15 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import CTAButton from '../../components/CTAButton/CTAButton';
 import BackToolBar from '../../components/Toolbar/BackToolbar/BackToolbar';
 import styles from './ServiceTime.module.css';
 
 export default function ServiceTime() {
-  const navigate = useNavigate();
-
   return (
     <section className={styles.container}>
-      <BackToolBar title='서비스 운영시간' onPrev={() => navigate(-1)} />
+      <BackToolBar title='서비스 운영시간' />
       <div className={styles.content}>
         <p>
           비우다는 <span className={styles.emphasis}>24시간</span> 준비되어
