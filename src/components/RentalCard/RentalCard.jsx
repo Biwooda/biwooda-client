@@ -3,14 +3,12 @@ import { Link } from 'react-router-dom';
 import fullWaterDropOrange from '../../assets/full_water_drop_orange.svg';
 import rightArrowXs from '../../assets/right_arrow_xs.svg';
 import symbolSm from '../../assets/symbol_sm.svg';
+import { useUserContext } from '../../contexts/UserContext';
 import styles from './RentalCard.module.css';
 
-const rentalState = true;
-const overdue = true;
-const due = '2024.06.27 20:00';
-const ticket = '2일권';
-
 export default function RentalCard() {
+  const { user } = useUserContext();
+  const { rentalState, due, overdue, ticket } = user;
   if (!rentalState) return null;
 
   return (

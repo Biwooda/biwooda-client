@@ -6,6 +6,9 @@ export function UserContextProvider({ children }) {
   const [user, setUser] = useState({
     nickname: 'barami5016',
     rentalState: true,
+    overdue: false,
+    due: '2024.06.27 20:00',
+    ticket: '2일권',
   });
 
   return (
