@@ -9,13 +9,13 @@ export default function DefaultButton({ children, onClick, disabled }) {
   );
 }
 
-function DefaultGreyButton({ text, onClick }) {
+function DefaultGreyButton({ children, onClick }) {
   return (
     <button
       className={`${styles.button} ${styles.greyButton}`}
       onClick={onClick}
     >
-      <div className={`${styles.text} ${styles.greyText}`}>{text}</div>
+      <div className={`${styles.text} ${styles.greyText}`}>{children}</div>
     </button>
   );
 }

@@ -96,10 +96,10 @@ export default function Contact() {
         </div>
         <div className={styles.buttons}>
           <div className={styles.cancleButton}>
-            <DefaultButton.Grey text='취소' />
+            <DefaultButton.Grey>취소</DefaultButton.Grey>
           </div>
           <div className={styles.inquiryButton}>
-            <DefaultButton text='문의하기' />
+            <DefaultButton>문의하기</DefaultButton>
           </div>
         </div>
       </div>
