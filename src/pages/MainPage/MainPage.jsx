@@ -72,9 +72,9 @@ export default function MainPage() {
           </div>
           <div className={styles.guide}>
             <pre className={styles.guideText}>{GUIDE}</pre>
-            <button className={styles.guideButton}>
+            <Link to='/rental-history' className={styles.guideButton}>
               <img src={rightArrowGrey} alt='right arrow' />
-            </button>
+            </Link>
           </div>
           <Link to='qr-scan'>
             <CTAButton>스캔하고 대여하기</CTAButton>
