@@ -71,10 +71,10 @@ export default function EmailLoginPage() {
           onClick={() => {
             setUser({
               nickname: formData.email.split('@')[0],
-              rentalState: true,
-              overdue: false,
-              due: '2024.06.27 20:00',
-              ticket: '2일권',
+              rentalState: false,
+              // overdue: false,
+              // due: '2024.06.27 20:00',
+              // ticket: '2일권',
             });
             <Snackbar.Action>로그인에 성공했습니다.</Snackbar.Action>;
             navigate('/');
