@@ -11,11 +11,12 @@ import Navbar from '../../components/Navbar/Navbar';
 import NaverMapWithMarker from '../../components/NaverMap/NaverMap';
 import { GUIDE } from '../../constants';
 import { useDrawerContext } from '../../contexts/DrawerContext';
+import { useUserContext } from '../../contexts/UserContext';
 import styles from './MainPage.module.css';
 
 export default function MainPage() {
+  const { user } = useUserContext();
   const { isOpen, toggleDrawer } = useDrawerContext();
-  const [isLogin, setIsLogin] = useState(false);
   const [isLoading, setIsLoading] = useState();
   const [focusedMarker, setFocusedMarker] = useState();
   const { BottomSheetWrapper } = useBottomSheet(focusedMarker);
@@ -45,8 +46,11 @@ export default function MainPage() {
     <section ref={mainRef} onClick={handleBottomSheet}>
       <Navbar toggleDrawer={toggleDrawer} />
       <NaverMapWithMarker setFocusedMarker={setFocusedMarker} />
-      {isOpen && (
-        <Drawer isLogin={isLogin} nickname='비우다' setIsLogin={setIsLogin} />
+      {isOpen && <Drawer />}
+      {user.rentalState && (
+        <BottomSheetWrapper>
+          <CTAButton type='white'>반납하기</CTAButton>
+        </BottomSheetWrapper>
       )}
       {focusedMarker && (
         <BottomSheetWrapper>
