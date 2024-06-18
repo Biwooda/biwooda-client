@@ -1,0 +1,32 @@
+.title {
+  font: var(--title-lg);
+  color: var(--grey-scale-75);
+}
+
+.label {
+  padding: 1.25rem 0 0.75rem 1.5rem;
+  font: var(--text-lg);
+  color: var(--grey-scale-60);
+  border-bottom: 1px solid var(--grey-scale-15);
+}
+
+.calendar {
+  padding-bottom: 0.625rem;
+  margin-top: 0.75rem;
+  border-radius: 1.5rem;
+  background-color: var(--grey-scale-10);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cancel {
+  width: 33%;
+}
+
+.next {
+  flex: 1;
+}

@@ -1,3 +1,4 @@
+import FEE from './fee';
 import GUIDE from './guide';
 import RENTAL_RETURN_IMAGE from './imgSrc';
 import { center, level, markers } from './map';
@@ -10,6 +11,7 @@ import {
 
 export {
   EMAIL_LOGIN_PAGE_TITLE,
+  FEE,
   GUIDE,
   LOGIN_FEEDBACK_MESSAGE,
   RENTAL_RETURN_IMAGE,

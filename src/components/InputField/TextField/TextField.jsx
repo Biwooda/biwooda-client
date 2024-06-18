@@ -7,6 +7,7 @@ export default function TextField({
   value,
   placeholder,
   onChange,
+  maxLength,
   children,
 }) {
   return (
@@ -24,7 +25,8 @@ export default function TextField({
           value={value}
           onChange={onChange}
           placeholder={placeholder}
-          tabindex='-1'
+          maxLength={maxLength}
+          tabIndex='-1'
         />
       </div>
     </div>

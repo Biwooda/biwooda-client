@@ -1,7 +1,7 @@
 import backArrow from '../../../assets/back_arrow.svg';
 import styles from './BackToolbar.module.css';
 
-export default function BackToolbar({ title, onPrev }) {
+export default function BackToolbar({ title, onPrev, children }) {
   return (
     <nav className={styles.nav}>
       <img
@@ -11,7 +11,7 @@ export default function BackToolbar({ title, onPrev }) {
         onClick={onPrev}
       />
       <div className={styles.title}>{title}</div>
-      <div className={styles.box}></div>
+      <div className={styles.box}>{children}</div>
     </nav>
   );
 }

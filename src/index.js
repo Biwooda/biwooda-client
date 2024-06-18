@@ -4,11 +4,21 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import './index.css';
 import CautionPage from './pages/CautionPage/CautionPage';
+import Contact from './pages/CustomerSupportPage/Contact/Contact';
+import ContactHistory from './pages/CustomerSupportPage/ContactHistory/ContactHistory';
+import CustomerSupportPage from './pages/CustomerSupportPage/CustomerSupportPage';
 import EmailLoginPage from './pages/EmailLoginPage/EmailLoginPage';
 import GuidelinePage from './pages/GuidelinePage/GuidelinePage';
+import InboxPage from './pages/InboxPage/InboxPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import MainPage from './pages/MainPage/MainPage';
+import MyPage from './pages/MyPage/MyPage';
 import NoticePage from './pages/NoticePage/NoticePage';
+import QrScanner from './pages/QrScanner/QrScanner';
+import RentalHistoryPage from './pages/RentalHistoryPage/RentalHistoryPage';
+import RentalCalendar from './pages/RentalPage/RentalCalendar/RentalCalendar';
+import RentalPage from './pages/RentalPage/RentalPage';
+import RentalPay from './pages/RentalPage/RentalPay/RentalPay';
 import RentalReturnGuidePage from './pages/RentalReturnGuidePage/RentalReturnGuidePage';
 import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
 import ServiceTime from './pages/ServiceTime/ServiceTime';
@@ -23,6 +33,32 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <MainPage />,
+      },
+      {
+        path: '/mypage',
+        element: <MyPage />,
+      },
+      {
+        path: '/rental',
+        element: <RentalPage />,
+        children: [
+          {
+            path: 'calendar',
+            element: <RentalCalendar />,
+          },
+          {
+            path: 'pay',
+            element: <RentalPay />,
+          },
+        ],
+      },
+      {
+        path: '/rental-history',
+        element: <RentalHistoryPage />,
+      },
+      {
+        path: '/inbox',
+        element: <InboxPage />,
       },
       {
         path: '/login',
@@ -59,6 +95,24 @@ const router = createBrowserRouter([
       {
         path: '/service-time',
         element: <ServiceTime />,
+      },
+      {
+        path: '/customer-support',
+        element: <CustomerSupportPage />,
+        children: [
+          {
+            index: true,
+            element: <Contact />,
+          },
+          {
+            path: 'contact-history',
+            element: <ContactHistory />,
+          },
+        ],
+      },
+      {
+        path: '/qr-scan',
+        element: <QrScanner />,
       },
     ],
   },

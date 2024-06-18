@@ -59,7 +59,7 @@ export default function Drawer() {
           <img src={guidelines} alt='guidelines_icon' />
           서비스 이용안내
         </Link>
-        <Link to='/' className={styles.item}>
+        <Link to='/customer-support' className={styles.item}>
           <img src={serviceCenter} alt='service_center_icon' />
           고객센터
         </Link>

@@ -1,0 +1,53 @@
+.rdrDefinedRangesWrapper,
+.rdrDateDisplayWrapper {
+  display: none; /* static range 메뉴 숨기기 */
+}
+
+.rdrCalendarWrapper {
+  background-color: transparent;
+}
+
+.rdrMonth {
+  padding: 0;
+}
+
+.rdrDay {
+  /* width: 48px; */
+  height: 3rem;
+}
+
+.rdrDayNumber {
+  height: 100%;
+  font: var(--text-lg);
+  color: var(--grey-scale-60);
+  top: 0;
+  z-index: 1;
+}
+
+.rdrStartEdge,
+.rdrEndEdge {
+  width: 75%;
+  height: 75%;
+  top: 50%;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  background-color: var(--primary-skyblue);
+  border-radius: 50px;
+  z-index: 1;
+}
+
+.rdrInRange {
+  height: 30px;
+  background-color: #1ce0b1;
+  top: 50%;
+  transform: translate(-20%, -50%);
+}
+
+.rdrInRange {
+  width: 200%;
+}
+
+.rdrDayPassive {
+  opacity: 0;
+}

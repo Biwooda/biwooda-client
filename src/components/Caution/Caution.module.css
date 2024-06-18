@@ -1,0 +1,43 @@
+.content {
+  margin-top: 40px;
+}
+
+.label {
+  display: flex;
+  margin-bottom: 14px;
+  font: var(--text-md);
+  color: var(--grey-scale-40);
+}
+
+.label div {
+  margin-left: 6px;
+  margin-right: 11px;
+}
+
+.box {
+  padding: 0 2rem;
+  max-height: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: var(--grey-scale-10);
+  transition: 0.3s ease;
+}
+
+.box.opend {
+  padding: 2rem;
+  max-height: 500px;
+}
+
+.text {
+  font: var(--text-sm);
+}
+
+.emphasis {
+  color: var(--skyblue);
+}
+
+.example {
+  display: inline-block;
+  font-size: 11px;
+  color: var(--grey-scale-30);
+}

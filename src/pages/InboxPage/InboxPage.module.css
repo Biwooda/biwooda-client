@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.toolbar {
+  padding: 0 1.4375rem;
+}
+
+.blueline {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1.6875rem;
+  font: var(--text-sm-emphasis);
+  letter-spacing: var(--text-sm-emphasis-letter-spacing);
+  background: var(--primary-skyblue);
+  color: transparent;
+}
+
+.title {
+  width: 60%;
+  margin: 0 2rem;
+  text-align: left;
+}
+
+.category,
+.date {
+  flex: 1;
+}
+
+.date {
+  white-space: pre-wrap;
+}
+
+.clip {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.none {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font: var(--title-sm);
+  letter-spacing: var(--title-sm-letter-spacing);
+  color: var(--primary-skyblue);
+}

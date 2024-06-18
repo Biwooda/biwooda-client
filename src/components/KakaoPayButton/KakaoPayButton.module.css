@@ -1,0 +1,23 @@
+.button {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem;
+  background: #fee500;
+  border-radius: 10px;
+}
+
+.button:active {
+  filter: brightness(0.8);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  flex: 1;
+  font: var(--button-text-md);
+  color: var(--grey-scale-90);
+  text-align: center;
+}

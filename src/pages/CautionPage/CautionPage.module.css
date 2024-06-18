@@ -1,39 +1,3 @@
 .container {
   padding: 0 23px;
 }
-
-.content {
-  margin-top: 40px;
-}
-
-.label {
-  display: flex;
-  margin-bottom: 14px;
-  font: var(--text-md);
-  color: var(--grey-scale-40);
-}
-
-.label div {
-  margin-left: 6px;
-  margin-right: 11px;
-}
-
-.box {
-  padding: 52px 31px;
-  border-radius: 20px;
-  background-color: var(--grey-scale-10);
-  transition: 200ms opacity ease;
-}
-
-.text {
-  font: var(--text-sm);
-}
-
-.emphasis {
-  color: var(--primary-skyblue);
-}
-
-.example {
-  font-size: 11px;
-  color: var(--grey-scale-30);
-}
