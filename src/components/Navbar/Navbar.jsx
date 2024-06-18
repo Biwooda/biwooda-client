@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import biwoodaLogo from '../../assets/logo.svg';
 import menu from '../../assets/menu.svg';
 import mypageIcon from '../../assets/mypage.svg';
@@ -13,9 +14,9 @@ export default function Navbar({ toggleDrawer }) {
       <div className={styles.logo}>
         <img src={biwoodaLogo} alt='logo' />
       </div>
-      <div className={styles.mypage}>
+      <Link to='/mypage' className={styles.mypage}>
         <img src={mypageIcon} alt='mypage_icon' />
-      </div>
+      </Link>
     </nav>
   );
 }
