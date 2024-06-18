@@ -6,12 +6,13 @@ import styles from './Chip.module.css';
 
 export default function Chip() {
   const { user } = useUserContext();
-  if (!user.rentalState) return null;
+  if (!user || !user?.rentalState) return null;
+  const { overdue } = user;
 
   return (
-    <div className={`${styles.tag} ${user.overdue && styles.overdue}`}>
-      <img src={user.overdue ? fullWaterDrop : symbol} alt='아이콘' />
-      {user.overdue ? '미반납중' : '대여중'}
+    <div className={`${styles.tag} ${overdue && styles.overdue}`}>
+      <img src={overdue ? fullWaterDrop : symbol} alt='아이콘' />
+      {overdue ? '미반납중' : '대여중'}
     </div>
   );
 }

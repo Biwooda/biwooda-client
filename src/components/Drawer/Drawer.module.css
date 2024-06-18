@@ -38,17 +38,9 @@
   line-height: 2rem;
 }
 
-.loginButton {
-  display: flex;
-  align-items: center;
-  gap: 0.09375rem;
-  padding: 0.46875rem 1.59375rem;
-  border-radius: 2rem;
-  font: var(--button-text-lg-emphasis);
-  letter-spacing: var(--button-text-lg-emphasis-letter-spacing);
-  color: var(--grey-scale-0);
-  background: linear-gradient(90deg, #0bff99 10.5%, #87d5ff 98%);
-  cursor: pointer;
+.nickname {
+  display: block;
+  margin-bottom: 1rem;
 }
 
 .menu {

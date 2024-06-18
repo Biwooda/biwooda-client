@@ -1,0 +1,12 @@
+.loginButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.09375rem;
+  padding: 0.46875rem 1.59375rem;
+  border-radius: 2rem;
+  font: var(--text-lg-emphasis);
+  letter-spacing: var(--text-lg-emphasis-letter-spacing);
+  color: var(--grey-scale-45);
+  background: var(--grey-scale-0);
+  cursor: pointer;
+}

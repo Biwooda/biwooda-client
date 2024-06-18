@@ -8,8 +8,8 @@ import styles from './RentalCard.module.css';
 
 export default function RentalCard() {
   const { user } = useUserContext();
-  const { rentalState, due, overdue, ticket } = user;
-  if (!rentalState) return null;
+  if (!user || !user?.rentalState) return null;
+  const { due, overdue, ticket } = user;
 
   return (
     <div className={styles.card}>

@@ -47,7 +47,7 @@ export default function MainPage() {
       <Navbar toggleDrawer={toggleDrawer} />
       <NaverMapWithMarker setFocusedMarker={setFocusedMarker} />
       {isOpen && <Drawer />}
-      {user.rentalState && (
+      {user?.rentalState && (
         <BottomSheetWrapper>
           <CTAButton type='white'>반납하기</CTAButton>
         </BottomSheetWrapper>
