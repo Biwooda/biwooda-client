@@ -1,15 +1,12 @@
 import QrScanner from 'qr-scanner';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './QrScanner.module.css';
 
 export default function ReadCode() {
-  const [data, setData] = useState('');
   const divRef = useRef();
   const videoRef = useRef(null);
-
-  const handleScan = (result: QrScanner.ScanResult) => {
-    setData(result.data);
-  };
+  const navigate = useNavigate();
 
   useEffect(() => {
     const videoElem = videoRef.current;
@@ -26,16 +23,14 @@ export default function ReadCode() {
     if (videoElem) {
       const qrScanner = new QrScanner(
         videoElem,
-        (result) => handleScan(result),
+        (result) => navigate('/rental/calendar', { state: result.data }),
         QrOptions
       );
       qrScanner.start();
 
       return () => qrScanner.destroy();
     }
-  }, []);
-
-  alert(data);
+  }, [navigate]);
 
   return (
     <section className={styles.container}>

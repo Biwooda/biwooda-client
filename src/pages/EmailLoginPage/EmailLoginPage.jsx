@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CTAButton from '../../components/CTAButton/CTAButton';
 import FeedbackMessage from '../../components/FeedbackMessage/FeedbackMessage';
 import InputField from '../../components/InputField/InputField';
+import Snackbar from '../../components/Snackbar/Snackbar';
 import {
   EMAIL_LOGIN_PAGE_TITLE,
   LOGIN_FEEDBACK_MESSAGE,
 } from '../../constants';
+import { useUserContext } from '../../contexts/UserContext';
 import { checkEmailFormat, checkPasswordFormat } from '../../utils/checkFormat';
 import SubPage from '../SubPage/SubPage';
 import styles from './EmailLoginPage.module.css';
 
 export default function EmailLoginPage() {
+  const { setUser } = useUserContext();
   const [formData, setFormData] = useState({ email: '', password: '' });
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
+  const navigate = useNavigate();
 
   return (
     <SubPage title={EMAIL_LOGIN_PAGE_TITLE}>
@@ -64,6 +68,17 @@ export default function EmailLoginPage() {
       </div>
       <div>
         <CTAButton
+          onClick={() => {
+            setUser({
+              nickname: formData.email.split('@')[0],
+              rentalState: false,
+              // overdue: false,
+              // due: '2024.06.27 20:00',
+              // ticket: '2일권',
+            });
+            <Snackbar.Action>로그인에 성공했습니다.</Snackbar.Action>;
+            navigate('/');
+          }}
           disabled={
             !(
               checkEmailFormat(formData.email) &&

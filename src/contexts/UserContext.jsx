@@ -3,13 +3,7 @@ import React, { createContext, useContext, useState } from 'react';
 const UserContext = createContext();
 
 export function UserContextProvider({ children }) {
-  const [user, setUser] = useState({
-    nickname: 'barami5016',
-    rentalState: true,
-    overdue: false,
-    due: '2024.06.27 20:00',
-    ticket: '2일권',
-  });
+  const [user, setUser] = useState(null);
 
   return (
     <UserContext.Provider value={{ user, setUser }}>

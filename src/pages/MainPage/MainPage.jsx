@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import lego from '../../assets/lego.json';
 import longArrow from '../../assets/long_arrow.svg';
 import rightArrowGrey from '../../assets/right_arrow_grey.svg';
@@ -47,7 +48,7 @@ export default function MainPage() {
       <Navbar toggleDrawer={toggleDrawer} />
       <NaverMapWithMarker setFocusedMarker={setFocusedMarker} />
       {isOpen && <Drawer />}
-      {user.rentalState && (
+      {user?.rentalState && (
         <BottomSheetWrapper>
           <CTAButton type='white'>반납하기</CTAButton>
         </BottomSheetWrapper>
@@ -75,7 +76,9 @@ export default function MainPage() {
               <img src={rightArrowGrey} alt='right arrow' />
             </button>
           </div>
-          <CTAButton>스캔하고 대여하기</CTAButton>
+          <Link to='qr-scan'>
+            <CTAButton>스캔하고 대여하기</CTAButton>
+          </Link>
         </BottomSheetWrapper>
       )}
     </section>

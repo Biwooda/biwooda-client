@@ -4,10 +4,10 @@ import faq from '../../assets/faq.svg';
 import guidelines from '../../assets/guidelines.svg';
 import logout from '../../assets/logout.svg';
 import notice from '../../assets/notice.svg';
-import rightArrow from '../../assets/right_arrow.svg';
 import serviceCenter from '../../assets/service_center.svg';
 import waterdropSm from '../../assets/waterdrop_sm.svg';
 import { useUserContext } from '../../contexts/UserContext';
+import GoToLogin from '../GoToLogin/GoToLogin';
 import CloseToolbar from '../Toolbar/CloseToolbar/CloseToolbar';
 import styles from './Drawer.module.css';
 
@@ -25,9 +25,10 @@ export default function Drawer() {
         }}
       >
         {user ? (
-          <div className={styles.title} style={{ width: '6.25rem' }}>
-            {user.nickname}님{' '}
-            <span style={{ fontWeight: 600 }}>반갑습니다</span>
+          <div className={styles.title}>
+            {user.nickname}님
+            <br />
+            반갑습니다
           </div>
         ) : (
           <>
@@ -35,18 +36,7 @@ export default function Drawer() {
               <img src={waterdropSm} alt='icon' />
               로그인 후 이용해주세요
             </div>
-            <button
-              className={styles.loginButton}
-              onClick={() =>
-                setUser({
-                  nickname: 'barami5016',
-                  rentalState: true,
-                })
-              }
-            >
-              <img src={rightArrow} alt='right_arrow' />
-              로그인하러 가기
-            </button>
+            <GoToLogin />
           </>
         )}
       </div>

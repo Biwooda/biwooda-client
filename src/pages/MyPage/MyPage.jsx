@@ -4,6 +4,7 @@ import accountDeletion from '../../assets/account_deletion.svg';
 import bell from '../../assets/bell.svg';
 import history from '../../assets/history.svg';
 import Chip from '../../components/Chip/Chip';
+import GoToLogin from '../../components/GoToLogin/GoToLogin';
 import RentalCard from '../../components/RentalCard/RentalCard';
 import BackToolbar from '../../components/Toolbar/BackToolbar/BackToolbar';
 import { useUserContext } from '../../contexts/UserContext';
@@ -31,7 +32,11 @@ export default function MyPage() {
       <div className={styles.content}>
         <div className={styles.top}>
           <div className={styles.profile}>
-            <div className={styles.name}>{user.nickname}님</div>
+            {user ? (
+              <div className={styles.name}>{user?.nickname}님</div>
+            ) : (
+              <GoToLogin />
+            )}
             <Chip />
           </div>
           <Link to='/inbox'>

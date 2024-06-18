@@ -21,7 +21,7 @@ export default function Navbar({ toggleDrawer }) {
       <Link to='/mypage' className={styles.mypage}>
         <img src={mypageIcon} alt='mypage_icon' />
       </Link>
-      {user.rentalState && (
+      {user?.rentalState && (
         <div className={styles.card}>
           <RentalCard />
         </div>
