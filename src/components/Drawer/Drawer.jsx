@@ -7,10 +7,13 @@ import notice from '../../assets/notice.svg';
 import rightArrow from '../../assets/right_arrow.svg';
 import serviceCenter from '../../assets/service_center.svg';
 import waterdropSm from '../../assets/waterdrop_sm.svg';
+import { useUserContext } from '../../contexts/UserContext';
 import CloseToolbar from '../Toolbar/CloseToolbar/CloseToolbar';
 import styles from './Drawer.module.css';
 
-export default function Drawer({ isLogin, nickname, setIsLogin }) {
+export default function Drawer() {
+  const { user, setUser } = useUserContext();
+
   return (
     <section className={styles.container}>
       <CloseToolbar />
@@ -18,12 +21,13 @@ export default function Drawer({ isLogin, nickname, setIsLogin }) {
         className={styles.banner}
         style={{
           background:
-            isLogin && 'linear-gradient(90deg, #38b9ff 2.26%, #0bff99 100.81%)',
+            user && 'linear-gradient(90deg, #38b9ff 2.26%, #0bff99 100.81%)',
         }}
       >
-        {isLogin ? (
+        {user ? (
           <div className={styles.title} style={{ width: '6.25rem' }}>
-            {nickname}님 <span style={{ 'font-whieght': 600 }}>반갑습니다</span>
+            {user.nickname}님{' '}
+            <span style={{ fontWeight: 600 }}>반갑습니다</span>
           </div>
         ) : (
           <>
@@ -33,7 +37,12 @@ export default function Drawer({ isLogin, nickname, setIsLogin }) {
             </div>
             <button
               className={styles.loginButton}
-              onClick={() => setIsLogin(true)}
+              onClick={() =>
+                setUser({
+                  nickname: 'barami5016',
+                  rentalState: true,
+                })
+              }
             >
               <img src={rightArrow} alt='right_arrow' />
               로그인하러 가기
@@ -58,8 +67,8 @@ export default function Drawer({ isLogin, nickname, setIsLogin }) {
           <img src={faq} alt='faq_icon' />
           FAQ
         </Link>
-        {isLogin && (
-          <div className={styles.item} onClick={() => setIsLogin(false)}>
+        {user && (
+          <div className={styles.item} onClick={() => setUser(null)}>
             <img src={logout} alt='logout_icon' />
             로그아웃
           </div>

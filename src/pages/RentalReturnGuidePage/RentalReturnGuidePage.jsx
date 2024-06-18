@@ -49,7 +49,7 @@ export default function RentalReturnGuidePage() {
           ></div>
         ))}
       </div>
-      <CTAButton text='다음' onClick={nextEvent} />
+      <CTAButton onClick={nextEvent}>다음</CTAButton>
     </section>
   );
 }

@@ -61,14 +61,15 @@ export default function EmailVerification({ data, code, setCode, onChange }) {
         <div className={styles.codeButton}>
           <div className={styles.sendCodeButton}>
             <DefaultButton
-              text='이메일로 인증번호 전송'
               onClick={onSendCode}
               disabled={!checkEmailFormat(data.email) || isDisabled}
-            />
+            >
+              이메일로 인증번호 전송
+            </DefaultButton>
           </div>
           {isDisabled && (
             <div className={styles.resendCodeButton}>
-              <DefaultButton text='재발송' onClick={onResendCode} />
+              <DefaultButton onClick={onResendCode}>재발송</DefaultButton>
             </div>
           )}
         </div>

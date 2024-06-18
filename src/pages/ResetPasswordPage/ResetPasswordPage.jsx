@@ -58,12 +58,13 @@ export default function ResetPasswordPage() {
         formData.password === formData.rePassword &&
         formData.code === code && (
           <CTAButton
-            text='비밀번호 재설정 완료'
             disabled={
               !checkPasswordFormat(formData.password) ||
               formData.password !== formData.rePassword
             }
-          />
+          >
+            비밀번호 재설정 완료
+          </CTAButton>
         )}
     </SubPage>
   );
