@@ -5,7 +5,8 @@ const UserContext = createContext();
 export function UserContextProvider({ children }) {
   const [user, setUser] = useState({
     nickname: 'barami5016',
-    rentalState: true,
+    rentalState: false,
+    overdue: true,
   });
 
   return (

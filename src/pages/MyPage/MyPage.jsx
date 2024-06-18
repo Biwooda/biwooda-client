@@ -6,9 +6,9 @@ import history from '../../assets/history.svg';
 import Chip from '../../components/Chip/Chip';
 import RentalCard from '../../components/RentalCard/RentalCard';
 import BackToolbar from '../../components/Toolbar/BackToolbar/BackToolbar';
+import { useUserContext } from '../../contexts/UserContext';
 import styles from './MyPage.module.css';
 
-const name = '비우다';
 const alertList = [
   '알림',
   '알림',
@@ -23,6 +23,7 @@ const alertList = [
 ];
 
 export default function MyPage() {
+  const { user } = useUserContext();
   const navigate = useNavigate();
 
   return (
@@ -31,7 +32,7 @@ export default function MyPage() {
       <div className={styles.content}>
         <div className={styles.top}>
           <div className={styles.profile}>
-            <div className={styles.name}>{name}님</div>
+            <div className={styles.name}>{user.nickname}님</div>
             <Chip />
           </div>
           <Link to='/inbox'>
