@@ -22,6 +22,7 @@
 .button:disabled {
   background-color: var(--grey-scale-20);
   color: var(--grey-scale-60);
+  border: 2px solid var(--grey-scale-20);
   cursor: default;
 }
 
