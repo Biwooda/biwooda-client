@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import ListIndex from '../../components/ListIndex/ListIndex';
 import ListItem from '../../components/ListItem/ListItem';
 import BackToolbar from '../../components/Toolbar/BackToolbar/BackToolbar';
@@ -48,10 +49,12 @@ const datas = [
 ];
 
 export default function RentalHistoryPage() {
+  const navigate = useNavigate();
+
   return (
     <section>
       <div className={styles.toolbar}>
-        <BackToolbar title='이용 내역' />
+        <BackToolbar title='이용 내역' onPrev={() => navigate(-1)} />
       </div>
       <ListIndex>
         <div className={styles.ticket}>이용권</div>
