@@ -61,6 +61,11 @@
   transform: translate(-15%, -50%);
 }
 
+.rdrDayStartOfWeek .rdrInRange {
+  border-radius: 0;
+  left: -15px;
+}
+
 .rdrDayEndOfWeek .rdrInRange {
   border-radius: 0;
 }
