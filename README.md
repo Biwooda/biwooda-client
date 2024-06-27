@@ -1,35 +1,37 @@
-# BIWOODA
+# 비우다
 
-Sookmyung women's university - 공유우산 플랫폼: 비우다
+> 우산을 들고 다니지 않는 일상을 꿈꾸다, 비우다
+> <br/>
+> 🔗 WEB LINK: https://biwooda.vercel.app
 
-## 🫧 역할 분담
+![biwooda](https://github.com/Biwooda/biwooda-client/assets/34948133/1b7403fd-df05-4693-a70d-d3b91faf5385)
 
-| 담당자 | 담당 내용 |
-| :----- | :-------- |
-| 송희원 |           |
+왜 비우다인가요?<br/>
+예상치 못 한 우천으로 편의점에서 구입한 우산이 집에 쌓여 있으신가요?<br/>
+매번 일기예보를 확인하고 우산을 챙기기 귀찮으신가요?<br/>
+공유 우산 서비스 비우다를 통해 불필요한 지출과 짐을 모두 해결할 수 있어요.
 
-## 💻 Development Environment
+<br/>
 
-- React
+
+
+<br/>
+
+## 💻 Development Techs
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/React Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white"> <img src="https://img.shields.io/badge/PostCSS-DD3A0A?style=for-the-badge&logo=postcss&logoColor=white"> <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
 
 <br>
 
 ## 📖 Using Library
 
-| 라이브러리 | 사용 목적 | Management Tool |
-| :--------: | :-------: | :-------------: |
-|    Moya    | 서버 통신 |       SPM       |
-|     @@     |    @@     |       @@        |
-|     @@     |    @@     |       @@        |
-|     @@     |    @@     |       @@        |
+| 라이브러리 | 사용 목적 | 버전 |
+| :---: | :---: | :---: |
+| react-naver-maps | 우산함 위치 정보 제공 | ^0.1.3 |
+| qr-scanner | 우산함 ID 스캔을 통한 대여 및 반납 | ^1.4.2 |
 
 <br>
 
-## 📂 Folder Architecture
 
-```jsx
-📁 src
-```
 
 <br>
 
