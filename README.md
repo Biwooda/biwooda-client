@@ -14,14 +14,15 @@
 
 <br/>
 
+## ❓ How to use
 
+| <img width="200" alt="image" src="https://github.com/Biwooda/biwooda-client/assets/34948133/ca7777a4-c29b-4cc5-ac1f-8703047a5808"> | <img width="200" alt="image" src="https://github.com/Biwooda/biwooda-client/assets/34948133/c4825aa2-56a8-49ed-a87b-097907515924"> | <img width="200" alt="image" src="https://github.com/Biwooda/biwooda-client/assets/34948133/e5460ae1-bb5b-40ca-b9d2-f9dd26b98b92"> | <img width="200" alt="image" src="https://github.com/Biwooda/biwooda-client/assets/34948133/de4dc929-74b1-4095-8a27-dac0359a6650"> |
+| :---: | :---: | :---: | :---: |
+| 우산함 선택 | 대여기간 선택 | 대여 비용 확인 | 결제 수단 선택 |
+
+🌟 대여 및 반납 방법: https://www.youtube.com/watch?v=9-FQYkFqGb4
 
 <br/>
-
-## 💻 Development Techs
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/React Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white"> <img src="https://img.shields.io/badge/PostCSS-DD3A0A?style=for-the-badge&logo=postcss&logoColor=white"> <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
-
-<br>
 
 ## 📖 Using Library
 
@@ -32,7 +33,8 @@
 
 <br>
 
-
+## 💻 Development Techs
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/React Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white"> <img src="https://img.shields.io/badge/PostCSS-DD3A0A?style=for-the-badge&logo=postcss&logoColor=white"> <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
 
 <br>
 
