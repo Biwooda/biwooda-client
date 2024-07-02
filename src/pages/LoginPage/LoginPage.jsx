@@ -1,20 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import emailLogo from '../../assets/email.svg';
-import kakaoLogo from '../../assets/kakao.svg';
-import biwoodaLogo from '../../assets/logo.svg';
-import naverLogo from '../../assets/naver.svg';
+import Icon from '../../components/Icon/Icon';
 import LoginButton from '../../components/LoginButton/LoginButton';
 import Title from '../../components/Title/Title';
 import Umbrella from '../../components/Umbrella/Umbrella';
 import styles from './LoginPage.module.css';
+
+const LOGIN_BUTTONS = [
+  { icon: { id: 'kakao', fill: '', width: 27, height: 27 } },
+  { icon: { id: 'naver', fill: '#ffffff', width: 27, height: 27 } },
+  { icon: { id: 'email', fill: '#38B9FF', width: 27, height: 27 } },
+];
 
 export default function LoginPage() {
   return (
     <section className={styles.login}>
       <div className={styles.top}>
         <div className={styles.logo}>
-          <img src={biwoodaLogo} alt='logo' />
+          <Icon id='logo' width={130} height={31} />
         </div>
         <Title
           title='시작해볼까요?'
@@ -25,7 +28,7 @@ export default function LoginPage() {
         <div className={styles.loginButtons}>
           <LoginButton
             label='kakao'
-            icon={kakaoLogo}
+            icon={LOGIN_BUTTONS[0].icon}
             backgroundColor='#FEE500'
             onClick={() => {
               console.log('kakao');
@@ -35,7 +38,7 @@ export default function LoginPage() {
           </LoginButton>
           <LoginButton
             label='naver'
-            icon={naverLogo}
+            icon={LOGIN_BUTTONS[1].icon}
             backgroundColor='#03C75A'
             onClick={() => {
               console.log('naver');
@@ -44,7 +47,11 @@ export default function LoginPage() {
             네이버로 로그인하기
           </LoginButton>
           <Link to='/login/email'>
-            <LoginButton label='email' icon={emailLogo} color='#1CAFFF'>
+            <LoginButton
+              label='email'
+              icon={LOGIN_BUTTONS[2].icon}
+              color='#1CAFFF'
+            >
               이메일로 로그인하기
             </LoginButton>
           </Link>

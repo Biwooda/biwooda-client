@@ -1,5 +1,5 @@
 import React from 'react';
-import trashCan from '../../assets/trash_can.svg';
+import Icon from '../../components/Icon/Icon';
 import ListItem from '../../components/ListItem/ListItem';
 import BackToolbar from '../../components/Toolbar/BackToolbar/BackToolbar';
 import styles from './InboxPage.module.css';
@@ -30,7 +30,7 @@ export default function InboxPage() {
     <section className={styles.container}>
       <div className={styles.toolbar}>
         <BackToolbar title='알림함'>
-          <img src={trashCan} alt='쓰레기통' />
+          <Icon id='trash' fill='#3E4E5B' width={36} height={36} />
         </BackToolbar>
       </div>
       {datas.length > 0 ? (

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import closedEyes from '../../../assets/close_eyes.svg';
-import openEyes from '../../../assets/open_eyes.svg';
+import Icon from '../../../components/Icon/Icon';
 import styles from './PasswordField.module.css';
 
 export default function PasswordField({
@@ -32,12 +31,15 @@ export default function PasswordField({
             placeholder={placeholder}
             tabIndex='-1'
           />
-          <img
-            className={styles.eyesIcon}
-            src={openEyes}
-            alt='opendEyes'
-            onClick={handleClick}
-          />
+          <div className={styles.eyesIcon} onClick={handleClick}>
+            <Icon
+              id='eye'
+              stroke='#38B9FF'
+              fill='#38B9FF'
+              width={24}
+              height={24}
+            />
+          </div>
         </div>
       ) : (
         <div className={styles.field}>
@@ -51,12 +53,15 @@ export default function PasswordField({
             placeholder={placeholder}
             tabIndex='-1'
           />
-          <img
-            className={styles.eyesIcon}
-            src={closedEyes}
-            alt='closedEyes'
-            onClick={handleClick}
-          />
+          <div className={styles.eyesIcon} onClick={handleClick}>
+            <Icon
+              id='eyeClosed'
+              stroke='#38B9FF'
+              fill='#38B9FF'
+              width={24}
+              height={24}
+            />
+          </div>
         </div>
       )}
     </div>

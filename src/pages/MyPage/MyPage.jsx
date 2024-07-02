@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import accountDeletion from '../../assets/account_deletion.svg';
-import bell from '../../assets/bell.svg';
-import history from '../../assets/history.svg';
 import Chip from '../../components/Chip/Chip';
 import GoToLogin from '../../components/GoToLogin/GoToLogin';
+import Icon from '../../components/Icon/Icon';
 import RentalCard from '../../components/RentalCard/RentalCard';
 import BackToolbar from '../../components/Toolbar/BackToolbar/BackToolbar';
 import { useUserContext } from '../../contexts/UserContext';
@@ -41,7 +39,7 @@ export default function MyPage() {
           </div>
           <Link to='/inbox'>
             <div className={styles.bell}>
-              <img src={bell} alt='알림종' />
+              <Icon id='bell' fill='#38B9FF' width={36} height={36} />
               <p className={styles.alertCount}>{alertList.length}</p>
             </div>
           </Link>
@@ -49,11 +47,17 @@ export default function MyPage() {
         <RentalCard />
         <div className={styles.menu}>
           <Link to='/rental-history' className={styles.item}>
-            <img src={history} alt='notice_icon' />
+            <Icon id='list' fill='#38B9FF' width={36} height={36} />
             비우다 이용 내역
           </Link>
           <div className={styles.item} onClick={() => {}}>
-            <img src={accountDeletion} alt='회원탈퇴' />
+            <Icon
+              id='out'
+              stroke='#38B9FF'
+              fill='#38B9FF'
+              width={36}
+              height={36}
+            />
             회원 탈퇴하기
           </div>
         </div>

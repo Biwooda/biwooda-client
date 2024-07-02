@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import close from '../../../assets/close.svg';
+import Icon from '../../../components/Icon/Icon';
 import { useDrawerContext } from '../../../contexts/DrawerContext';
 import styles from './CloseToolbar.module.css';
 
@@ -11,15 +11,15 @@ export default function CloseToolbar({ title }) {
     <nav className={styles.nav}>
       <div className={styles.box}></div>
       <div className={styles.title}>{title}</div>
-      <img
+      <div
         className={styles.close}
-        src={close}
-        alt='close_icon'
         onClick={() => {
           toggleDrawer();
           navigate('/');
         }}
-      />
+      >
+        <Icon id='x' fill='#3E4E5B' width={24} height={24} />
+      </div>
     </nav>
   );
 }

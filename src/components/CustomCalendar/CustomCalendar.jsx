@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 import { DateRangePicker } from 'react-date-range';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
-import nextMonth from '../../assets/next.svg';
-import prevMonth from '../../assets/prev.svg';
+import Icon from '../../components/Icon/Icon';
 import './CustomCalendar.css';
 import styles from './CustomCalendar.module.css';
 
@@ -59,11 +58,11 @@ export default function CustomCalendar({ selectEndDate }) {
 const CustomNavigator = ({ date, onNext, onPrev }) => (
   <div className={styles.customNavigator}>
     <button className={styles.monthButton} onClick={onPrev}>
-      <img src={prevMonth} alt='prev month' />
+      <Icon id='leftArrow' stroke='#516875' width={18} height={18} />
     </button>
     <span className={styles.shownDate}>{format(date, 'yyyy년 M월')}</span>
     <button className={styles.monthButton} onClick={onNext}>
-      <img src={nextMonth} alt='next month' />
+      <Icon id='rightArrow' stroke='#516875' width={18} height={18} />
     </button>
   </div>
 );

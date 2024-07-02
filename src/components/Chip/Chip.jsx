@@ -1,7 +1,6 @@
 import React from 'react';
-import fullWaterDrop from '../../assets/full_water_drop.svg';
-import symbol from '../../assets/symbol_sm_white.svg';
 import { useUserContext } from '../../contexts/UserContext';
+import Icon from '../Icon/Icon';
 import styles from './Chip.module.css';
 
 export default function Chip() {
@@ -11,7 +10,12 @@ export default function Chip() {
 
   return (
     <div className={`${styles.tag} ${overdue && styles.overdue}`}>
-      <img src={overdue ? fullWaterDrop : symbol} alt='아이콘' />
+      <Icon
+        id={overdue ? 'waterdropFull' : 'symbol'}
+        fill='#ffffff'
+        width={18}
+        height={18}
+      />
       {overdue ? '미반납중' : '대여중'}
     </div>
   );

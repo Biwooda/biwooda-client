@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import caution from '../../assets/caution.svg';
-import downArrow from '../../assets/down_arrow.svg';
-import upArrow from '../../assets/up_arrow.svg';
+import Icon from '../../components/Icon/Icon';
 import styles from './Caution.module.css';
 
 export default function Caution({ init }) {
@@ -10,13 +8,19 @@ export default function Caution({ init }) {
   return (
     <div className={styles.content}>
       <div className={styles.label}>
-        <img src={caution} alt='caution' />
+        <Icon id='caution' fill='#A9BAC6' width={18} height={18} />
         <div>잠깐 대여 전 확인하세요</div>
-        <img
-          src={isOpen ? upArrow : downArrow}
-          alt='arrow icon'
+        <div
+          className={styles.arrow}
           onClick={() => setIsOpen((prev) => !prev)}
-        />
+        >
+          <Icon
+            id={isOpen ? 'upArrow' : 'downArrow'}
+            stroke='#92A5B3'
+            width={17}
+            height={18}
+          />
+        </div>
       </div>
       <div className={`${styles.box} ${isOpen && styles.opend}`}>
         <div className={styles.text}>
