@@ -1,5 +1,6 @@
 import React from 'react';
 import getTextColorByBackgroundColor from '../../utils/getTextColorByBackgroundColor';
+import Icon from '../Icon/Icon';
 import styles from './LoginButton.module.css';
 
 export default function LoginButton({
@@ -20,7 +21,7 @@ export default function LoginButton({
       }}
     >
       <div className={styles.icon}>
-        <img src={icon} alt={label} />
+        <Icon {...icon} />
       </div>
       <div
         className={styles.text}

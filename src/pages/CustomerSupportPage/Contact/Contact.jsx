@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
-import camera from '../../../assets/camera.svg';
-import downArrow from '../../../assets/down_arrow.svg';
 import DefaultButton from '../../../components/DefaultButton/DefaultButton';
+import Icon from '../../../components/Icon/Icon';
 import InputField from '../../../components/InputField/InputField';
 import Select from '../../../components/Select/Select';
 import styles from './Contact.module.css';
@@ -44,7 +43,7 @@ export default function Contact() {
       <div className={styles.imageContainer}>
         <div className={styles.fileInput}>
           <label htmlFor='inputFileCustom'>
-            <img src={camera} alt='camera' />
+            <Icon id='camera' fill='#92A5B3' width={24} height={24} />
             <span className={styles.amount}>{files.length}/10</span>
           </label>
           <input
@@ -106,19 +105,19 @@ export default function Contact() {
       <div className={styles.caution}>
         <div className={styles.cautionTitleDiv}>
           <div className={styles.cautionTitle}>분실/훼손 신고 주의사항</div>
-          <img
+          <div
             ref={arrowRef}
             className={styles.arrow}
-            src={downArrow}
-            alt='arrow icon'
             onClick={() => {
               setIsOpen((prev) => !prev);
               arrowRef.current.style = `transform: ${
-                isOpen ? 'rotate(0deg) translateY(-1px)' : 'rotate(180deg)'
+                isOpen ? 'rotate(0deg) translateY(2px)' : 'rotate(180deg)'
               }`;
               boxRef.current.style = `opacity: ${isOpen ? 0 : 1}`;
             }}
-          />
+          >
+            <Icon id='downArrow' stroke='#92A5B3' width={17} height={17} />
+          </div>
         </div>
         <div ref={boxRef} className={styles.description}>
           <p>

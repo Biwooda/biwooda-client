@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import backArrow from '../../assets/back_arrow.svg';
+import Icon from '../../components/Icon/Icon';
 import Title from '../../components/Title/Title.jsx';
 import styles from './SubPage.module.css';
 
@@ -9,8 +9,8 @@ export default function SubPage({ title, children }) {
 
   return (
     <section className={styles.container}>
-      <div className={styles.back}>
-        <img src={backArrow} alt='back' onClick={() => navigate(-1)} />
+      <div className={styles.back} onClick={() => navigate(-1)}>
+        <Icon id='back' stroke='#3E4E5B' width={36} height={36} />
       </div>
       <Title
         icon={title.icon}

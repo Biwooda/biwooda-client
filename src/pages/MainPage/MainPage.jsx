@@ -1,12 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import lego from '../../assets/lego.json';
-import longArrow from '../../assets/long_arrow.svg';
-import rightArrowGrey from '../../assets/right_arrow_grey.svg';
-import symbolSm from '../../assets/symbol_sm.svg';
 import useBottomSheet from '../../components/BottomSheet/BottomSheet';
 import CTAButton from '../../components/CTAButton/CTAButton';
 import Drawer from '../../components/Drawer/Drawer';
+import Icon from '../../components/Icon/Icon';
 import Animation from '../../components/Loading/Loading';
 import Navbar from '../../components/Navbar/Navbar';
 import NaverMapWithMarker from '../../components/NaverMap/NaverMap';
@@ -60,20 +58,23 @@ export default function MainPage() {
               숙명여대 {focusedMarker.label} 앞
             </div>
             <div className={styles.amount}>
-              <img className={styles.symbol} src={symbolSm} alt='symbol' />
+              <Icon id='symbol' fill='#1CAFFF' width={18} height={18} />
               현재 대여 가능한 우산
-              <img
-                className={styles.longArrow}
-                src={longArrow}
-                alt='long arrow'
-              />{' '}
+              <div className={styles.longArrow}>
+                <Icon
+                  id='rightArrowLong'
+                  fill='#1CAFFF'
+                  width={95}
+                  height={11}
+                />
+              </div>
               {focusedMarker.amount}개
             </div>
           </div>
           <div className={styles.guide}>
             <pre className={styles.guideText}>{GUIDE}</pre>
             <Link to='/rental-history' className={styles.guideButton}>
-              <img src={rightArrowGrey} alt='right arrow' />
+              <Icon id='rightArrow' stroke='#92A5B3' width={18} height={18} />
             </Link>
           </div>
           <Link to='qr-scan'>
