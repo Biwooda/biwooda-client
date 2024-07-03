@@ -1,13 +1,16 @@
-import FEE from './fee';
-import GUIDE from './guide';
-import RENTAL_RETURN_IMAGE from './imgSrc';
-import { center, level, markers } from './map';
-import { LOGIN_FEEDBACK_MESSAGE, SIGN_UP_FEEDBACK_MESSAGE } from './message';
+import FEE from 'constants/fee';
+import GUIDE from 'constants/guide';
+import RENTAL_RETURN_IMAGE from 'constants/imgSrc';
+import { center, level, markers } from 'constants/map';
+import {
+  LOGIN_FEEDBACK_MESSAGE,
+  SIGN_UP_FEEDBACK_MESSAGE,
+} from 'constants/message';
 import {
   EMAIL_LOGIN_PAGE_TITLE,
   RESET_PASSWORD_PAGE_TITLE,
   SIGN_UP_PAGE_TITLE,
-} from './title';
+} from 'constants/title';
 
 export {
   EMAIL_LOGIN_PAGE_TITLE,

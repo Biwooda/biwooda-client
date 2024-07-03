@@ -1,6 +1,8 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import BackToolbar from '../../components/Toolbar/BackToolbar/BackToolbar';
+
+import BackToolbar from 'components/Toolbar/BackToolbar/BackToolbar';
+
 import styles from './CustomerSupportPage.module.css';
 
 export default function CustomerSupportPage() {
@@ -18,7 +20,7 @@ export default function CustomerSupportPage() {
             <Link
               to='/customer-support'
               className={`${styles.tab} ${tab === 'Tab1' && styles.selected}`}
-              onClick={(event) => {
+              onClick={() => {
                 underlineRef.current.style.transform = 'translateX(calc(33%))';
                 setTab('Tab1');
               }}
@@ -36,7 +38,7 @@ export default function CustomerSupportPage() {
               문의내역
             </Link>
           </div>
-          <div className={styles.underline} ref={underlineRef}></div>
+          <div className={styles.underline} ref={underlineRef} />
         </div>
       </div>
       <Outlet />

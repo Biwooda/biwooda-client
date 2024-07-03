@@ -1,6 +1,9 @@
-import QrScanner from 'qr-scanner';
+/* eslint-disable jsx-a11y/media-has-caption */
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import QrScanner from 'qr-scanner';
+
 import styles from './QrScanner.module.css';
 
 export default function ReadCode() {
@@ -8,8 +11,9 @@ export default function ReadCode() {
   const videoRef = useRef(null);
   const navigate = useNavigate();
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
-    const videoElem = videoRef.current;
+    const { current: videoElem } = videoRef;
     const QrOptions = {
       // 핸드폰의 경우, 외부 카메라인지 셀프카메라인지
       preferredCamera: 'environment',
@@ -37,7 +41,7 @@ export default function ReadCode() {
       <div>
         <video ref={videoRef} className={styles.video} />
       </div>
-      <div ref={divRef} className={styles.div}></div>
+      <div ref={divRef} className={styles.div} />
     </section>
   );
 }

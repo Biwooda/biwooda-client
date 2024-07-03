@@ -1,5 +1,5 @@
-import React from 'react';
-import Icon from '../Icon/Icon';
+import Icon from 'components/Icon/Icon';
+
 import styles from './Title.module.css';
 
 export default function Title({ icon, title, description }) {

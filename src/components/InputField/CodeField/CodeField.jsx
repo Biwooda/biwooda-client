@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './CodeField.module.css';
 
 export default function TextField({
@@ -7,7 +6,6 @@ export default function TextField({
   value,
   placeholder,
   onChange,
-  verification,
   isSended,
   children,
 }) {

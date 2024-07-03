@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CustomCalendar from '../../../components/CustomCalendar/CustomCalendar';
-import RoundButton from '../../../components/RoundButton/RoundButton';
+
+import CustomCalendar from 'components/CustomCalendar/CustomCalendar';
+import RoundButton from 'components/RoundButton/RoundButton';
+
 import styles from './RentalCalendar.module.css';
 
 export default function RentalCalendar() {

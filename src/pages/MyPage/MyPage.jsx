@@ -1,11 +1,13 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import Chip from '../../components/Chip/Chip';
-import GoToLogin from '../../components/GoToLogin/GoToLogin';
-import Icon from '../../components/Icon/Icon';
-import RentalCard from '../../components/RentalCard/RentalCard';
-import BackToolbar from '../../components/Toolbar/BackToolbar/BackToolbar';
-import { useUserContext } from '../../contexts/UserContext';
+
+import { useUserContext } from 'contexts/UserContext';
+
+import Chip from 'components/Chip/Chip';
+import GoToLogin from 'components/GoToLogin/GoToLogin';
+import Icon from 'components/Icon/Icon';
+import RentalCard from 'components/RentalCard/RentalCard';
+import BackToolbar from 'components/Toolbar/BackToolbar/BackToolbar';
+
 import styles from './MyPage.module.css';
 
 const alertList = [
@@ -50,7 +52,13 @@ export default function MyPage() {
             <Icon id='list' fill='#38B9FF' width={36} height={36} />
             비우다 이용 내역
           </Link>
-          <div className={styles.item} onClick={() => {}}>
+          <div
+            className={styles.item}
+            role='button'
+            tabIndex='0'
+            onClick={() => {}}
+            onKeyDown={() => {}}
+          >
             <Icon
               id='out'
               stroke='#38B9FF'

@@ -1,8 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import Icon from '../../components/Icon/Icon';
-import { useUserContext } from '../../contexts/UserContext';
-import RentalCard from '../RentalCard/RentalCard';
+
+import { useUserContext } from 'contexts/UserContext';
+
+import Icon from 'components/Icon/Icon';
+import RentalCard from 'components/RentalCard/RentalCard';
+
 import styles from './Navbar.module.css';
 
 export default function Navbar({ toggleDrawer }) {
@@ -10,7 +12,17 @@ export default function Navbar({ toggleDrawer }) {
 
   return (
     <nav className={styles.nav}>
-      <div className={styles.menu} onClick={toggleDrawer}>
+      <div
+        className={styles.menu}
+        role='button'
+        tabIndex='0'
+        onClick={toggleDrawer}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter') {
+            toggleDrawer();
+          }
+        }}
+      >
         <Icon id='hamburger' fill='#38B9FF' width={36} height={36} />
       </div>
       <div className={styles.logo}>

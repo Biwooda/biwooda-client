@@ -1,7 +1,8 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Icon from '../../components/Icon/Icon';
-import Title from '../../components/Title/Title.jsx';
+
+import Icon from 'components/Icon/Icon';
+import Title from 'components/Title/Title';
+
 import styles from './SubPage.module.css';
 
 export default function SubPage({ title, children }) {
@@ -9,7 +10,17 @@ export default function SubPage({ title, children }) {
 
   return (
     <section className={styles.container}>
-      <div className={styles.back} onClick={() => navigate(-1)}>
+      <div
+        className={styles.back}
+        role='button'
+        tabIndex='0'
+        onClick={() => navigate(-1)}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter') {
+            navigate(-1);
+          }
+        }}
+      >
         <Icon id='back' stroke='#3E4E5B' width={36} height={36} />
       </div>
       <Title

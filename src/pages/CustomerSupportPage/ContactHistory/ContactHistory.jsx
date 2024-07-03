@@ -1,6 +1,6 @@
-import React from 'react';
-import ListIndex from '../../../components/ListIndex/ListIndex';
-import ListItem from '../../../components/ListItem/ListItem';
+import ListIndex from 'components/ListIndex/ListIndex';
+import ListItem from 'components/ListItem/ListItem';
+
 import styles from './ContactHistory.module.css';
 
 const datas = [
@@ -30,7 +30,7 @@ export default function ContactHistory() {
         <div className={styles.state}>처리상태</div>
       </ListIndex>
       <div>
-        {datas.map(({ key, order, title, date, state }) => (
+        {datas.map(({ key, order, title, date }) => (
           <ListItem key={key}>
             <div className={styles.order}>{order}</div>
             <div className={styles.title}>{title}</div>

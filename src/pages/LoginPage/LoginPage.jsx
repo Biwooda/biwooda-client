@@ -1,15 +1,37 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import Icon from '../../components/Icon/Icon';
-import LoginButton from '../../components/LoginButton/LoginButton';
-import Title from '../../components/Title/Title';
-import Umbrella from '../../components/Umbrella/Umbrella';
+
+import Icon from 'components/Icon/Icon';
+import LoginButton from 'components/LoginButton/LoginButton';
+import Title from 'components/Title/Title';
+import Umbrella from 'components/Umbrella/Umbrella';
+
 import styles from './LoginPage.module.css';
 
 const LOGIN_BUTTONS = [
-  { icon: { id: 'kakao', fill: '', width: 27, height: 27 } },
-  { icon: { id: 'naver', fill: '#ffffff', width: 27, height: 27 } },
-  { icon: { id: 'email', fill: '#38B9FF', width: 27, height: 27 } },
+  {
+    icon: {
+      id: 'kakao',
+      fill: '',
+      width: 27,
+      height: 27,
+    },
+  },
+  {
+    icon: {
+      id: 'naver',
+      fill: '#ffffff',
+      width: 27,
+      height: 27,
+    },
+  },
+  {
+    icon: {
+      id: 'email',
+      fill: '#38B9FF',
+      width: 27,
+      height: 27,
+    },
+  },
 ];
 
 export default function LoginPage() {
@@ -30,7 +52,7 @@ export default function LoginPage() {
             label='kakao'
             icon={LOGIN_BUTTONS[0].icon}
             backgroundColor='#FEE500'
-            onClick={() => {
+            onLogin={() => {
               console.log('kakao');
             }}
           >
@@ -40,7 +62,7 @@ export default function LoginPage() {
             label='naver'
             icon={LOGIN_BUTTONS[1].icon}
             backgroundColor='#03C75A'
-            onClick={() => {
+            onLogin={() => {
               console.log('naver');
             }}
           >

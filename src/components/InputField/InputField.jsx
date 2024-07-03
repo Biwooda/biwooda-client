@@ -1,10 +1,9 @@
-import React from 'react';
-import CodeField from './CodeField/CodeField';
-import PasswordField from './PasswordField/PasswordField';
-import TextField from './TextField/TextField';
+import CodeField from 'components/InputField/CodeField/CodeField';
+import PasswordField from 'components/InputField/PasswordField/PasswordField';
+import TextField from 'components/InputField/TextField/TextField';
 
 export default function InputField({ children }) {
-  return <>{children}</>;
+  return { children };
 }
 
 InputField.Text = TextField;

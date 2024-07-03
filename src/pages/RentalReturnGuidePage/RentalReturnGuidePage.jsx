@@ -1,7 +1,10 @@
-import React, { useRef } from 'react';
-import CTAButton from '../../components/CTAButton/CTAButton';
-import BackToolbar from '../../components/Toolbar/BackToolbar/BackToolbar';
-import { RENTAL_RETURN_IMAGE } from '../../constants';
+import { useRef } from 'react';
+
+import CTAButton from 'components/CTAButton/CTAButton';
+import BackToolbar from 'components/Toolbar/BackToolbar/BackToolbar';
+
+import { RENTAL_RETURN_IMAGE } from 'constants';
+
 import styles from './RentalReturnGuidePage.module.css';
 
 const CAROUSEL_LENGTH = RENTAL_RETURN_IMAGE.length - 1;
@@ -22,7 +25,7 @@ export default function RentalReturnGuidePage() {
       dots[current].classList.toggle(styles.active);
     } else {
       current = 0;
-      carouselRef.current.style.transform = `translateX(0px)`;
+      carouselRef.current.style.transform = 'translateX(0px)';
       dots[current].classList.toggle(styles.active);
     }
   };
@@ -44,7 +47,7 @@ export default function RentalReturnGuidePage() {
           <div
             key={img}
             className={`${styles.dot} ${index === 0 && styles.active}`}
-          ></div>
+          />
         ))}
       </div>
       <CTAButton onClick={nextEvent}>다음</CTAButton>

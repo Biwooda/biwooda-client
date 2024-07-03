@@ -1,10 +1,15 @@
-import React, { useRef, useState } from 'react';
-import CTAButton from '../../components/CTAButton/CTAButton.jsx';
-import EmailVerification from '../../components/EmailVerification/EmailVerification.jsx';
-import PasswordVerification from '../../components/PasswordVerification/PasswordVerification.jsx';
-import { RESET_PASSWORD_PAGE_TITLE } from '../../constants/index.js';
-import { checkPasswordFormat } from '../../utils/checkFormat';
-import SubPage from '../SubPage/SubPage';
+import { useRef, useState } from 'react';
+
+import SubPage from 'pages/SubPage/SubPage';
+
+import CTAButton from 'components/CTAButton/CTAButton';
+import EmailVerification from 'components/EmailVerification/EmailVerification';
+import PasswordVerification from 'components/PasswordVerification/PasswordVerification';
+
+import { RESET_PASSWORD_PAGE_TITLE } from 'constants/index.js';
+
+import { checkPasswordFormat } from 'utils/checkFormat';
+
 import styles from './ResetPasswordPage.module.css';
 
 export default function ResetPasswordPage() {
@@ -15,8 +20,8 @@ export default function ResetPasswordPage() {
     rePassword: '',
   });
   const [code, setCode] = useState();
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  const handleChange = ({ target }) => {
+    const { name, value } = target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
   const scrollRef = useRef();
@@ -37,7 +42,9 @@ export default function ResetPasswordPage() {
             setCode={setCode}
             onChange={(event) => {
               handleChange(event);
-              const { name, value } = event.target;
+              const {
+                target: { name, value },
+              } = event;
 
               if (name === 'code' && value === code) {
                 setTimeout(() => {

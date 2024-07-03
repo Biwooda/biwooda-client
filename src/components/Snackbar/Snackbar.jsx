@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './Snackbar.module.css';
 
 export default function Snackbar({ children }) {
@@ -55,7 +54,7 @@ function WithTwoActionButton({ onClick, children }) {
         <div className={styles.actionButtonDiv}>
           <button
             className={`${styles.actionButton} ${styles.greyButton}`}
-            onClick={() => {}}
+            onClick={onClick}
           >
             아니요
           </button>

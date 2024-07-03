@@ -1,6 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import Icon from '../../components/Icon/Icon';
+
+import Icon from 'components/Icon/Icon';
+
 import styles from './GoToLogin.module.css';
 
 export default function GoToLogin() {

@@ -1,13 +1,12 @@
-import React from 'react';
-import ListIndex from '../../components/ListIndex/ListIndex';
-import ListItem from '../../components/ListItem/ListItem';
-import BackToolbar from '../../components/Toolbar/BackToolbar/BackToolbar';
+import ListIndex from 'components/ListIndex/ListIndex';
+import ListItem from 'components/ListItem/ListItem';
+import BackToolbar from 'components/Toolbar/BackToolbar/BackToolbar';
+
 import styles from './RentalHistoryPage.module.css';
 
 const datas = [
   {
     key: 1,
-
     ticket: '당일권',
     rentalDate: '23.06.23 13.08.25',
     dueDate: '23.06.23 13.08.25',
@@ -17,7 +16,6 @@ const datas = [
   },
   {
     key: 2,
-
     ticket: '당일권',
     rentalDate: '23.06.23 13.08.25',
     dueDate: '23.06.23 13.08.25',
@@ -27,7 +25,6 @@ const datas = [
   },
   {
     key: 3,
-
     ticket: '당일권',
     rentalDate: '23.06.23 13.08.25',
     dueDate: '23.06.23 13.08.25',
@@ -37,7 +34,6 @@ const datas = [
   },
   {
     key: 4,
-
     ticket: '당일권',
     rentalDate: '23.06.23 13.08.25',
     dueDate: '23.06.23 13.08.25',

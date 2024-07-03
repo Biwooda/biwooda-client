@@ -1,29 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
+import CautionPage from 'pages/CautionPage/CautionPage';
+import Contact from 'pages/CustomerSupportPage/Contact/Contact';
+import ContactHistory from 'pages/CustomerSupportPage/ContactHistory/ContactHistory';
+import CustomerSupportPage from 'pages/CustomerSupportPage/CustomerSupportPage';
+import EmailLoginPage from 'pages/EmailLoginPage/EmailLoginPage';
+import GuidelinePage from 'pages/GuidelinePage/GuidelinePage';
+import InboxPage from 'pages/InboxPage/InboxPage';
+import LoginPage from 'pages/LoginPage/LoginPage';
+import MainPage from 'pages/MainPage/MainPage';
+import MyPage from 'pages/MyPage/MyPage';
+import NoticePage from 'pages/NoticePage/NoticePage';
+import QrScanner from 'pages/QrScanner/QrScanner';
+import RentalHistoryPage from 'pages/RentalHistoryPage/RentalHistoryPage';
+import RentalCalendar from 'pages/RentalPage/RentalCalendar/RentalCalendar';
+import RentalPage from 'pages/RentalPage/RentalPage';
+import RentalPay from 'pages/RentalPage/RentalPay/RentalPay';
+import RentalReturnGuidePage from 'pages/RentalReturnGuidePage/RentalReturnGuidePage';
+import ResetPasswordPage from 'pages/ResetPasswordPage/ResetPasswordPage';
+import ServiceTime from 'pages/ServiceTime/ServiceTime';
+import SignUpPage from 'pages/SignUpPage/SignUpPage';
+
+import reportWebVitals from 'reportWebVitals';
+
 import App from './App';
 import './index.css';
-import CautionPage from './pages/CautionPage/CautionPage';
-import Contact from './pages/CustomerSupportPage/Contact/Contact';
-import ContactHistory from './pages/CustomerSupportPage/ContactHistory/ContactHistory';
-import CustomerSupportPage from './pages/CustomerSupportPage/CustomerSupportPage';
-import EmailLoginPage from './pages/EmailLoginPage/EmailLoginPage';
-import GuidelinePage from './pages/GuidelinePage/GuidelinePage';
-import InboxPage from './pages/InboxPage/InboxPage';
-import LoginPage from './pages/LoginPage/LoginPage';
-import MainPage from './pages/MainPage/MainPage';
-import MyPage from './pages/MyPage/MyPage';
-import NoticePage from './pages/NoticePage/NoticePage';
-import QrScanner from './pages/QrScanner/QrScanner';
-import RentalHistoryPage from './pages/RentalHistoryPage/RentalHistoryPage';
-import RentalCalendar from './pages/RentalPage/RentalCalendar/RentalCalendar';
-import RentalPage from './pages/RentalPage/RentalPage';
-import RentalPay from './pages/RentalPage/RentalPay/RentalPay';
-import RentalReturnGuidePage from './pages/RentalReturnGuidePage/RentalReturnGuidePage';
-import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
-import ServiceTime from './pages/ServiceTime/ServiceTime';
-import SignUpPage from './pages/SignUpPage/SignUpPage';
-import reportWebVitals from './reportWebVitals';
 
 const router = createBrowserRouter([
   {
@@ -125,7 +128,4 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

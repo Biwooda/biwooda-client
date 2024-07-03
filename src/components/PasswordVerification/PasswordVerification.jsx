@@ -1,8 +1,10 @@
-import React from 'react';
-import FeedbackMessage from '../../components/FeedbackMessage/FeedbackMessage';
-import InputField from '../../components/InputField/InputField';
-import { SIGN_UP_FEEDBACK_MESSAGE } from '../../constants';
-import { checkPasswordFormat } from '../../utils/checkFormat';
+import FeedbackMessage from 'components/FeedbackMessage/FeedbackMessage';
+import InputField from 'components/InputField/InputField';
+
+import { checkPasswordFormat } from 'utils/checkFormat';
+
+import { SIGN_UP_FEEDBACK_MESSAGE } from 'constants';
+
 import styles from './PasswordVerification.module.css';
 
 export default function PasswordVerification({ data, onChange }) {

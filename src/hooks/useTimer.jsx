@@ -4,6 +4,12 @@ export default function useTimer(value = 0) {
   const [time, setTime] = useState(value);
   const [timerId, setTimerId] = useState();
 
+  const clearTimer = useCallback(() => {
+    if (timerId) {
+      clearInterval(timerId);
+    }
+  }, [timerId]);
+
   const startTimer = () => {
     setTime(value);
     clearTimer();
@@ -16,12 +22,6 @@ export default function useTimer(value = 0) {
       }, 1000)
     );
   };
-
-  const clearTimer = useCallback(() => {
-    if (timerId) {
-      clearInterval(timerId);
-    }
-  }, [timerId]);
 
   useEffect(() => {
     if (time === 0) {

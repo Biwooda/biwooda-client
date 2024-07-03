@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './CTAButton.module.css';
 
 export default function CTAButton({ children, type, onClick, disabled }) {
