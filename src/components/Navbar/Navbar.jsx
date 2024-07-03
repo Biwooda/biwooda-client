@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Icon from '../../components/Icon/Icon';
-import { useUserContext } from '../../contexts/UserContext';
-import RentalCard from '../RentalCard/RentalCard';
+import Icon from 'components/Icon/Icon';
+import { useUserContext } from 'contexts/UserContext';
+import RentalCard from 'components/RentalCard/RentalCard';
 import styles from './Navbar.module.css';
 
 export default function Navbar({ toggleDrawer }) {

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Chip from '../../components/Chip/Chip';
-import GoToLogin from '../../components/GoToLogin/GoToLogin';
-import Icon from '../../components/Icon/Icon';
-import RentalCard from '../../components/RentalCard/RentalCard';
-import BackToolbar from '../../components/Toolbar/BackToolbar/BackToolbar';
-import { useUserContext } from '../../contexts/UserContext';
+import Chip from 'components/Chip/Chip';
+import GoToLogin from 'components/GoToLogin/GoToLogin';
+import Icon from 'components/Icon/Icon';
+import RentalCard from 'components/RentalCard/RentalCard';
+import BackToolbar from 'components/Toolbar/BackToolbar/BackToolbar';
+import { useUserContext } from 'contexts/UserContext';
 import styles from './MyPage.module.css';
 
 const alertList = [

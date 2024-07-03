@@ -1,6 +1,6 @@
 import React from 'react';
-import ListIndex from '../../../components/ListIndex/ListIndex';
-import ListItem from '../../../components/ListItem/ListItem';
+import ListIndex from 'components/ListIndex/ListIndex';
+import ListItem from 'components/ListItem/ListItem';
 import styles from './ContactHistory.module.css';
 
 const datas = [

@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
-import DefaultButton from '../../../components/DefaultButton/DefaultButton';
-import Icon from '../../../components/Icon/Icon';
-import InputField from '../../../components/InputField/InputField';
-import Select from '../../../components/Select/Select';
+import DefaultButton from 'components/DefaultButton/DefaultButton';
+import Icon from 'components/Icon/Icon';
+import InputField from 'components/InputField/InputField';
+import Select from 'components/Select/Select';
 import styles from './Contact.module.css';
 
 const options = [
@@ -91,7 +91,7 @@ export default function Contact() {
             placeholder='500자 이내로 작성해주세요'
             maxLength='500'
             onChange={handleChange}
-          ></textarea>
+          />
         </div>
         <div className={styles.buttons}>
           <div className={styles.cancleButton}>

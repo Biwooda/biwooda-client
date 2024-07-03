@@ -5,7 +5,7 @@ import {
   NaverMap,
   NavermapsProvider,
 } from 'react-naver-maps';
-import { center, level, markers as markerInfos } from '../../constants';
+import { center, level, markers as markerInfos } from 'constants';
 
 export default function NaverMapWithMarker({ setFocusedMarker }) {
   const [markers, setMarkers] = useState(markerInfos);

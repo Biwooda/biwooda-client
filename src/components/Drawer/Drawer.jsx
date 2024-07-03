@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useUserContext } from '../../contexts/UserContext';
-import GoToLogin from '../GoToLogin/GoToLogin';
-import Icon from '../Icon/Icon';
-import CloseToolbar from '../Toolbar/CloseToolbar/CloseToolbar';
+import { useUserContext } from 'contexts/UserContext';
+import GoToLogin from 'components/GoToLogin/GoToLogin';
+import Icon from 'components/Icon/Icon';
+import CloseToolbar from 'components/Toolbar/CloseToolbar/CloseToolbar';
 import styles from './Drawer.module.css';
 
 export default function Drawer() {

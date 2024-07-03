@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import Caution from '../../components/Caution/Caution';
-import BackToolbar from '../../components/Toolbar/BackToolbar/BackToolbar';
+import Caution from 'components/Caution/Caution';
+import BackToolbar from 'components/Toolbar/BackToolbar/BackToolbar';
 import styles from './RentalPage.module.css';
 
 export default function RentalPage() {

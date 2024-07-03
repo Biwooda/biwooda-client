@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react';
-import CTAButton from '../../components/CTAButton/CTAButton.jsx';
-import EmailVerification from '../../components/EmailVerification/EmailVerification.jsx';
-import PasswordVerification from '../../components/PasswordVerification/PasswordVerification.jsx';
-import { RESET_PASSWORD_PAGE_TITLE } from '../../constants/index.js';
-import { checkPasswordFormat } from '../../utils/checkFormat';
-import SubPage from '../SubPage/SubPage';
+import CTAButton from 'components/CTAButton/CTAButton.jsx';
+import EmailVerification from 'components/EmailVerification/EmailVerification.jsx';
+import PasswordVerification from 'components/PasswordVerification/PasswordVerification.jsx';
+import { RESET_PASSWORD_PAGE_TITLE } from 'constants/index.js';
+import { checkPasswordFormat } from 'utils/checkFormat';
+import SubPage from 'pages/SubPage/SubPage';
 import styles from './ResetPasswordPage.module.css';
 
 export default function ResetPasswordPage() {

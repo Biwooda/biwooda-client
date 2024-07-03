@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import Icon from '../../../components/Icon/Icon';
+import Icon from 'components/Icon/Icon';
 import styles from './BackToolbar.module.css';
 
 export default function BackToolbar({ title, children }) {

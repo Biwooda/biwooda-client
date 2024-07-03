@@ -1,6 +1,6 @@
 import React from 'react';
-import getTextColorByBackgroundColor from '../../utils/getTextColorByBackgroundColor';
-import Icon from '../Icon/Icon';
+import getTextColorByBackgroundColor from 'utils/getTextColorByBackgroundColor';
+import Icon from 'components/Icon/Icon';
 import styles from './LoginButton.module.css';
 
 export default function LoginButton({

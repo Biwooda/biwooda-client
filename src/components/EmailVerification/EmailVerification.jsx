@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import DefaultButton from '../../components/DefaultButton/DefaultButton';
-import FeedbackMessage from '../../components/FeedbackMessage/FeedbackMessage';
-import { SIGN_UP_FEEDBACK_MESSAGE } from '../../constants';
-import useTimer from '../../hooks/useTimer';
-import { checkEmailFormat } from '../../utils/checkFormat';
-import toTime from '../../utils/convertNumberToTime';
-import InputField from '../InputField/InputField';
+import DefaultButton from 'components/DefaultButton/DefaultButton';
+import FeedbackMessage from 'components/FeedbackMessage/FeedbackMessage';
+import { SIGN_UP_FEEDBACK_MESSAGE } from 'constants';
+import useTimer from 'hooks/useTimer';
+import { checkEmailFormat } from 'utils/checkFormat';
+import toTime from 'utils/convertNumberToTime';
+import InputField from 'components/InputField/InputField';
 import styles from './EmailVerification.module.css';
 
 export default function EmailVerification({ data, code, setCode, onChange }) {

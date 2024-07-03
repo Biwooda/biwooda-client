@@ -1,9 +1,9 @@
-import { format } from 'date-fns';
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import KakaoPayButton from '../../../components/KakaoPayButton/KakaoPayButton';
-import RoundButton from '../../../components/RoundButton/RoundButton';
-import { FEE } from '../../../constants';
+import { format } from 'date-fns';
+import KakaoPayButton from 'components/KakaoPayButton/KakaoPayButton';
+import RoundButton from 'components/RoundButton/RoundButton';
+import { FEE } from 'constants';
 import styles from './RentalPay.module.css';
 
 export default function RentalPay() {

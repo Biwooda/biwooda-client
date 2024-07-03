@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useUserContext } from '../../contexts/UserContext';
-import Icon from '../Icon/Icon';
+import { useUserContext } from 'contexts/UserContext';
+import Icon from 'components/Icon/Icon';
 import styles from './RentalCard.module.css';
 
 export default function RentalCard() {

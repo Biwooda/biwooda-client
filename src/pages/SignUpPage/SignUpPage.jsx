@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react';
-import CTAButton from '../../components/CTAButton/CTAButton';
-import EmailVerification from '../../components/EmailVerification/EmailVerification';
-import PasswordVerification from '../../components/PasswordVerification/PasswordVerification';
-import { SIGN_UP_PAGE_TITLE } from '../../constants';
-import SubPage from '../../pages/SubPage/SubPage';
-import { checkPasswordFormat } from '../../utils/checkFormat';
+import CTAButton from 'components/CTAButton/CTAButton';
+import EmailVerification from 'components/EmailVerification/EmailVerification';
+import PasswordVerification from 'components/PasswordVerification/PasswordVerification';
+import { SIGN_UP_PAGE_TITLE } from 'constants';
+import SubPage from 'pages/SubPage/SubPage';
+import { checkPasswordFormat } from 'utils/checkFormat';
 import styles from './SignUpPage.module.css';
 
 export default function SignUpPage() {

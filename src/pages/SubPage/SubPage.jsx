@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Icon from '../../components/Icon/Icon';
-import Title from '../../components/Title/Title.jsx';
+import Icon from 'components/Icon/Icon';
+import Title from 'components/Title/Title.jsx';
 import styles from './SubPage.module.css';
 
 export default function SubPage({ title, children }) {

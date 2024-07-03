@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
-import CTAButton from '../../components/CTAButton/CTAButton';
-import BackToolbar from '../../components/Toolbar/BackToolbar/BackToolbar';
-import { RENTAL_RETURN_IMAGE } from '../../constants';
+import CTAButton from 'components/CTAButton/CTAButton';
+import BackToolbar from 'components/Toolbar/BackToolbar/BackToolbar';
+import { RENTAL_RETURN_IMAGE } from 'constants';
 import styles from './RentalReturnGuidePage.module.css';
 
 const CAROUSEL_LENGTH = RENTAL_RETURN_IMAGE.length - 1;

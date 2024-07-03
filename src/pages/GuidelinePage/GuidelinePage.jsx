@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Icon from '../../components/Icon/Icon';
-import CloseToolbar from '../../components/Toolbar/CloseToolbar/CloseToolbar';
+import Icon from 'components/Icon/Icon';
+import CloseToolbar from 'components/Toolbar/CloseToolbar/CloseToolbar';
 import styles from './GuidelinePage.module.css';
 
 export default function GuidelinePage() {

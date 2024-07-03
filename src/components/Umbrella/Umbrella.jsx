@@ -1,5 +1,5 @@
 import React from 'react';
-import umbrella from '../../assets/umbrella.svg';
+import umbrella from 'assets/umbrella.svg';
 import styles from './Umbrella.module.css';
 
 export default function Umbrella() {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Icon from '../../components/Icon/Icon';
+import Icon from 'components/Icon/Icon';
 import styles from './Caution.module.css';
 
 export default function Caution({ init }) {
