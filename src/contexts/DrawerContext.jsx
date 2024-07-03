@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useMemo, useState } from 'react';
 
 const DrawerContext = createContext();
 
@@ -8,10 +8,16 @@ export function DrawerContextProvider({ children }) {
     setIsOpen((prev) => !prev);
   };
 
+  const value = useMemo(
+    () => ({
+      isOpen,
+      toggleDrawer,
+    }),
+    []
+  );
+
   return (
-    <DrawerContext.Provider value={{ isOpen, toggleDrawer }}>
-      {children}
-    </DrawerContext.Provider>
+    <DrawerContext.Provider value={value}>{children}</DrawerContext.Provider>
   );
 }
 

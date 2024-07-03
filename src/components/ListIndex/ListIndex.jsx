@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './ListIndex.module.css';
 
 export default function ListIndex({ children }) {

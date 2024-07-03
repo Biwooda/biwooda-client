@@ -1,10 +1,11 @@
-import { React, useState } from 'react';
+import { useState } from 'react';
 import {
   Container as MapDiv,
   Marker,
   NaverMap,
   NavermapsProvider,
 } from 'react-naver-maps';
+
 import { center, level, markers as markerInfos } from 'constants';
 
 export default function NaverMapWithMarker({ setFocusedMarker }) {
@@ -29,7 +30,7 @@ export default function NaverMapWithMarker({ setFocusedMarker }) {
         >
           {markers.map((marker, index) => (
             <Marker
-              key={index}
+              key={marker.id}
               position={{ lat: marker.lat, lng: marker.lng }}
               onClick={() => handleMarkerClick(index)}
               icon={

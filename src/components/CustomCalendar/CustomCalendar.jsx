@@ -1,33 +1,36 @@
-import { addMonths, format, subMonths } from 'date-fns';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { DateRangePicker } from 'react-date-range';
+
+import { addMonths, format, subMonths } from 'date-fns';
+
+import Icon from 'components/Icon/Icon';
+
+import styles from './CustomCalendar.module.css';
+import './CustomCalendar.css';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
-import Icon from 'components/Icon/Icon';
-import './CustomCalendar.css';
-import styles from './CustomCalendar.module.css';
 
 export default function CustomCalendar({ selectEndDate }) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const [endDate, setEndDate] = useState(today);
 
-  const handleSelect = (ranges) => {
-    const { endDate } = ranges.selection;
+  const handleSelect = ({ selection }) => {
+    const { rangeEndDate } = selection;
 
-    if (today > endDate) {
+    if (today > rangeEndDate) {
       return;
     }
 
-    const diffTime = Math.abs(endDate - today);
+    const diffTime = Math.abs(rangeEndDate - today);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
     if (diffDays > 4) {
       return;
     }
 
-    selectEndDate([today, endDate]);
-    setEndDate(endDate);
+    selectEndDate([today, rangeEndDate]);
+    setEndDate(rangeEndDate);
   };
 
   return (
@@ -36,7 +39,7 @@ export default function CustomCalendar({ selectEndDate }) {
         ranges={[
           {
             startDate: today,
-            endDate: endDate,
+            endDate,
             key: 'selection',
           },
         ]}
@@ -49,20 +52,22 @@ export default function CustomCalendar({ selectEndDate }) {
           />
         )}
         weekdayDisplayFormat='E'
-        showSelectionPreview={true}
+        showSelectionPreview
       />
     </div>
   );
 }
 
-const CustomNavigator = ({ date, onNext, onPrev }) => (
-  <div className={styles.customNavigator}>
-    <button className={styles.monthButton} onClick={onPrev}>
-      <Icon id='leftArrow' stroke='#516875' width={18} height={18} />
-    </button>
-    <span className={styles.shownDate}>{format(date, 'yyyy년 M월')}</span>
-    <button className={styles.monthButton} onClick={onNext}>
-      <Icon id='rightArrow' stroke='#516875' width={18} height={18} />
-    </button>
-  </div>
-);
+function CustomNavigator({ date, onNext, onPrev }) {
+  return (
+    <div className={styles.customNavigator}>
+      <button className={styles.monthButton} onClick={onPrev}>
+        <Icon id='leftArrow' stroke='#516875' width={18} height={18} />
+      </button>
+      <span className={styles.shownDate}>{format(date, 'yyyy년 M월')}</span>
+      <button className={styles.monthButton} onClick={onNext}>
+        <Icon id='rightArrow' stroke='#516875' width={18} height={18} />
+      </button>
+    </div>
+  );
+}

@@ -1,7 +1,7 @@
-import React from 'react';
 import ListIndex from 'components/ListIndex/ListIndex';
 import ListItem from 'components/ListItem/ListItem';
 import BackToolbar from 'components/Toolbar/BackToolbar/BackToolbar';
+
 import styles from './RentalHistoryPage.module.css';
 
 const datas = [

@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+
 import Icon from 'components/Icon/Icon';
+
 import styles from './Caution.module.css';
 
 export default function Caution({ init }) {
@@ -9,10 +11,18 @@ export default function Caution({ init }) {
     <div className={styles.content}>
       <div className={styles.label}>
         <Icon id='caution' fill='#A9BAC6' width={18} height={18} />
-        <div>잠깐 대여 전 확인하세요</div>
+        <div id='caution'>잠깐 대여 전 확인하세요</div>
         <div
           className={styles.arrow}
+          role='button'
+          tabIndex='0'
+          aria-labelledby='caution'
           onClick={() => setIsOpen((prev) => !prev)}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter') {
+              setIsOpen((prev) => !prev);
+            }
+          }}
         >
           <Icon
             id={isOpen ? 'upArrow' : 'downArrow'}
@@ -25,7 +35,8 @@ export default function Caution({ init }) {
       <div className={`${styles.box} ${isOpen && styles.opend}`}>
         <div className={styles.text}>
           <p>
-            <span className={styles.emphasis}>*</span>모든 대여는 시간이 아닌{' '}
+            <span className={styles.emphasis}>*</span>
+            모든 대여는 시간이 아닌{' '}
             <span className={styles.emphasis}>‘일’로 카운트</span>
             됩니다
             <span className={styles.example}>
@@ -34,21 +45,22 @@ export default function Caution({ init }) {
             </span>
           </p>
           <p>
-            <span className={styles.emphasis}>*</span>우산 대여 및 반납은 24시간
-            가능합니다
+            <span className={styles.emphasis}>*</span>
+            우산 대여 및 반납은 24시간 가능합니다
           </p>
           <p>
-            <span className={styles.emphasis}>*</span>반납 시{' '}
-            <span>추가요금</span>은 대여 시의 결제수단으로{' '}
-            <span className={styles.emphasis}>자동으로 결제</span>됩니다
+            <span className={styles.emphasis}>*</span>
+            반납 시 <span>추가요금</span>은 대여 시의 결제수단으로{' '}
+            <span className={styles.emphasis}>자동으로 결제</span>
+            됩니다
           </p>
           <p>
-            <span className={styles.emphasis}>*</span>미반납 시 자동으로 분실
-            처리되며, 다음과 같이 추가 금액이 과금됩니다
+            <span className={styles.emphasis}>*</span>
+            미반납 시 자동으로 분실 처리되며, 다음과 같이 추가 금액이 과금됩니다
           </p>
           <p>
-            <span className={styles.emphasis}>*</span>우산 분실 처리 후 우산은
-            개인소유입니다
+            <span className={styles.emphasis}>*</span>
+            우산 분실 처리 후 우산은 개인소유입니다
           </p>
         </div>
       </div>

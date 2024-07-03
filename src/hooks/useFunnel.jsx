@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 export default function useFunnel(start) {
   const [step, setStep] = useState(start);
@@ -13,9 +13,7 @@ export default function useFunnel(start) {
     [step]
   );
 
-  const Step = useCallback(({ children }) => {
-    return <>{children}</>;
-  }, []);
+  const Step = useCallback(({ children }) => children, []);
 
   Funnel.Step = Step;
 

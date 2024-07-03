@@ -1,4 +1,3 @@
-import React from 'react';
 import ICON_SVG from 'assets/Icon/icon.svg';
 
 export default function Icon({ id, fill, stroke, ...props }) {

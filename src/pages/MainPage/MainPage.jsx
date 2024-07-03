@@ -1,6 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import lego from 'assets/lego.json';
+
+import { useDrawerContext } from 'contexts/DrawerContext';
+import { useUserContext } from 'contexts/UserContext';
+
 import useBottomSheet from 'components/BottomSheet/BottomSheet';
 import CTAButton from 'components/CTAButton/CTAButton';
 import Drawer from 'components/Drawer/Drawer';
@@ -8,9 +11,10 @@ import Icon from 'components/Icon/Icon';
 import Animation from 'components/Loading/Loading';
 import Navbar from 'components/Navbar/Navbar';
 import NaverMapWithMarker from 'components/NaverMap/NaverMap';
+
+import lego from 'assets/lego.json';
 import { GUIDE } from 'constants';
-import { useDrawerContext } from 'contexts/DrawerContext';
-import { useUserContext } from 'contexts/UserContext';
+
 import styles from './MainPage.module.css';
 
 export default function MainPage() {
@@ -30,7 +34,7 @@ export default function MainPage() {
       setIsLoading(false);
     }, 1000);
 
-    const mainElement = mainRef.current;
+    const { current: mainElement } = mainRef;
 
     return () => {
       if (mainElement) {
@@ -42,6 +46,7 @@ export default function MainPage() {
   if (isLoading) return <Animation animationData={lego} />;
 
   return (
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
     <section ref={mainRef} onClick={handleBottomSheet}>
       <Navbar toggleDrawer={toggleDrawer} />
       <NaverMapWithMarker setFocusedMarker={setFocusedMarker} />

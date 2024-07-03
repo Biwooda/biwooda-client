@@ -1,9 +1,11 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+
 import { useUserContext } from 'contexts/UserContext';
+
 import GoToLogin from 'components/GoToLogin/GoToLogin';
 import Icon from 'components/Icon/Icon';
 import CloseToolbar from 'components/Toolbar/CloseToolbar/CloseToolbar';
+
 import styles from './Drawer.module.css';
 
 export default function Drawer() {
@@ -21,7 +23,8 @@ export default function Drawer() {
       >
         {user ? (
           <div className={styles.title}>
-            {user.nickname}님
+            {user.nickname}
+            님
             <br />
             반갑습니다
           </div>
@@ -53,7 +56,17 @@ export default function Drawer() {
           FAQ
         </Link>
         {user && (
-          <div className={styles.item} onClick={() => setUser(null)}>
+          <div
+            className={styles.item}
+            role='button'
+            tabIndex='0'
+            onClick={() => setUser(null)}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') {
+                setUser(null);
+              }
+            }}
+          >
             <Icon id='logout' fill='#516875' width={36} height={36} />
             로그아웃
           </div>

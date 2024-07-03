@@ -1,6 +1,6 @@
-import React from 'react';
 import CTAButton from 'components/CTAButton/CTAButton';
 import BackToolBar from 'components/Toolbar/BackToolbar/BackToolbar';
+
 import styles from './ServiceTime.module.css';
 
 export default function ServiceTime() {

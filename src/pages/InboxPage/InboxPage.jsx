@@ -1,7 +1,7 @@
-import React from 'react';
 import Icon from 'components/Icon/Icon';
 import ListItem from 'components/ListItem/ListItem';
 import BackToolbar from 'components/Toolbar/BackToolbar/BackToolbar';
+
 import styles from './InboxPage.module.css';
 
 const datas = [

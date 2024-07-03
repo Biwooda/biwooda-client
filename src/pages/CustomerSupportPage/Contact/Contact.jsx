@@ -1,8 +1,10 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
+
 import DefaultButton from 'components/DefaultButton/DefaultButton';
 import Icon from 'components/Icon/Icon';
 import InputField from 'components/InputField/InputField';
 import Select from 'components/Select/Select';
+
 import styles from './Contact.module.css';
 
 const options = [
@@ -20,8 +22,8 @@ export default function Contact() {
     category: undefined,
     text: '',
   });
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  const handleChange = ({ target }) => {
+    const { name, value } = target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -44,7 +46,10 @@ export default function Contact() {
         <div className={styles.fileInput}>
           <label htmlFor='inputFileCustom'>
             <Icon id='camera' fill='#92A5B3' width={24} height={24} />
-            <span className={styles.amount}>{files.length}/10</span>
+            <span className={styles.amount}>
+              {files.length}
+              /10
+            </span>
           </label>
           <input
             id='inputFileCustom'
@@ -82,16 +87,15 @@ export default function Contact() {
         <div>
           <label className={styles.label} htmlFor='textarea'>
             글 본문
+            <textarea
+              className={styles.textarea}
+              name='text'
+              value={formData.text}
+              placeholder='500자 이내로 작성해주세요'
+              maxLength='500'
+              onChange={handleChange}
+            />
           </label>
-          <textarea
-            id='textarea'
-            className={styles.textarea}
-            name='text'
-            value={formData.text}
-            placeholder='500자 이내로 작성해주세요'
-            maxLength='500'
-            onChange={handleChange}
-          />
         </div>
         <div className={styles.buttons}>
           <div className={styles.cancleButton}>
@@ -108,12 +112,23 @@ export default function Contact() {
           <div
             ref={arrowRef}
             className={styles.arrow}
+            role='button'
+            tabIndex='0'
             onClick={() => {
               setIsOpen((prev) => !prev);
               arrowRef.current.style = `transform: ${
                 isOpen ? 'rotate(0deg) translateY(2px)' : 'rotate(180deg)'
               }`;
               boxRef.current.style = `opacity: ${isOpen ? 0 : 1}`;
+            }}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') {
+                setIsOpen((prev) => !prev);
+                arrowRef.current.style = `transform: ${
+                  isOpen ? 'rotate(0deg) translateY(2px)' : 'rotate(180deg)'
+                }`;
+                boxRef.current.style = `opacity: ${isOpen ? 0 : 1}`;
+              }
             }}
           >
             <Icon id='downArrow' stroke='#92A5B3' width={17} height={17} />

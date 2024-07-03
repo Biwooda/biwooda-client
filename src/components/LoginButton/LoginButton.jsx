@@ -1,20 +1,27 @@
-import React from 'react';
-import getTextColorByBackgroundColor from 'utils/getTextColorByBackgroundColor';
 import Icon from 'components/Icon/Icon';
+
+import getTextColorByBackgroundColor from 'utils/getTextColorByBackgroundColor';
+
 import styles from './LoginButton.module.css';
 
 export default function LoginButton({
-  label,
   icon,
   backgroundColor = '#ffffff',
   color,
-  onClick,
+  onLogin,
   children,
 }) {
   return (
     <div
       className={styles.button}
-      onClick={onClick}
+      role='button'
+      tabIndex='0'
+      onClick={onLogin}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter') {
+          onLogin();
+        }
+      }}
       style={{
         backgroundColor,
         ...(backgroundColor !== '#ffffff' && { border: 'none' }),

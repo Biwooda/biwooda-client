@@ -1,6 +1,7 @@
-import React from 'react';
 import { useUserContext } from 'contexts/UserContext';
+
 import Icon from 'components/Icon/Icon';
+
 import styles from './Chip.module.css';
 
 export default function Chip() {
