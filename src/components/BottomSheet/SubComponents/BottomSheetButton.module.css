@@ -1,0 +1,21 @@
+.button {
+  width: 100%;
+  padding: 1.4rem 0;
+  border-radius: 0.625rem;
+  border: 2px solid var(--primary-skyblue);
+  background: var(--primary-skyblue);
+  color: var(--grey-scale-0);
+  font: var(--button-text-md-2);
+  letter-spacing: var(--button-text-md-2-letter-spacing);
+  cursor: pointer;
+}
+
+.button.white {
+  border: 2px solid var(--grey-scale-15);
+  background-color: var(--grey-scale-0);
+  color: var(--grey-scale-45);
+}
+
+.button:active {
+  filter: brightness(0.8);
+}
