@@ -6,9 +6,12 @@ import {
   NavermapsProvider,
 } from 'react-naver-maps';
 
+import { useBottomSheetContext } from 'contexts/BottomSheetContext';
+
 import { center, level, markers as markerInfos } from 'constants';
 
 export default function NaverMapWithMarker({ setFocusedMarker }) {
+  const { openBottomSheet } = useBottomSheetContext();
   const [markers, setMarkers] = useState(markerInfos);
   const handleMarkerClick = (index) => {
     const updatedMarkers = markerInfos.map((marker, i) => ({
@@ -19,6 +22,7 @@ export default function NaverMapWithMarker({ setFocusedMarker }) {
     }));
     setMarkers(updatedMarkers);
     setFocusedMarker(markerInfos[index]);
+    openBottomSheet();
   };
 
   return (
@@ -32,7 +36,10 @@ export default function NaverMapWithMarker({ setFocusedMarker }) {
             <Marker
               key={marker.id}
               position={{ lat: marker.lat, lng: marker.lng }}
-              onClick={() => handleMarkerClick(index)}
+              onClick={(event) => {
+                event.originalEvent.stopPropagation();
+                handleMarkerClick(index);
+              }}
               icon={
                 marker.amount === 0
                   ? {

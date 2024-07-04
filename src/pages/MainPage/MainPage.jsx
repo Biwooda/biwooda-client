@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { useBottomSheetContext } from 'contexts/BottomSheetContext';
 import { useDrawerContext } from 'contexts/DrawerContext';
 import { useUserContext } from 'contexts/UserContext';
 
@@ -20,31 +21,20 @@ export default function MainPage() {
   const { isOpen, toggleDrawer } = useDrawerContext();
   const [isLoading, setIsLoading] = useState();
   const [focusedMarker, setFocusedMarker] = useState();
-  const mainRef = useRef(null);
-  const handleBottomSheet = () => {
-    setFocusedMarker(null);
-  };
+  const { isOpen: isOpenBottomSheet } = useBottomSheetContext();
 
   useEffect(() => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
     }, 1000);
-
-    const { current: mainElement } = mainRef;
-
-    return () => {
-      if (mainElement) {
-        mainElement.removeEventListener('click', handleBottomSheet);
-      }
-    };
   }, []);
 
   if (isLoading) return <Animation animationData={lego} />;
 
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-    <section ref={mainRef} onClick={handleBottomSheet}>
+    <section>
       <Navbar toggleDrawer={toggleDrawer} />
       <NaverMapWithMarker setFocusedMarker={setFocusedMarker} />
       {isOpen && <Drawer />}
@@ -53,7 +43,7 @@ export default function MainPage() {
           <CTAButton type='white'>반납하기</CTAButton>
         </BottomSheet>
       )}
-      {focusedMarker && (
+      {isOpenBottomSheet && (
         <BottomSheet>
           <BottomSheet.Title>
             숙명여대 {focusedMarker.label} 앞

@@ -1,4 +1,7 @@
+import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
+
+import { useBottomSheetContext } from 'contexts/BottomSheetContext';
 
 import BottomSheetButton from './SubComponents/BottomSheetButton';
 import BottomSheetDescription from './SubComponents/BottomSheetDescription';
@@ -8,14 +11,29 @@ import BottomSheetTitle from './SubComponents/BottomSheetTitle';
 import styles from './BottomSheet.module.css';
 
 function BottomSheetMain({ children }) {
+  const { closeBottomSheet } = useBottomSheetContext();
   const bottomSheetPortal = document.getElementById('App');
+  const stopPropagation = (event) => event.stopPropagation();
+
+  // if (!idOpen) {
+  //   return null;
+  // }
 
   if (!bottomSheetPortal) {
     return null;
   }
 
+  useEffect(() => {
+    document.addEventListener('click', closeBottomSheet);
+
+    return () => {
+      document.removeEventListener('click', closeBottomSheet);
+    };
+  }, []);
+
   return createPortal(
-    <div className={styles.bottomSheet}>
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+    <div className={styles.bottomSheet} onClick={stopPropagation}>
       <div className={styles.header}>
         <span className={styles.handler} />
       </div>
