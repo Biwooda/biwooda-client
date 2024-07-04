@@ -1,0 +1,4 @@
+.title {
+  font: var(--title-md-2);
+  color: var(--grey-scale-75);
+}
