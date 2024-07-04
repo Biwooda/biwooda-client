@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useDrawerContext } from 'contexts/DrawerContext';
 import { useUserContext } from 'contexts/UserContext';
 
-import useBottomSheet from 'components/BottomSheet/BottomSheet';
+import BottomSheet from 'components/BottomSheet/BottomSheet';
 import CTAButton from 'components/CTAButton/CTAButton';
 import Drawer from 'components/Drawer/Drawer';
 import Icon from 'components/Icon/Icon';
@@ -15,14 +15,11 @@ import NaverMapWithMarker from 'components/NaverMap/NaverMap';
 import lego from 'assets/lego.json';
 import { GUIDE } from 'constants';
 
-import styles from './MainPage.module.css';
-
 export default function MainPage() {
   const { user } = useUserContext();
   const { isOpen, toggleDrawer } = useDrawerContext();
   const [isLoading, setIsLoading] = useState();
   const [focusedMarker, setFocusedMarker] = useState();
-  const { BottomSheetWrapper } = useBottomSheet(focusedMarker);
   const mainRef = useRef(null);
   const handleBottomSheet = () => {
     setFocusedMarker(null);
@@ -52,40 +49,40 @@ export default function MainPage() {
       <NaverMapWithMarker setFocusedMarker={setFocusedMarker} />
       {isOpen && <Drawer />}
       {user?.rentalState && (
-        <BottomSheetWrapper>
+        <BottomSheet>
           <CTAButton type='white'>반납하기</CTAButton>
-        </BottomSheetWrapper>
+        </BottomSheet>
       )}
       {focusedMarker && (
-        <BottomSheetWrapper>
-          <div className={styles.info}>
-            <div className={styles.location}>
-              숙명여대 {focusedMarker.label} 앞
-            </div>
-            <div className={styles.amount}>
-              <Icon id='symbol' fill='#1CAFFF' width={18} height={18} />
-              현재 대여 가능한 우산
-              <div className={styles.longArrow}>
-                <Icon
-                  id='rightArrowLong'
-                  fill='#1CAFFF'
-                  width={95}
-                  height={11}
-                />
-              </div>
-              {focusedMarker.amount}개
-            </div>
-          </div>
-          <div className={styles.guide}>
-            <pre className={styles.guideText}>{GUIDE}</pre>
-            <Link to='/rental-history' className={styles.guideButton}>
-              <Icon id='rightArrow' stroke='#92A5B3' width={18} height={18} />
-            </Link>
-          </div>
+        <BottomSheet>
+          <BottomSheet.Title>
+            숙명여대 {focusedMarker.label} 앞
+          </BottomSheet.Title>
+          <BottomSheet.Label>
+            <Icon
+              id='symbol'
+              fill='#1CAFFF'
+              width={18}
+              height={18}
+              style={{ marginRight: '0.25rem' }}
+            />
+            현재 대여 가능한 우산
+            <Icon
+              id='rightArrowLong'
+              fill='#1CAFFF'
+              width={95}
+              height={11}
+              style={{ margin: '0 0.5rem' }}
+            />
+            {focusedMarker.amount}개
+          </BottomSheet.Label>
+          <BottomSheet.Description hasArrowButton to='/rental-history'>
+            {GUIDE}
+          </BottomSheet.Description>
           <Link to='qr-scan'>
-            <CTAButton>스캔하고 대여하기</CTAButton>
+            <BottomSheet.Button>스캔하고 대여하기</BottomSheet.Button>
           </Link>
-        </BottomSheetWrapper>
+        </BottomSheet>
       )}
     </section>
   );
