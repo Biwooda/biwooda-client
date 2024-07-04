@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  background: var(--grey-scale-10);
+  border-radius: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.description {
+  padding: 1.5rem 1.75rem;
+  flex: 1;
+  font: var(--text-md);
+  color: var(--grey-scale-40);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.arrowButton {
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0.75rem 0.75rem 0;
+  background: var(--grey-scale-10);
+  cursor: pointer;
+}
+
+.arrowButton:hover {
+  filter: brightness(0.9);
+}
+
+.arrowButton:active {
+  filter: brightness(0.8);
+}
