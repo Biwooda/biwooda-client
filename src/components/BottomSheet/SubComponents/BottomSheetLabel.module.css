@@ -1,0 +1,7 @@
+.label {
+  padding: 0 1.625rem;
+  display: flex;
+  align-items: center;
+  font: var(--text-md-emphasis);
+  color: var(--skyblue);
+}
