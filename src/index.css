@@ -76,7 +76,7 @@
   --label-md-letter-spacing: 0%;
 
   --button-text-lg-letter-spacing: 2%;
-  --button-text-md2-letter-spacing: 1.2%;
+  --button-text-md-2-letter-spacing: 1.2%;
   --button-text-md-letter-spacing: 0%;
   --button-text-sm-letter-spacing: -1%;
 
@@ -94,16 +94,29 @@ h4,
 h5,
 h6,
 div,
-p {
+p,
+pre {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: 'Pretendard Variable', Pretendard, -apple-system,
-    BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
-    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-family:
+    'Pretendard Variable',
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    'Helvetica Neue',
+    'Segoe UI',
+    'Apple SD Gothic Neo',
+    'Noto Sans KR',
+    'Malgun Gothic',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    sans-serif;
   background-color: rgb(202, 202, 202);
 }
 
