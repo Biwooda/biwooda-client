@@ -9,7 +9,7 @@ function App() {
   return (
     <UserContextProvider>
       <DrawerContextProvider>
-        <div className='App'>
+        <div id='App'>
           <Outlet />
         </div>
       </DrawerContextProvider>
