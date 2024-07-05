@@ -102,6 +102,19 @@ label {
   padding: 0;
 }
 
+button {
+  border: none;
+  outline: none;
+}
+
+input {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 body {
   font-family:
     'Pretendard Variable',
@@ -122,17 +135,14 @@ body {
   background-color: rgb(202, 202, 202);
 }
 
-button {
-  border: none;
-  outline: none;
-}
-
-input {
-  outline: none;
-}
-
-a {
-  text-decoration: none;
+#bottomSheet {
+  max-width: 450px;
+  max-height: 935px;
+  min-height: 667px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: white;
+  overflow-y: auto;
 }
 
 @media screen and (max-width: 400px) {

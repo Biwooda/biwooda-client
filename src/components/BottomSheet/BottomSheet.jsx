@@ -1,8 +1,6 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-import { useBottomSheetContext } from 'contexts/BottomSheetContext';
-
 import BottomSheetButton from './SubComponents/BottomSheetButton';
 import BottomSheetButtons from './SubComponents/BottomSheetButtons';
 import BottomSheetDescription from './SubComponents/BottomSheetDescription';
@@ -11,14 +9,13 @@ import BottomSheetTitle from './SubComponents/BottomSheetTitle';
 
 import styles from './BottomSheet.module.css';
 
-function BottomSheetMain({ children }) {
-  const { isOpen, closeBottomSheet } = useBottomSheetContext();
-  const bottomSheetPortal = document.getElementById('App');
+function BottomSheetMain({ children, isOpen, setIsOpen }) {
+  const bottomSheetPortal = document.getElementById('bottomSheet');
 
   useEffect(() => {
     const close = (event) => {
       if (!event.target.closest(`.${styles.bottomSheet}`)) {
-        closeBottomSheet();
+        setIsOpen(false);
       }
     };
 
@@ -29,7 +26,7 @@ function BottomSheetMain({ children }) {
     return () => {
       document.removeEventListener('click', close);
     };
-  }, [isOpen, closeBottomSheet]);
+  }, [isOpen, setIsOpen]);
 
   if (!isOpen || !bottomSheetPortal) {
     return null;
