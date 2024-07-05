@@ -20,6 +20,7 @@ export default function MainPage() {
   const { isOpen, toggleDrawer } = useDrawerContext();
   const [isLoading, setIsLoading] = useState();
   const [focusedMarker, setFocusedMarker] = useState();
+  const [isBottomSheetOpen, setIsBottomSheetOpen] = useState();
 
   useEffect(() => {
     setIsLoading(true);
@@ -33,14 +34,15 @@ export default function MainPage() {
   return (
     <section>
       <Navbar toggleDrawer={toggleDrawer} />
-      <NaverMapWithMarker setFocusedMarker={setFocusedMarker} />
+      <NaverMapWithMarker
+        setFocusedMarker={setFocusedMarker}
+        setIsBottomSheetOpen={setIsBottomSheetOpen}
+      />
       {isOpen && <Drawer />}
-      {user?.rentalState && (
-        <BottomSheet>
-          <CTAButton type='white'>반납하기</CTAButton>
-        </BottomSheet>
-      )}
-      <BottomSheet>
+      <BottomSheet isOpen={user?.rentalState} setIsOpen={() => {}}>
+        <CTAButton type='white'>반납하기</CTAButton>
+      </BottomSheet>
+      <BottomSheet isOpen={isBottomSheetOpen} setIsOpen={setIsBottomSheetOpen}>
         <BottomSheet.Title>
           숙명여대 {focusedMarker?.label} 앞
         </BottomSheet.Title>
