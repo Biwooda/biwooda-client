@@ -95,7 +95,9 @@ h5,
 h6,
 div,
 p,
-pre {
+pre,
+input,
+label {
   margin: 0;
   padding: 0;
 }

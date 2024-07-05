@@ -6,6 +6,11 @@
   margin-bottom: 0.75rem;
 }
 
+.container.hasCheck {
+  padding-bottom: 1em;
+  flex-direction: column;
+}
+
 .description {
   padding: 1.5rem 1.75rem;
   flex: 1;
@@ -31,4 +36,29 @@
 
 .arrowButton:active {
   filter: brightness(0.8);
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-image: url(assets/Icon/checkbox.svg);
+  background-size: cover;
+  cursor: pointer;
+}
+
+.checkbox:checked {
+  background-image: url(assets/images/dummy.svg);
+}
+
+.text {
+  font: var(--text);
+  color: var(--grey-scale-45);
 }
