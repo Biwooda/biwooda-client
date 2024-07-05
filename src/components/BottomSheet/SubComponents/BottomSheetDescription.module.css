@@ -3,7 +3,12 @@
   justify-content: space-between;
   background: var(--grey-scale-10);
   border-radius: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin: 1.5rem 0 0.75rem 0;
+}
+
+.container.hasCheck {
+  padding-bottom: 1em;
+  flex-direction: column;
 }
 
 .description {
@@ -31,4 +36,29 @@
 
 .arrowButton:active {
   filter: brightness(0.8);
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-image: url(assets/Icon/checkbox.svg);
+  background-size: cover;
+  cursor: pointer;
+}
+
+.checkbox:checked {
+  background-image: url(assets/images/dummy.svg);
+}
+
+.text {
+  font: var(--text);
+  color: var(--grey-scale-45);
 }

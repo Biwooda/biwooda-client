@@ -1,6 +1,6 @@
 .button {
-  width: 100%;
   padding: 1.4rem 0;
+  width: 100%;
   border-radius: 0.625rem;
   border: 2px solid var(--primary-skyblue);
   background: var(--primary-skyblue);

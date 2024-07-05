@@ -4,6 +4,7 @@ import { createPortal } from 'react-dom';
 import { useBottomSheetContext } from 'contexts/BottomSheetContext';
 
 import BottomSheetButton from './SubComponents/BottomSheetButton';
+import BottomSheetButtons from './SubComponents/BottomSheetButtons';
 import BottomSheetDescription from './SubComponents/BottomSheetDescription';
 import BottomSheetLabel from './SubComponents/BottomSheetLabel';
 import BottomSheetTitle from './SubComponents/BottomSheetTitle';
@@ -48,6 +49,7 @@ const BottomSheet = Object.assign(BottomSheetMain, {
   Label: BottomSheetLabel,
   Description: BottomSheetDescription,
   Button: BottomSheetButton,
+  Buttons: BottomSheetButtons,
 });
 
 export default BottomSheet;
