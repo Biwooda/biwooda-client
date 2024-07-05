@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { useBottomSheetContext } from 'contexts/BottomSheetContext';
 import { useDrawerContext } from 'contexts/DrawerContext';
 import { useUserContext } from 'contexts/UserContext';
 
@@ -21,7 +20,6 @@ export default function MainPage() {
   const { isOpen, toggleDrawer } = useDrawerContext();
   const [isLoading, setIsLoading] = useState();
   const [focusedMarker, setFocusedMarker] = useState();
-  const { isOpen: isOpenBottomSheet } = useBottomSheetContext();
 
   useEffect(() => {
     setIsLoading(true);
@@ -33,7 +31,6 @@ export default function MainPage() {
   if (isLoading) return <Animation animationData={lego} />;
 
   return (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
     <section>
       <Navbar toggleDrawer={toggleDrawer} />
       <NaverMapWithMarker setFocusedMarker={setFocusedMarker} />
@@ -43,37 +40,35 @@ export default function MainPage() {
           <CTAButton type='white'>반납하기</CTAButton>
         </BottomSheet>
       )}
-      {isOpenBottomSheet && (
-        <BottomSheet>
-          <BottomSheet.Title>
-            숙명여대 {focusedMarker.label} 앞
-          </BottomSheet.Title>
-          <BottomSheet.Label>
-            <Icon
-              id='symbol'
-              fill='#1CAFFF'
-              width={18}
-              height={18}
-              style={{ marginRight: '0.25rem' }}
-            />
-            현재 대여 가능한 우산
-            <Icon
-              id='rightArrowLong'
-              fill='#1CAFFF'
-              width={95}
-              height={11}
-              style={{ margin: '0 0.5rem' }}
-            />
-            {focusedMarker.amount}개
-          </BottomSheet.Label>
-          <BottomSheet.Description hasArrowButton to='/rental-history'>
-            {GUIDE}
-          </BottomSheet.Description>
-          <Link to='qr-scan'>
-            <BottomSheet.Button>스캔하고 대여하기</BottomSheet.Button>
-          </Link>
-        </BottomSheet>
-      )}
+      <BottomSheet>
+        <BottomSheet.Title>
+          숙명여대 {focusedMarker?.label} 앞
+        </BottomSheet.Title>
+        <BottomSheet.Label>
+          <Icon
+            id='symbol'
+            fill='#1CAFFF'
+            width={18}
+            height={18}
+            style={{ marginRight: '0.25rem' }}
+          />
+          현재 대여 가능한 우산
+          <Icon
+            id='rightArrowLong'
+            fill='#1CAFFF'
+            width={95}
+            height={11}
+            style={{ margin: '0 0.5rem' }}
+          />
+          {focusedMarker?.amount}개
+        </BottomSheet.Label>
+        <BottomSheet.Description hasArrowButton to='/rental-history'>
+          {GUIDE}
+        </BottomSheet.Description>
+        <Link to='qr-scan'>
+          <BottomSheet.Button>스캔하고 대여하기</BottomSheet.Button>
+        </Link>
+      </BottomSheet>
     </section>
   );
 }

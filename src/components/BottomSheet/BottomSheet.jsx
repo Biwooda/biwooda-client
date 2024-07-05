@@ -12,29 +12,31 @@ import BottomSheetTitle from './SubComponents/BottomSheetTitle';
 import styles from './BottomSheet.module.css';
 
 function BottomSheetMain({ children }) {
-  const { closeBottomSheet } = useBottomSheetContext();
+  const { isOpen, closeBottomSheet } = useBottomSheetContext();
   const bottomSheetPortal = document.getElementById('App');
-  const stopPropagation = (event) => event.stopPropagation();
 
-  // if (!idOpen) {
-  //   return null;
-  // }
+  useEffect(() => {
+    const close = (event) => {
+      if (!event.target.closest(`.${styles.bottomSheet}`)) {
+        closeBottomSheet();
+      }
+    };
 
-  if (!bottomSheetPortal) {
+    if (isOpen) {
+      document.addEventListener('click', close);
+    }
+
+    return () => {
+      document.removeEventListener('click', close);
+    };
+  }, [isOpen, closeBottomSheet]);
+
+  if (!isOpen || !bottomSheetPortal) {
     return null;
   }
 
-  useEffect(() => {
-    document.addEventListener('click', closeBottomSheet);
-
-    return () => {
-      document.removeEventListener('click', closeBottomSheet);
-    };
-  }, []);
-
   return createPortal(
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-    <div className={styles.bottomSheet} onClick={stopPropagation}>
+    <div className={styles.bottomSheet}>
       <div className={styles.header}>
         <span className={styles.handler} />
       </div>
