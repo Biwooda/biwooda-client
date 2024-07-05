@@ -13,7 +13,7 @@ import styles from './BottomSheet.module.css';
 
 function BottomSheetMain({ children }) {
   const { isOpen, closeBottomSheet } = useBottomSheetContext();
-  const bottomSheetPortal = document.getElementById('App');
+  const bottomSheetPortal = document.getElementById('bottomSheet');
 
   useEffect(() => {
     const close = (event) => {
