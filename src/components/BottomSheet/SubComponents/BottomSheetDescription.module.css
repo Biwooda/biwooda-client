@@ -3,7 +3,7 @@
   justify-content: space-between;
   background: var(--grey-scale-10);
   border-radius: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin: 1.5rem 0 0.75rem 0;
 }
 
 .container.hasCheck {
