@@ -1,4 +1,9 @@
 .title {
+  padding: 0 1.625rem;
   font: var(--title-md-2);
   color: var(--grey-scale-75);
+}
+
+.title.center {
+  text-align: center;
 }
