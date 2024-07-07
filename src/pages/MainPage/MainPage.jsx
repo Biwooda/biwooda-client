@@ -31,6 +31,8 @@ export default function MainPage() {
 
   if (isLoading) return <Animation animationData={lego} />;
 
+  console.log('test 중입니다!');
+
   return (
     <section>
       <Navbar toggleDrawer={toggleDrawer} />
