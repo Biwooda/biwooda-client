@@ -29,7 +29,7 @@ export default function MainPage() {
     }, 1000);
   }, []);
 
-  if (isLoading) return <Animation animationData={lego} />;
+  // if (isLoading) return <Animation animationData={lego} />;
 
   return (
     <section>
@@ -64,7 +64,7 @@ export default function MainPage() {
           />
           {focusedMarker?.amount}개
         </BottomSheet.Label>
-        <BottomSheet.Description hasArrowButton to='/rental-history'>
+        <BottomSheet.Description to='/rental-history'>
           {GUIDE}
         </BottomSheet.Description>
         <Link to='qr-scan'>
