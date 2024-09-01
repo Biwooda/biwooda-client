@@ -1,13 +1,13 @@
-import { useUserContext } from '@/contexts/UserContext';
+import { useAuthContext } from '@/contexts/AuthContext.jsx';
 
 import { Icon } from '@/components/Icon';
 
 import styles from './Chip.module.css';
 
 export default function Chip() {
-  const { user } = useUserContext();
-  if (!user || !user?.rentalState) return null;
-  const { overdue } = user;
+  const { ticket } = useAuthContext();
+  if (!ticket || !ticket?.rentalState) return null;
+  const { overdue } = ticket;
 
   return (
     <div className={`${styles.tag} ${overdue && styles.overdue}`}>

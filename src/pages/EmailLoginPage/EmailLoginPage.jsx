@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { useUserContext } from '@/contexts/UserContext';
+import { useAuthContext } from '@/contexts/AuthContext';
 
 import { SubPage } from '@/pages/SubPage';
 
@@ -17,7 +17,7 @@ import { EMAIL_LOGIN_PAGE_TITLE, LOGIN_FEEDBACK_MESSAGE } from '@/constants';
 import styles from './EmailLoginPage.module.css';
 
 export default function EmailLoginPage() {
-  const { setUser } = useUserContext();
+  const { handleEmailLogin } = useAuthContext();
   const [formData, setFormData] = useState({ email: '', password: '' });
   const handleChange = ({ target }) => {
     const { name, value } = target;
@@ -72,13 +72,17 @@ export default function EmailLoginPage() {
       <div>
         <CTAButton
           onClick={() => {
-            setUser({
-              nickname: formData.email.split('@')[0],
-              rentalState: false,
-              // overdue: false,
-              // due: '2024.06.27 20:00',
-              // ticket: '2일권',
+            handleEmailLogin({
+              email: formData.email,
+              password: formData.password,
             });
+            // setUser({
+            //   nickname: formData.email.split('@')[0],
+            //   rentalState: false,
+            //   // overdue: false,
+            //   // due: '2024.06.27 20:00',
+            //   // ticket: '2일권',
+            // });
             <Snackbar.Action>로그인에 성공했습니다.</Snackbar.Action>;
             navigate('/');
           }}

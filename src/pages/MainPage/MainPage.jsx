@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useDrawerContext } from '@/contexts/DrawerContext';
-import { useUserContext } from '@/contexts/UserContext';
+import { useAuthContext } from '@/contexts/AuthContext';
 
 import { Animation } from '@/components/Loading';
 import { BottomSheet } from '@/components/BottomSheet';
@@ -17,7 +17,7 @@ import lego from '@/assets/lego.json';
 import { GUIDE } from '@/constants';
 
 export default function MainPage() {
-  const { user } = useUserContext();
+  const { user, ticket } = useAuthContext();
   const { isOpen, toggleDrawer } = useDrawerContext();
   const [isLoading, setIsLoading] = useState();
   const [focusedMarker, setFocusedMarker] = useState();
@@ -40,7 +40,7 @@ export default function MainPage() {
         setIsBottomSheetOpen={setIsBottomSheetOpen}
       />
       {isOpen && <Drawer />}
-      <BottomSheet isOpen={user?.rentalState} setIsOpen={() => {}}>
+      <BottomSheet isOpen={user && ticket?.rentalState} setIsOpen={() => {}}>
         <CTAButton type='white'>반납하기</CTAButton>
       </BottomSheet>
       <BottomSheet isOpen={isBottomSheetOpen} setIsOpen={setIsBottomSheetOpen}>

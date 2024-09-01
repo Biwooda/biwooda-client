@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { useUserContext } from '@/contexts/UserContext';
+import { useAuthContext } from '@/contexts/AuthContext.jsx';
 
 import { CloseToolbar } from '@/components/Toolbar';
 import { GoToLogin } from '@/components/GoToLogin';
@@ -9,7 +9,7 @@ import { Icon } from '@/components/Icon';
 import styles from './Drawer.module.css';
 
 export default function Drawer() {
-  const { user, setUser } = useUserContext();
+  const { user, logout } = useAuthContext();
 
   return (
     <section className={styles.container}>
@@ -23,7 +23,7 @@ export default function Drawer() {
       >
         {user ? (
           <div className={styles.title}>
-            {user.nickname}
+            {user.displayName}
             님
             <br />
             반갑습니다
@@ -60,10 +60,10 @@ export default function Drawer() {
             className={styles.item}
             role='button'
             tabIndex='0'
-            onClick={() => setUser(null)}
+            onClick={() => logout()}
             onKeyDown={(event) => {
               if (event.key === 'Enter') {
-                setUser(null);
+                logout();
               }
             }}
           >
