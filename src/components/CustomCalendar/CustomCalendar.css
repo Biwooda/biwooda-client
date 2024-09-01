@@ -2,20 +2,20 @@
 .rdrDateDisplayWrapper {
   display: none;
 }
-
+/* 
 .rdrCalendarWrapper {
   background-color: transparent;
-}
-
+} */
+/* 
 .rdrMonth {
   padding: 0;
-}
+} */
 
-.rdrDay {
+/* .rdrDay {
   height: 3rem;
-}
+} */
 
-.rdrStartEdge,
+/* .rdrStartEdge,
 .rdrEndEdge {
   width: 75%;
   height: 75%;
@@ -25,59 +25,59 @@
   background-color: var(--primary-skyblue);
   border-radius: 50px;
   z-index: 1;
-}
-
+} */
+/* 
 .rdrEndEdge::after {
   display: block;
   content: '';
   width: 150%;
   height: 30px;
-  /* background-color: #1ce0b1; */
+  background-color: #1ce0b1;
   background-color: var(--primary-skyblue);
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-100%, -50%);
   z-index: -1;
-}
-
+} */
+/* 
 .rdrStartEdge.rdrEndEdge::after {
   display: none;
-}
-
+} */
+/* 
 .rdrDayStartOfWeek .rdrEndEdge {
   border-radius: 50px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
+} */
+/* 
 .rdrInRange {
   width: 200%;
   height: 30px;
-  /* background-color: #1ce0b1; */
+  background-color: #1ce0b1;
   background-color: var(--primary-skyblue);
   top: 50%;
   transform: translate(-15%, -50%);
-}
+} */
 
-.rdrDayStartOfWeek .rdrInRange {
+/* .rdrDayStartOfWeek .rdrInRange {
   border-radius: 0;
   left: -15px;
-}
-
+} */
+/* 
 .rdrDayEndOfWeek .rdrInRange {
   border-radius: 0;
-}
+} */
 
-.rdrDayNumber {
+/* .rdrDayNumber {
   height: 100%;
   font: var(--text-lg);
   color: var(--grey-scale-60);
   top: 0;
   z-index: 2;
-}
+} */
 
-.rdrDayPassive {
+/* .rdrDayPassive {
   opacity: 0;
-}
+} */

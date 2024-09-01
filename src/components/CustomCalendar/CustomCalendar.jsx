@@ -13,10 +13,11 @@ import 'react-date-range/dist/theme/default.css';
 export default function CustomCalendar({ selectEndDate }) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
+
   const [endDate, setEndDate] = useState(today);
 
   const handleSelect = ({ selection }) => {
-    const { rangeEndDate } = selection;
+    const { endDate: rangeEndDate } = selection;
 
     if (today > rangeEndDate) {
       return;
