@@ -12,7 +12,7 @@ export default function Navbar({ toggleDrawer }) {
 
   return (
     <nav className={styles.nav}>
-      <div
+      {/* <div
         className={styles.menu}
         role='button'
         tabIndex='0'
@@ -24,13 +24,13 @@ export default function Navbar({ toggleDrawer }) {
         }}
       >
         <Icon id='hamburger' fill='#38B9FF' width={36} height={36} />
-      </div>
+      </div> */}
       <div className={styles.logo}>
         <Icon id='logo' width={130} height={31} />
       </div>
-      <Link to='/mypage' className={styles.mypage}>
+      {/* <Link to='/mypage' className={styles.mypage}>
         <Icon id='person' fill='#38B9FF' width={36} height={36} />
-      </Link>
+      </Link> */}
       {user?.rentalState && (
         <div className={styles.card}>
           <RentalCard />
