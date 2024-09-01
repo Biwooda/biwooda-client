@@ -1,6 +1,6 @@
-import ListIndex from 'components/ListIndex/ListIndex';
-import ListItem from 'components/ListItem/ListItem';
-import BackToolbar from 'components/Toolbar/BackToolbar/BackToolbar';
+import { BackToolbar } from '@/components/Toolbar';
+import { ListIndex } from '@/components/ListIndex';
+import { ListItem } from '@/components/ListItem';
 
 import styles from './RentalHistoryPage.module.css';
 

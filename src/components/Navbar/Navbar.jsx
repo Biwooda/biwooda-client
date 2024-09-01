@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 
-import { useUserContext } from 'contexts/UserContext';
+import { useUserContext } from '@/contexts/UserContext';
 
-import Icon from 'components/Icon/Icon';
-import RentalCard from 'components/RentalCard/RentalCard';
+import { Icon } from '@/components/Icon';
+import { RentalCard } from '@/components/RentalCard';
 
 import styles from './Navbar.module.css';
 

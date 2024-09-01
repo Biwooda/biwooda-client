@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
 
-import DefaultButton from 'components/DefaultButton/DefaultButton';
-import Icon from 'components/Icon/Icon';
-import InputField from 'components/InputField/InputField';
-import Select from 'components/Select/Select';
+import { DefaultButton } from '@/components/DefaultButton';
+import { Icon } from '@/components/Icon';
+import { InputField } from '@/components/InputField';
+import { Select } from '@/components/Select';
 
 import styles from './Contact.module.css';
 

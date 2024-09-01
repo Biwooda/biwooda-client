@@ -1,4 +1,4 @@
-import umbrella from 'assets/umbrella.svg';
+import umbrella from '@/assets/umbrella.svg';
 
 import styles from './Umbrella.module.css';
 

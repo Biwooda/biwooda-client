@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-import { useUserContext } from 'contexts/UserContext';
+import { useUserContext } from '@/contexts/UserContext';
 
-import GoToLogin from 'components/GoToLogin/GoToLogin';
-import Icon from 'components/Icon/Icon';
-import CloseToolbar from 'components/Toolbar/CloseToolbar/CloseToolbar';
+import { CloseToolbar } from '@/components/Toolbar';
+import { GoToLogin } from '@/components/GoToLogin';
+import { Icon } from '@/components/Icon';
 
 import styles from './Drawer.module.css';
 

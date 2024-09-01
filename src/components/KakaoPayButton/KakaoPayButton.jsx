@@ -1,4 +1,4 @@
-import Icon from 'components/Icon/Icon';
+import { Icon } from '@/components/Icon';
 
 import styles from './KakaoPayButton.module.css';
 

@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
-import BackToolbar from 'components/Toolbar/BackToolbar/BackToolbar';
+import { BackToolbar } from '@/components/Toolbar';
 
 import styles from './CustomerSupportPage.module.css';
 

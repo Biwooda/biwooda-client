@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 
-import Icon from 'components/Icon/Icon';
-import LoginButton from 'components/LoginButton/LoginButton';
-import Title from 'components/Title/Title';
-import Umbrella from 'components/Umbrella/Umbrella';
+import { Icon } from '@/components/Icon';
+import { LoginButton } from '@/components/LoginButton';
+import { Title } from '@/components/Title';
+import { Umbrella } from '@/components/Umbrella';
 
 import styles from './LoginPage.module.css';
 

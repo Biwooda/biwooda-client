@@ -3,7 +3,7 @@ import { DateRangePicker } from 'react-date-range';
 
 import { addMonths, format, subMonths } from 'date-fns';
 
-import Icon from 'components/Icon/Icon';
+import { Icon } from '@/components/Icon';
 
 import styles from './CustomCalendar.module.css';
 import './CustomCalendar.css';

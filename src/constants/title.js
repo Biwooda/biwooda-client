@@ -1,4 +1,4 @@
-const EMAIL_LOGIN_PAGE_TITLE = {
+export const EMAIL_LOGIN_PAGE_TITLE = {
   icon: {
     id: 'email',
     fill: '#38B9FF',
@@ -9,7 +9,7 @@ const EMAIL_LOGIN_PAGE_TITLE = {
   description: '이메일과 비밀번호로 로그인해봐요',
 };
 
-const SIGN_UP_PAGE_TITLE = {
+export const SIGN_UP_PAGE_TITLE = {
   step1: {
     icon: {
       id: 'symbol',
@@ -32,7 +32,7 @@ const SIGN_UP_PAGE_TITLE = {
   },
 };
 
-const RESET_PASSWORD_PAGE_TITLE = {
+export const RESET_PASSWORD_PAGE_TITLE = {
   step1: {
     icon: {
       id: 'waterdrop',
@@ -53,10 +53,4 @@ const RESET_PASSWORD_PAGE_TITLE = {
     title: '비밀번호 재설정',
     description: '새로 사용할 비밀번호를 입력해주세요',
   },
-};
-
-export {
-  EMAIL_LOGIN_PAGE_TITLE,
-  RESET_PASSWORD_PAGE_TITLE,
-  SIGN_UP_PAGE_TITLE,
 };

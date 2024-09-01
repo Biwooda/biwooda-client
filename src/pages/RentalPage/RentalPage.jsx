@@ -1,7 +1,7 @@
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
-import Caution from 'components/Caution/Caution';
-import BackToolbar from 'components/Toolbar/BackToolbar/BackToolbar';
+import { BackToolbar } from '@/components/Toolbar';
+import { Caution } from '@/components/Caution';
 
 import styles from './RentalPage.module.css';
 

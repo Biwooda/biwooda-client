@@ -1,9 +1,9 @@
-import FeedbackMessage from 'components/FeedbackMessage/FeedbackMessage';
-import InputField from 'components/InputField/InputField';
+import { FeedbackMessage } from '@/components/FeedbackMessage';
+import { InputField } from '@/components/InputField';
 
-import { checkPasswordFormat } from 'utils/checkFormat';
+import { checkPasswordFormat } from '@/utils/checkFormat';
 
-import { SIGN_UP_FEEDBACK_MESSAGE } from 'constants';
+import { SIGN_UP_FEEDBACK_MESSAGE } from '@/constants';
 
 import styles from './PasswordVerification.module.css';
 

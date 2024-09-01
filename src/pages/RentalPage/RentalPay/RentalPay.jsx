@@ -3,10 +3,10 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import { format } from 'date-fns';
 
-import KakaoPayButton from 'components/KakaoPayButton/KakaoPayButton';
-import RoundButton from 'components/RoundButton/RoundButton';
+import { KakaoPayButton } from '@/components/KakaoPayButton';
+import { RoundButton } from '@/components/RoundButton';
 
-import { FEE } from 'constants';
+import { FEE } from '@/constants';
 
 import styles from './RentalPay.module.css';
 

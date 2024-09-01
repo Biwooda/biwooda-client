@@ -1,6 +1,6 @@
-import { useUserContext } from 'contexts/UserContext';
+import { useUserContext } from '@/contexts/UserContext';
 
-import Icon from 'components/Icon/Icon';
+import { Icon } from '@/components/Icon';
 
 import styles from './Chip.module.css';
 

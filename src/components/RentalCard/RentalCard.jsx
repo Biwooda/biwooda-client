@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import { useUserContext } from 'contexts/UserContext';
+import { useUserContext } from '@/contexts/UserContext';
 
-import Icon from 'components/Icon/Icon';
+import { Icon } from '@/components/Icon';
 
 import styles from './RentalCard.module.css';
 

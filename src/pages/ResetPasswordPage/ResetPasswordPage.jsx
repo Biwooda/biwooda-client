@@ -1,14 +1,14 @@
 import { useRef, useState } from 'react';
 
-import SubPage from 'pages/SubPage/SubPage';
+import { SubPage } from '@/pages/SubPage';
 
-import CTAButton from 'components/CTAButton/CTAButton';
-import EmailVerification from 'components/EmailVerification/EmailVerification';
-import PasswordVerification from 'components/PasswordVerification/PasswordVerification';
+import { CTAButton } from '@/components/CTAButton';
+import { EmailVerification } from '@/components/EmailVerification';
+import { PasswordVerification } from '@/components/PasswordVerification';
 
-import { RESET_PASSWORD_PAGE_TITLE } from 'constants/index.js';
+import { checkPasswordFormat } from '@/utils';
 
-import { checkPasswordFormat } from 'utils/checkFormat';
+import { RESET_PASSWORD_PAGE_TITLE } from '@/constants';
 
 import styles from './ResetPasswordPage.module.css';
 

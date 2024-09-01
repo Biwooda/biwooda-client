@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 
-import { DrawerContextProvider } from 'contexts/DrawerContext';
-import { UserContextProvider } from 'contexts/UserContext';
+import { DrawerContextProvider } from '@/contexts/DrawerContext';
+import { UserContextProvider } from '@/contexts/UserContext';
 
 import './App.css';
 

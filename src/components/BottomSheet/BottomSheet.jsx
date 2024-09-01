@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-import BottomSheetButton from './SubComponents/BottomSheetButton';
-import BottomSheetButtons from './SubComponents/BottomSheetButtons';
-import BottomSheetDescription from './SubComponents/BottomSheetDescription';
-import BottomSheetLabel from './SubComponents/BottomSheetLabel';
-import BottomSheetTitle from './SubComponents/BottomSheetTitle';
+import BottomSheetButton from './SubComponents/BottomSheetButton.jsx';
+import BottomSheetButtons from './SubComponents/BottomSheetButtons.jsx';
+import BottomSheetDescription from './SubComponents/BottomSheetDescription.jsx';
+import BottomSheetLabel from './SubComponents/BottomSheetLabel.jsx';
+import BottomSheetTitle from './SubComponents/BottomSheetTitle.jsx';
 
 import styles from './BottomSheet.module.css';
 

@@ -1,19 +1,20 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { useDrawerContext } from 'contexts/DrawerContext';
-import { useUserContext } from 'contexts/UserContext';
+import { useDrawerContext } from '@/contexts/DrawerContext';
+import { useUserContext } from '@/contexts/UserContext';
 
-import BottomSheet from 'components/BottomSheet/BottomSheet';
-import CTAButton from 'components/CTAButton/CTAButton';
-import Drawer from 'components/Drawer/Drawer';
-import Icon from 'components/Icon/Icon';
-import Animation from 'components/Loading/Loading';
-import Navbar from 'components/Navbar/Navbar';
-import NaverMapWithMarker from 'components/NaverMap/NaverMap';
+import { Animation } from '@/components/Loading';
+import { BottomSheet } from '@/components/BottomSheet';
+import { CTAButton } from '@/components/CTAButton';
+import { Drawer } from '@/components/Drawer';
+import { Icon } from '@/components/Icon';
+import { Navbar } from '@/components/Navbar';
+import { NaverMapWithMarker } from '@/components/NaverMap';
 
-import lego from 'assets/lego.json';
-import { GUIDE } from 'constants';
+import lego from '@/assets/lego.json';
+
+import { GUIDE } from '@/constants';
 
 export default function MainPage() {
   const { user } = useUserContext();

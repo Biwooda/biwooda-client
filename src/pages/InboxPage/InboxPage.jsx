@@ -1,6 +1,6 @@
-import Icon from 'components/Icon/Icon';
-import ListItem from 'components/ListItem/ListItem';
-import BackToolbar from 'components/Toolbar/BackToolbar/BackToolbar';
+import { BackToolbar } from '@/components/Toolbar';
+import { Icon } from '@/components/Icon';
+import { ListItem } from '@/components/ListItem';
 
 import styles from './InboxPage.module.css';
 

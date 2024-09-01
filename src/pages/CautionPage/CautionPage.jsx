@@ -1,5 +1,5 @@
-import Caution from 'components/Caution/Caution';
-import BackToolbar from 'components/Toolbar/BackToolbar/BackToolbar';
+import { Caution } from '@/components/Caution';
+import { BackToolbar } from '@/components/Toolbar';
 
 import styles from './CautionPage.module.css';
 

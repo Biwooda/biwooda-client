@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { useUserContext } from 'contexts/UserContext';
+import { useUserContext } from '@/contexts/UserContext';
 
-import SubPage from 'pages/SubPage/SubPage';
+import { SubPage } from '@/pages/SubPage';
 
-import CTAButton from 'components/CTAButton/CTAButton';
-import FeedbackMessage from 'components/FeedbackMessage/FeedbackMessage';
-import InputField from 'components/InputField/InputField';
-import Snackbar from 'components/Snackbar/Snackbar';
+import { CTAButton } from '@/components/CTAButton';
+import { FeedbackMessage } from '@/components/FeedbackMessage';
+import { InputField } from '@/components/InputField';
+import { Snackbar } from '@/components/Snackbar';
 
-import { checkEmailFormat, checkPasswordFormat } from 'utils/checkFormat';
+import { checkEmailFormat, checkPasswordFormat } from '@/utils/checkFormat';
 
-import { EMAIL_LOGIN_PAGE_TITLE, LOGIN_FEEDBACK_MESSAGE } from 'constants';
+import { EMAIL_LOGIN_PAGE_TITLE, LOGIN_FEEDBACK_MESSAGE } from '@/constants';
 
 import styles from './EmailLoginPage.module.css';
 
