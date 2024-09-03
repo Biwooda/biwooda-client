@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-
 import { useRef } from 'react';
 
 import styles from './Select.module.css';

@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import CustomCalendar from 'components/CustomCalendar/CustomCalendar';
-import RoundButton from 'components/RoundButton/RoundButton';
+import { CustomCalendar } from '@/components/CustomCalendar';
+import { RoundButton } from '@/components/RoundButton';
 
 import styles from './RentalCalendar.module.css';
+import { useRentalStore } from '@/store/rental.js';
 
 export default function RentalCalendar() {
   const today = new Date();

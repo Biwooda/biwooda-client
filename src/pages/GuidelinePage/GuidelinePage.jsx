@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import Icon from 'components/Icon/Icon';
-import CloseToolbar from 'components/Toolbar/CloseToolbar/CloseToolbar';
+import { CloseToolbar } from '@/components/Toolbar';
+import { Icon } from '@/components/Icon';
 
 import styles from './GuidelinePage.module.css';
 

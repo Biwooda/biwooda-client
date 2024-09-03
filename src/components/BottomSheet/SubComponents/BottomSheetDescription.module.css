@@ -49,13 +49,13 @@ label {
   appearance: none;
   width: 20px;
   height: 20px;
-  background-image: url(assets/Icon/checkbox.svg);
+  background-image: url(@/assets/Icon/checkbox.svg);
   background-size: cover;
   cursor: pointer;
 }
 
 .checkbox:checked {
-  background-image: url(assets/images/dummy.svg);
+  background-image: url(@/assets/images/dummy.svg);
 }
 
 .text {

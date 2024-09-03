@@ -1,7 +1,6 @@
 #App {
   max-width: 450px;
-  max-height: 935px;
-  min-height: 667px;
+  /* min-height: 667px; */
   height: 100vh;
   margin: 0 auto;
   background-color: white;

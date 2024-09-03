@@ -1,4 +1,4 @@
-export default function getTextColorByBackgroundColor(hexColor) {
+export function getTextColorByBackgroundColor(hexColor) {
   const c = hexColor.substring(1);
   const rgb = parseInt(c, 16);
   const r = (rgb >> 16) & 0xff;

@@ -1,6 +1,6 @@
-import CodeField from 'components/InputField/CodeField/CodeField';
-import PasswordField from 'components/InputField/PasswordField/PasswordField';
-import TextField from 'components/InputField/TextField/TextField';
+import CodeField from './CodeField/CodeField.jsx';
+import PasswordField from './PasswordField/PasswordField.jsx';
+import TextField from './TextField/TextField.jsx';
 
 export default function InputField({ children }) {
   return { children };

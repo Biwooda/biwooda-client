@@ -1,33 +1,37 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { useDrawerContext } from 'contexts/DrawerContext';
-import { useUserContext } from 'contexts/UserContext';
+import { useRentalStore } from '@/store';
 
-import BottomSheet from 'components/BottomSheet/BottomSheet';
-import CTAButton from 'components/CTAButton/CTAButton';
-import Drawer from 'components/Drawer/Drawer';
-import Icon from 'components/Icon/Icon';
-import Animation from 'components/Loading/Loading';
-import Navbar from 'components/Navbar/Navbar';
-import NaverMapWithMarker from 'components/NaverMap/NaverMap';
+import { useDrawerContext } from '@/contexts/DrawerContext';
+import { useAuthContext } from '@/contexts/AuthContext';
 
-import lego from 'assets/lego.json';
-import { GUIDE } from 'constants';
+import { Animation } from '@/components/Loading';
+import { BottomSheet } from '@/components/BottomSheet';
+import { CTAButton } from '@/components/CTAButton';
+import { Drawer } from '@/components/Drawer';
+import { Icon } from '@/components/Icon';
+import { Navbar } from '@/components/Navbar';
+import { NaverMapWithMarker } from '@/components/NaverMap';
+
+import lego from '@/assets/lego.json';
+
+import { GUIDE } from '@/constants';
 
 export default function MainPage() {
-  const { user } = useUserContext();
+  const { updateLockerCode } = useRentalStore((state) => state.actions);
+  const { user, ticket } = useAuthContext();
   const { isOpen, toggleDrawer } = useDrawerContext();
-  const [isLoading, setIsLoading] = useState();
   const [focusedMarker, setFocusedMarker] = useState();
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState();
+  const [isLoading, setIsLoading] = useState();
 
-  useEffect(() => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-  }, []);
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 1000);
+  // }, []);
 
   // if (isLoading) return <Animation animationData={lego} />;
 
@@ -39,7 +43,7 @@ export default function MainPage() {
         setIsBottomSheetOpen={setIsBottomSheetOpen}
       />
       {isOpen && <Drawer />}
-      <BottomSheet isOpen={user?.rentalState} setIsOpen={() => {}}>
+      <BottomSheet isOpen={user && ticket?.rentalState} setIsOpen={() => {}}>
         <CTAButton type='white'>반납하기</CTAButton>
       </BottomSheet>
       <BottomSheet isOpen={isBottomSheetOpen} setIsOpen={setIsBottomSheetOpen}>
@@ -68,7 +72,11 @@ export default function MainPage() {
           {GUIDE}
         </BottomSheet.Description>
         <Link to='qr-scan'>
-          <BottomSheet.Button>스캔하고 대여하기</BottomSheet.Button>
+          <BottomSheet.Button
+            onClick={() => updateLockerCode(focusedMarker?.lockerCode)}
+          >
+            스캔하고 대여하기
+          </BottomSheet.Button>
         </Link>
       </BottomSheet>
     </section>

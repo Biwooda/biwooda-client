@@ -1,15 +1,16 @@
 import { useState } from 'react';
 
-import useTimer from 'hooks/useTimer';
+import { verifyEmail } from '@/apis';
 
-import DefaultButton from 'components/DefaultButton/DefaultButton';
-import FeedbackMessage from 'components/FeedbackMessage/FeedbackMessage';
-import InputField from 'components/InputField/InputField';
+import useTimer from '@/hooks/useTimer';
 
-import { checkEmailFormat } from 'utils/checkFormat';
-import toTime from 'utils/convertNumberToTime';
+import { DefaultButton } from '@/components/DefaultButton';
+import { FeedbackMessage } from '@/components/FeedbackMessage';
+import { InputField } from '@/components/InputField';
 
-import { SIGN_UP_FEEDBACK_MESSAGE } from 'constants';
+import { checkEmailFormat, toTime } from '@/utils';
+
+import { SIGN_UP_FEEDBACK_MESSAGE } from '@/constants';
 
 import styles from './EmailVerification.module.css';
 
@@ -23,7 +24,9 @@ export default function EmailVerification({ data, code, setCode, onChange }) {
     setDisabled(false);
   };
 
-  const onSendCode = () => {
+  const onSendCode = async () => {
+    const res = await verifyEmail({ email: data.email });
+    console.log(res);
     setCode('1111');
     setDisabled(true);
     setIsSended(true);

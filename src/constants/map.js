@@ -1,8 +1,9 @@
-const level = 18;
-const center = { lat: 37.545289, lng: 126.964415 };
-const markers = [
+export const level = 18;
+export const center = { lat: 37.545289, lng: 126.964415 };
+export const markers = [
   {
     id: 1,
+    lockerCode: 'locker1',
     label: '학생회관 1층',
     lat: 37.545343,
     lng: 126.964929,
@@ -12,6 +13,7 @@ const markers = [
   },
   {
     id: 2,
+    lockerCode: 'locker2',
     label: '프라임관 1층',
     lat: 37.544981,
     lng: 126.964872,
@@ -74,5 +76,3 @@ const markers = [
   //   url: '/marker.svg',
   // },
 ];
-
-export { center, level, markers };

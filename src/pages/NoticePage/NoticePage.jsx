@@ -1,6 +1,6 @@
-import ListIndex from 'components/ListIndex/ListIndex';
-import ListItem from 'components/ListItem/ListItem';
-import CloseToolbar from 'components/Toolbar/CloseToolbar/CloseToolbar';
+import { ListIndex } from '@/components/ListIndex';
+import { ListItem } from '@/components/ListItem';
+import { CloseToolbar } from '@/components/Toolbar';
 
 import styles from './NoticePage.module.css';
 

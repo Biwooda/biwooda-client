@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/media-has-caption */
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,7 +10,6 @@ export default function ReadCode() {
   const videoRef = useRef(null);
   const navigate = useNavigate();
 
-  // eslint-disable-next-line consistent-return
   useEffect(() => {
     const { current: videoElem } = videoRef;
     const QrOptions = {

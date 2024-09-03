@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 
-import { useDrawerContext } from 'contexts/DrawerContext';
+import { useDrawerContext } from '@/contexts/DrawerContext';
 
-import Icon from 'components/Icon/Icon';
+import { Icon } from '@/components/Icon';
 
 import styles from './CloseToolbar.module.css';
 

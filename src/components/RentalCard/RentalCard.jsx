@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom';
 
-import { useUserContext } from 'contexts/UserContext';
+import { useAuthContext } from '@/contexts/AuthContext';
 
-import Icon from 'components/Icon/Icon';
+import { Icon } from '@/components/Icon';
 
 import styles from './RentalCard.module.css';
 
 export default function RentalCard() {
-  const { user } = useUserContext();
-  if (!user || !user?.rentalState) return null;
-  const { due, overdue, ticket } = user;
+  const { user, ticket: ticketInfo } = useAuthContext();
+
+  if (!user) return null;
+
+  const { due, overdue, ticket } = ticketInfo;
 
   return (
     <div className={styles.card}>

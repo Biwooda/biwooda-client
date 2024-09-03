@@ -1,14 +1,14 @@
 import { useRef, useState } from 'react';
 
-import SubPage from 'pages/SubPage/SubPage';
+import { SubPage } from '@/pages/SubPage';
 
-import CTAButton from 'components/CTAButton/CTAButton';
-import EmailVerification from 'components/EmailVerification/EmailVerification';
-import PasswordVerification from 'components/PasswordVerification/PasswordVerification';
+import { CTAButton } from '@/components/CTAButton';
+import { EmailVerification } from '@/components/EmailVerification';
+import { PasswordVerification } from '@/components/PasswordVerification';
 
-import { checkPasswordFormat } from 'utils/checkFormat';
+import { checkPasswordFormat } from '@/utils/checkFormat';
 
-import { SIGN_UP_PAGE_TITLE } from 'constants';
+import { SIGN_UP_PAGE_TITLE } from '@/constants';
 
 import styles from './SignUpPage.module.css';
 

@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 
-import CTAButton from 'components/CTAButton/CTAButton';
-import BackToolbar from 'components/Toolbar/BackToolbar/BackToolbar';
+import { BackToolbar } from '@/components/Toolbar';
+import { CTAButton } from '@/components/CTAButton';
 
-import { RENTAL_RETURN_IMAGE } from 'constants';
+import { RENTAL_RETURN_IMAGE } from '@/constants';
 
 import styles from './RentalReturnGuidePage.module.css';
 

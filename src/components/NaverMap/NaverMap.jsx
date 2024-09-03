@@ -6,22 +6,22 @@ import {
   NavermapsProvider,
 } from 'react-naver-maps';
 
-import { center, level, markers as markerInfos } from 'constants';
+import { center, level, markers as markerInfos } from '@/constants';
 
 export default function NaverMapWithMarker({
   setFocusedMarker,
   setIsBottomSheetOpen,
 }) {
   const [markers, setMarkers] = useState(markerInfos);
-  const handleMarkerClick = (index) => {
-    const updatedMarkers = markerInfos.map((marker, i) => ({
+  const handleMarkerClick = ({ id }) => {
+    const updatedMarkers = markerInfos.map((marker) => ({
       ...marker,
-      size: i === index ? { width: 90, height: 123 } : marker.size,
-      url: i === index ? '/select_marker.svg' : marker.url,
-      amount: i === index ? '' : marker.amount,
+      size: marker.id === id ? { width: 90, height: 123 } : marker.size,
+      url: marker.id === id ? '/select_marker.svg' : '/marker.svg',
+      amount: marker.id === id ? '' : marker.amount,
     }));
     setMarkers(updatedMarkers);
-    setFocusedMarker(markerInfos[index]);
+    setFocusedMarker(markerInfos.find((marker) => marker.id === id));
     setIsBottomSheetOpen(true);
   };
 
@@ -38,7 +38,7 @@ export default function NaverMapWithMarker({
               position={{ lat: marker.lat, lng: marker.lng }}
               onClick={(event) => {
                 event.originalEvent.stopPropagation();
-                handleMarkerClick(index);
+                handleMarkerClick(marker);
               }}
               icon={
                 marker.amount === 0

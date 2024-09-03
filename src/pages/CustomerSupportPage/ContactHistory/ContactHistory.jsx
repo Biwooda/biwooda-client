@@ -1,5 +1,5 @@
-import ListIndex from 'components/ListIndex/ListIndex';
-import ListItem from 'components/ListItem/ListItem';
+import { ListIndex } from '@/components/ListIndex';
+import { ListItem } from '@/components/ListItem';
 
 import styles from './ContactHistory.module.css';
 

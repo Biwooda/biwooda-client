@@ -1,6 +1,6 @@
-import Icon from 'components/Icon/Icon';
+import { Icon } from '@/components/Icon';
 
-import getTextColorByBackgroundColor from 'utils/getTextColorByBackgroundColor';
+import { getTextColorByBackgroundColor } from '@/utils';
 
 import styles from './LoginButton.module.css';
 

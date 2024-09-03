@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
-import Icon from 'components/Icon/Icon';
-import Title from 'components/Title/Title';
+import { Icon } from '@/components/Icon';
+import { Title } from '@/components/Title';
 
 import styles from './SubPage.module.css';
 

@@ -1,18 +1,20 @@
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+import { useRentalStore } from '@/store';
 import { format } from 'date-fns';
 
-import KakaoPayButton from 'components/KakaoPayButton/KakaoPayButton';
-import RoundButton from 'components/RoundButton/RoundButton';
+import { KakaoPayButton } from '@/components/KakaoPayButton';
+import { RoundButton } from '@/components/RoundButton';
 
-import { FEE } from 'constants';
+import { FEE } from '@/constants';
 
 import styles from './RentalPay.module.css';
 
 export default function RentalPay() {
-  const [isPayButtonClicked, setIsPayButtonClicked] = useState(false);
+  const { updatePass } = useRentalStore((state) => state.actions);
   const { state: rentalPeriod } = useLocation();
+  const [isPayButtonClicked, setIsPayButtonClicked] = useState(false);
   const diffDays = Math.ceil(
     (rentalPeriod[1] - rentalPeriod[0]) / (1000 * 60 * 60 * 24) + 1
   );
@@ -30,7 +32,7 @@ export default function RentalPay() {
         <div className={styles.fee}>
           총 {diffDays}
           일(
-          {FEE[diffDays - 1]}
+          {FEE[diffDays - 1].toLocaleString()}
           원)
           {isPayButtonClicked ? ' 결제' : '입니다.'}
         </div>
@@ -45,7 +47,15 @@ export default function RentalPay() {
             </RoundButton>
           </div>
           <div className={styles.next}>
-            <RoundButton onClick={() => setIsPayButtonClicked(true)}>
+            <RoundButton
+              onClick={() => {
+                updatePass({
+                  price: FEE[diffDays - 1],
+                  itemName: `${diffDays}days`,
+                });
+                setIsPayButtonClicked(true);
+              }}
+            >
               네, 결제할게요!
             </RoundButton>
           </div>
