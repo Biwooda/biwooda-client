@@ -33,6 +33,10 @@ export default function MainPage() {
   //   }, 1000);
   // }, []);
 
+  useEffect(() => {
+    localStorage.setItem('accessToken', 'aa');
+  }, []);
+
   // if (isLoading) return <Animation animationData={lego} />;
 
   return (
