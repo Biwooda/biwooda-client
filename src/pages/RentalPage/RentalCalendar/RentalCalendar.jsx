@@ -5,6 +5,7 @@ import { CustomCalendar } from '@/components/CustomCalendar';
 import { RoundButton } from '@/components/RoundButton';
 
 import styles from './RentalCalendar.module.css';
+import { useRentalStore } from '@/store/rental.js';
 
 export default function RentalCalendar() {
   const today = new Date();

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { useRentalStore } from '@/store';
+
 import { useDrawerContext } from '@/contexts/DrawerContext';
 import { useAuthContext } from '@/contexts/AuthContext';
 
@@ -17,18 +19,19 @@ import lego from '@/assets/lego.json';
 import { GUIDE } from '@/constants';
 
 export default function MainPage() {
+  const { updateLockerCode } = useRentalStore((state) => state.actions);
   const { user, ticket } = useAuthContext();
   const { isOpen, toggleDrawer } = useDrawerContext();
-  const [isLoading, setIsLoading] = useState();
   const [focusedMarker, setFocusedMarker] = useState();
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState();
+  const [isLoading, setIsLoading] = useState();
 
-  useEffect(() => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-  }, []);
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 1000);
+  // }, []);
 
   // if (isLoading) return <Animation animationData={lego} />;
 
@@ -69,7 +72,11 @@ export default function MainPage() {
           {GUIDE}
         </BottomSheet.Description>
         <Link to='qr-scan'>
-          <BottomSheet.Button>스캔하고 대여하기</BottomSheet.Button>
+          <BottomSheet.Button
+            onClick={() => updateLockerCode(focusedMarker?.lockerCode)}
+          >
+            스캔하고 대여하기
+          </BottomSheet.Button>
         </Link>
       </BottomSheet>
     </section>

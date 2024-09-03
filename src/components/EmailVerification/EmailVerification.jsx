@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { verifyEmail } from '@/apis';
+
 import useTimer from '@/hooks/useTimer';
 
 import { DefaultButton } from '@/components/DefaultButton';
@@ -22,7 +24,9 @@ export default function EmailVerification({ data, code, setCode, onChange }) {
     setDisabled(false);
   };
 
-  const onSendCode = () => {
+  const onSendCode = async () => {
+    const res = await verifyEmail({ email: data.email });
+    console.log(res);
     setCode('1111');
     setDisabled(true);
     setIsSended(true);

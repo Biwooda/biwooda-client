@@ -1,5 +1,12 @@
 import axios from 'axios';
 
+const defaultAxios = axios.create({
+  baseURL: process.env.REACT_APP_SERVER_DOMAIN,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
 const authAxios = axios.create({
   baseURL: process.env.REACT_APP_SERVER_DOMAIN,
   headers: {
@@ -58,4 +65,4 @@ authAxios.interceptors.response.use(
   }
 );
 
-export { authAxios };
+export { defaultAxios, authAxios };
