@@ -1,12 +1,16 @@
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
+import usePreventRefresh from '@/hooks/usePreventRefresh.jsx';
+
 import { BackToolbar } from '@/components/Toolbar';
 import { Caution } from '@/components/Caution';
 
 import styles from './RentalPage.module.css';
 
 export default function RentalPage() {
+  usePreventRefresh();
+
   return (
     <section className={styles.container}>
       <BackToolbar title='대여하기' onPrev={() => navigate(-1)} />
