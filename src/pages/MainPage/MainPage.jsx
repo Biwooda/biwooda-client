@@ -19,7 +19,6 @@ import lego from '@/assets/lego.json';
 import { GUIDE } from '@/constants';
 
 export default function MainPage() {
-  const { updateLockerCode } = useRentalStore((state) => state.actions);
   const { user, ticket } = useAuthContext();
   const { isOpen, toggleDrawer } = useDrawerContext();
   const [focusedMarker, setFocusedMarker] = useState();
@@ -76,11 +75,7 @@ export default function MainPage() {
           {GUIDE}
         </BottomSheet.Description>
         <Link to='qr-scan'>
-          <BottomSheet.Button
-            onClick={() => updateLockerCode(focusedMarker?.lockerCode)}
-          >
-            스캔하고 대여하기
-          </BottomSheet.Button>
+          <BottomSheet.Button>스캔하고 대여하기</BottomSheet.Button>
         </Link>
       </BottomSheet>
     </section>
