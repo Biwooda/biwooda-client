@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
+import { SnackbarProvider } from '@/contexts/SnackbarContext.jsx';
+
 import CautionPage from '@/pages/CautionPage/CautionPage';
 import Contact from '@/pages/CustomerSupportPage/Contact/Contact';
 import ContactHistory from '@/pages/CustomerSupportPage/ContactHistory/ContactHistory';
@@ -129,7 +131,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <SnackbarProvider>
+      <RouterProvider router={router} />
+    </SnackbarProvider>
   </React.StrictMode>
 );
 

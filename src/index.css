@@ -135,6 +135,18 @@ body {
   background-color: rgb(202, 202, 202);
 }
 
+#snack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
 #bottomSheet {
   max-width: 450px;
   margin: 0 auto;
