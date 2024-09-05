@@ -8,18 +8,20 @@ import { RoundButton } from '@/components/RoundButton';
 
 import styles from './RentalCalendar.module.css';
 
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
 export default function RentalCalendar() {
   const { state: lockerCode } = useLocation();
   const navigate = useNavigate();
   const { updateLockerCode } = useRentalStore((state) => state.actions);
 
+  const [rentalPeriod, setRentalPeriod] = useState([today, today]);
+  const [diffDays, setDiffDays] = useState(1);
+
   useEffect(() => {
     updateLockerCode(lockerCode);
   }, [lockerCode]);
-
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  const [rentalPeriod, setRentalPeriod] = useState([today, today]);
 
   return (
     <>
@@ -27,7 +29,17 @@ export default function RentalCalendar() {
         <h2 className={styles.title}>대여 날짜 선택하기</h2>
         <div className={styles.calendar}>
           <div className={styles.label}>대여하고자 하는 날을 클릭!</div>
-          <CustomCalendar selectEndDate={setRentalPeriod} />
+          <CustomCalendar
+            selectEndDate={(period) => {
+              const [start, end] = period;
+              const diffDays = Math.ceil(
+                (end - start) / (1000 * 60 * 60 * 24) + 1
+              );
+
+              setRentalPeriod(period);
+              setDiffDays(diffDays);
+            }}
+          />
         </div>
       </div>
       <div className={styles.buttons}>
@@ -38,7 +50,9 @@ export default function RentalCalendar() {
         </div>
         <div className={styles.next}>
           <RoundButton
-            onClick={() => navigate('/rental/pay', { state: rentalPeriod })}
+            onClick={() =>
+              navigate('/rental/pay', { state: { rentalPeriod, diffDays } })
+            }
           >
             선택완료
           </RoundButton>

@@ -13,11 +13,11 @@ import styles from './RentalPay.module.css';
 
 export default function RentalPay() {
   const { updatePass } = useRentalStore((state) => state.actions);
-  const { state: rentalPeriod } = useLocation();
+  const {
+    state: { rentalPeriod, diffDays },
+  } = useLocation();
   const [isPayButtonClicked, setIsPayButtonClicked] = useState(false);
-  const diffDays = Math.ceil(
-    (rentalPeriod[1] - rentalPeriod[0]) / (1000 * 60 * 60 * 24) + 1
-  );
+
   const navigate = useNavigate();
 
   return (
