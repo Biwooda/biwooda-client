@@ -6,6 +6,8 @@ export const useRentalStore = create((set) => ({
     price: undefined,
     itemName: undefined,
     num: 1,
+    diffDays: undefined,
+    rentalPeriod: undefined,
   },
   actions: {
     updateLockerCode: (lockerCode) =>
@@ -15,6 +17,10 @@ export const useRentalStore = create((set) => ({
     updatePass: ({ price, itemName }) =>
       set(({ rentalInfo }) => ({
         rentalInfo: { ...rentalInfo, price, itemName },
+      })),
+    updateRentalInfo: ({ diffDays, rentalPeriod }) =>
+      set(({ rentalInfo }) => ({
+        rentalInfo: { ...rentalInfo, diffDays, rentalPeriod },
       })),
   },
 }));

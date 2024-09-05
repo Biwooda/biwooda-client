@@ -1,0 +1,13 @@
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cancel {
+  width: 33%;
+}
+
+.next {
+  flex: 1;
+}

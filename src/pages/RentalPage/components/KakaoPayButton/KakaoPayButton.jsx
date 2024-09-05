@@ -11,6 +11,7 @@ import styles from './KakaoPayButton.module.css';
 export default function KakaoPayButton() {
   const navigate = useNavigate();
   const rentalInfo = useRentalStore((state) => state.rentalInfo);
+
   const pay = async () => {
     try {
       const { data } = await rental(rentalInfo);

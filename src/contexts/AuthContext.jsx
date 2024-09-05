@@ -5,7 +5,6 @@ import {
   onUserStateChange,
   logout,
 } from '@/apis/firebase';
-import KakaoPayButton from '@/components/KakaoPayButton/KakaoPayButton.jsx';
 
 const AuthContext = createContext();
 

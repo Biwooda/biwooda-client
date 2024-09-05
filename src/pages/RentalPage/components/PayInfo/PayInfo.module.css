@@ -1,0 +1,25 @@
+.title {
+  font: var(--title-lg);
+  color: var(--grey-scale-75);
+}
+
+.period {
+  width: 78%;
+  padding: 11px 29px 11px 0;
+  border-radius: 0px 64px 64px 0px;
+  transform: translateX(-23px);
+  background: linear-gradient(
+    90deg,
+    rgba(11, 255, 153, 0.44) 0%,
+    rgba(135, 213, 255, 0.44) 96.03%
+  );
+  font: var(--text-lg);
+  color: var(--grey-scale-75);
+  text-align: right;
+  margin: 69px 0 19px 0;
+}
+
+.fee {
+  font: var(--title-md);
+  color: var(--grey-scale-75);
+}

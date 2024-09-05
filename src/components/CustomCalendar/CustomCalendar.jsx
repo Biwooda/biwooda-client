@@ -1,39 +1,52 @@
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
 import { DateRangePicker } from 'react-date-range';
+
+import { useRentalStore } from '@/store';
 
 import { addMonths, format, subMonths } from 'date-fns';
 
 import { Icon } from '@/components/Icon';
+
+import { FEE } from '@/constants';
+import { getDaysDifference, isBeforeToday } from '@/utils';
 
 import styles from './CustomCalendar.module.css';
 import './CustomCalendar.css';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 
-export default function CustomCalendar({ selectEndDate }) {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+const today = new Date();
+today.setHours(0, 0, 0, 0);
 
+export default function CustomCalendar() {
+  const { updateRentalInfo, updatePass } = useRentalStore(
+    (state) => state.actions
+  );
   const [endDate, setEndDate] = useState(today);
 
   const handleSelect = ({ selection }) => {
     const { endDate: rangeEndDate } = selection;
 
-    if (today > rangeEndDate) {
+    if (isBeforeToday(rangeEndDate)) {
       return;
     }
 
-    const diffTime = Math.abs(rangeEndDate - today);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-    if (diffDays > 4) {
+    const diffDays = getDaysDifference(today, rangeEndDate);
+    if (diffDays > 5) {
       return;
     }
 
-    selectEndDate([today, rangeEndDate]);
+    updateRentalInfo({ diffDays, rentalPeriod: [today, rangeEndDate] });
+    updatePass({
+      price: FEE[diffDays - 1],
+      itemName: `${diffDays}days`,
+    });
     setEndDate(rangeEndDate);
   };
+
+  useEffect(() => {
+    updateRentalInfo({ diffDays: 1, rentalPeriod: [today, today] });
+  }, []);
 
   return (
     <div className={styles.canlendar}>
