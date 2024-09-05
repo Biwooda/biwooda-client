@@ -1,14 +1,11 @@
-import Lottie from 'react-lottie';
+import { Oval } from 'react-loader-spinner';
 
-export default function Animation({ animationData }) {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
+import styles from './Loading.module.css';
 
-  return <Lottie options={defaultOptions} height={400} width={400} />;
+export default function Loading() {
+  return (
+    <div className={styles.container}>
+      <Oval color='#38B9FF' secondaryColor='#ffffff' width='80' height='80' />
+    </div>
+  );
 }

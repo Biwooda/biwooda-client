@@ -2,65 +2,43 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { useRentalStore } from '@/store';
-import { format } from 'date-fns';
 
-import { KakaoPayButton } from '@/components/KakaoPayButton';
+import { rental } from '@/apis';
+
+import { Loading } from '@/components/Loading';
 import { RoundButton } from '@/components/RoundButton';
 
-import { FEE } from '@/constants';
+import { KakaoPayButton, PayInfo } from '@/pages/RentalPage/components';
 
 import styles from './RentalPay.module.css';
 
 export default function RentalPay() {
-  const { updatePass } = useRentalStore((state) => state.actions);
-  const { state: rentalPeriod } = useLocation();
-  const [isPayButtonClicked, setIsPayButtonClicked] = useState(false);
-  const diffDays = Math.ceil(
-    (rentalPeriod[1] - rentalPeriod[0]) / (1000 * 60 * 60 * 24) + 1
-  );
-  const navigate = useNavigate();
+  const rentalInfo = useRentalStore((state) => state.rentalInfo);
+  const [pending, setPending] = useState();
+
+  console.log(pending);
+
+  const pay = async () => {
+    try {
+      setPending(true);
+      const { data } = await rental(rentalInfo);
+      console.log(data);
+      window.location.href = data.next_redirect_mobile_url;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setPending(false);
+    }
+  };
+
+  if (pending) {
+    return <Loading />;
+  }
 
   return (
     <>
-      <div>
-        <h2 className={styles.title}>대여 비용 알려드려요</h2>
-        <div className={styles.period}>
-          {format(rentalPeriod[0], 'yyyy.MM.dd')}
-          부터 {format(rentalPeriod[1], 'yyyy.MM.dd')}
-          까지
-        </div>
-        <div className={styles.fee}>
-          총 {diffDays}
-          일(
-          {FEE[diffDays - 1].toLocaleString()}
-          원)
-          {isPayButtonClicked ? ' 결제' : '입니다.'}
-        </div>
-      </div>
-      {isPayButtonClicked ? (
-        <KakaoPayButton />
-      ) : (
-        <div className={styles.buttons}>
-          <div className={styles.cancel}>
-            <RoundButton type='white' onClick={() => navigate(-1)}>
-              취소
-            </RoundButton>
-          </div>
-          <div className={styles.next}>
-            <RoundButton
-              onClick={() => {
-                updatePass({
-                  price: FEE[diffDays - 1],
-                  itemName: `${diffDays}days`,
-                });
-                setIsPayButtonClicked(true);
-              }}
-            >
-              네, 결제할게요!
-            </RoundButton>
-          </div>
-        </div>
-      )}
+      <PayInfo text='결제' />
+      <KakaoPayButton onClick={pay} />
     </>
   );
 }

@@ -6,7 +6,7 @@ import { useRentalStore } from '@/store';
 import { useDrawerContext } from '@/contexts/DrawerContext';
 import { useAuthContext } from '@/contexts/AuthContext';
 
-import { Animation } from '@/components/Loading';
+import { Animation } from '@/components/Animation';
 import { BottomSheet } from '@/components/BottomSheet';
 import { CTAButton } from '@/components/CTAButton';
 import { Drawer } from '@/components/Drawer';

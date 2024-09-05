@@ -16,6 +16,7 @@ import NoticePage from '@/pages/NoticePage/NoticePage';
 import QrScanner from '@/pages/QrScanner/QrScanner';
 import RentalHistoryPage from '@/pages/RentalHistoryPage/RentalHistoryPage';
 import RentalCalendar from '@/pages/RentalPage/RentalCalendar/RentalCalendar';
+import RentalCheck from './pages/RentalPage/RentalCheck/RentalCheck.jsx';
 import RentalPage from '@/pages/RentalPage/RentalPage';
 import RentalPay from '@/pages/RentalPage/RentalPay/RentalPay';
 import RentalReturnGuidePage from '@/pages/RentalReturnGuidePage/RentalReturnGuidePage';
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
           {
             path: 'calendar',
             element: <RentalCalendar />,
+          },
+          {
+            path: 'check',
+            element: <RentalCheck />,
           },
           {
             path: 'pay',
