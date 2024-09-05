@@ -1,17 +1,25 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+import { useRentalStore } from '@/store';
 
 import { CustomCalendar } from '@/components/CustomCalendar';
 import { RoundButton } from '@/components/RoundButton';
 
 import styles from './RentalCalendar.module.css';
-import { useRentalStore } from '@/store/rental.js';
 
 export default function RentalCalendar() {
+  const { state: lockerCode } = useLocation();
+  const navigate = useNavigate();
+  const { updateLockerCode } = useRentalStore((state) => state.actions);
+
+  useEffect(() => {
+    updateLockerCode(lockerCode);
+  }, [lockerCode]);
+
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const [rentalPeriod, setRentalPeriod] = useState([today, today]);
-  const navigate = useNavigate();
 
   return (
     <>
