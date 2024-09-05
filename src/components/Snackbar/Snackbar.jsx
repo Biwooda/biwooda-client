@@ -1,25 +1,59 @@
+import { useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
+
+import { useSnackContext } from '@/contexts/SnackbarContext.jsx';
+
 import styles from './Snackbar.module.css';
 
-export default function Snackbar({ children }) {
-  return <div className={styles.snackbar}>{children}</div>;
+export default function Snackbar({ snack, children }) {
+  const { removeSnack } = useSnackContext();
+  const snackRef = useRef();
+
+  useEffect(() => {
+    const fadeOut = setTimeout(() => {
+      snackRef.current.style.opacity = '0';
+    }, 3000);
+
+    const unmount = setTimeout(() => {
+      removeSnack(snack);
+    }, 3500);
+
+    return () => {
+      clearTimeout(fadeOut);
+      clearTimeout(unmount);
+    };
+  }, [snack, snackRef, removeSnack]);
+
+  const root = document.getElementById('snack');
+
+  return createPortal(
+    <div ref={snackRef} className={styles.snackbar}>
+      {children}
+    </div>,
+    root
+  );
+
+  return;
 }
 
-function WithText({ children }) {
+function WithText({ snack, children }) {
   return (
-    <Snackbar>
+    <Snackbar snack={snack}>
       <div className={styles.text}>{children}</div>
     </Snackbar>
   );
 }
 
-function WithActionButton({ onClick, children }) {
+function WithActionButton({ snack, children }) {
+  const { removeSnack } = useSnackContext();
+
   return (
-    <Snackbar>
+    <Snackbar snack={snack}>
       <div className={styles.actionContainer}>
         <div className={styles.text}>{children}</div>
         <button
           className={`${styles.actionButton} ${styles.blueButton}`}
-          onClick={onClick}
+          onClick={() => removeSnack(snack)}
         >
           확인
         </button>
@@ -28,9 +62,9 @@ function WithActionButton({ onClick, children }) {
   );
 }
 
-function WithLongActionButton({ buttonText, onClick, children }) {
+function WithLongActionButton({ snack, buttonText, onClick, children }) {
   return (
-    <Snackbar>
+    <Snackbar snack={snack}>
       <div className={styles.longActionContainer}>
         <div className={styles.text}>{children}</div>
         <div className={styles.actionButtonDiv}>
@@ -46,9 +80,9 @@ function WithLongActionButton({ buttonText, onClick, children }) {
   );
 }
 
-function WithTwoActionButton({ onClick, children }) {
+function WithTwoActionButton({ snack, onClick, children }) {
   return (
-    <Snackbar>
+    <Snackbar snack={snack}>
       <div className={styles.decisionContainer}>
         <div className={styles.text}>{children}</div>
         <div className={styles.actionButtonDiv}>
