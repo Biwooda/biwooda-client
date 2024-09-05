@@ -1,1 +1,1 @@
-export { default as Animation } from './Loading.jsx';
+export { default as Loading } from './Loading.jsx';
