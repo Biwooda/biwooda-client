@@ -14,9 +14,9 @@ import { Icon } from '@/components/Icon';
 import { Navbar } from '@/components/Navbar';
 import { NaverMapWithMarker } from '@/components/NaverMap';
 
-import lego from '@/assets/lego.json';
-
 import { GUIDE } from '@/constants';
+
+import lego from '@/assets/lego.json';
 
 export default function MainPage() {
   const { user, ticket } = useAuthContext();
