@@ -32,8 +32,6 @@ export default function Snackbar({ snack, children }) {
     </div>,
     root
   );
-
-  return;
 }
 
 function WithText({ snack, children }) {

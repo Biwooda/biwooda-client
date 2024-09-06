@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { useRentalStore } from '@/store';
@@ -11,9 +11,7 @@ import styles from './RentalCalendar.module.css';
 export default function RentalCalendar() {
   const { state: lockerCode } = useLocation();
   const navigate = useNavigate();
-  const { updateLockerCode, updateRentalInfo, updatePass } = useRentalStore(
-    (state) => state.actions
-  );
+  const { updateLockerCode } = useRentalStore((state) => state.actions);
 
   useEffect(() => {
     updateLockerCode(lockerCode);

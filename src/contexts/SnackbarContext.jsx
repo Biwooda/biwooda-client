@@ -67,6 +67,12 @@ export function SnackbarProvider({ children }) {
               </Snackbar.Decision>
             );
           }
+
+          return (
+            <Snackbar.Text key={id} snack={snack}>
+              {message}
+            </Snackbar.Text>
+          );
         })}
     </SnackbarContext.Provider>
   );
