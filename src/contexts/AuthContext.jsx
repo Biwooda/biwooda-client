@@ -9,7 +9,7 @@ import {
 const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState({});
   const [ticket, setTicket] = useState({
     nickname: 'snow',
     rentalState: true,

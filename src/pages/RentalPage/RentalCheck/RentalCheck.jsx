@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { RoundButton } from '@/components/RoundButton';
 
@@ -7,6 +7,8 @@ import { PayInfo } from '@/pages/RentalPage/components';
 import styles from './RentalCheck.module.css';
 
 export default function RentalCheck() {
+  const navigate = useNavigate();
+
   return (
     <>
       <PayInfo text='입니다.' />

@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { useNavigate, Outlet } from 'react-router-dom';
 
 import usePreventRefresh from '@/hooks/usePreventRefresh.jsx';
 
@@ -9,6 +8,7 @@ import { Caution } from '@/components/Caution';
 import styles from './RentalPage.module.css';
 
 export default function RentalPage() {
+  const navigate = useNavigate();
   usePreventRefresh();
 
   return (

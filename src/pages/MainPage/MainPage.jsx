@@ -1,12 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { useRentalStore } from '@/store';
-
 import { useDrawerContext } from '@/contexts/DrawerContext';
 import { useAuthContext } from '@/contexts/AuthContext';
 
-import { Animation } from '@/components/Animation';
 import { BottomSheet } from '@/components/BottomSheet';
 import { CTAButton } from '@/components/CTAButton';
 import { Drawer } from '@/components/Drawer';
@@ -16,27 +13,15 @@ import { NaverMapWithMarker } from '@/components/NaverMap';
 
 import { GUIDE } from '@/constants';
 
-import lego from '@/assets/lego.json';
-
 export default function MainPage() {
   const { user, ticket } = useAuthContext();
   const { isOpen, toggleDrawer } = useDrawerContext();
   const [focusedMarker, setFocusedMarker] = useState();
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState();
-  const [isLoading, setIsLoading] = useState();
-
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 1000);
-  // }, []);
 
   useEffect(() => {
     localStorage.setItem('accessToken', 'aa');
   }, []);
-
-  // if (isLoading) return <Animation animationData={lego} />;
 
   return (
     <section>
