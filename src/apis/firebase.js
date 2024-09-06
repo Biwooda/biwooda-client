@@ -75,7 +75,7 @@ export const handleKakaoLogin = async () => {
       // 여기서 받은 idToken을 클라이언트 애플리케이션에서 사용합니다.
       console.log('Received idToken:', idToken);
       // 추가적인 로직을 여기에 작성
-      verifyToken(idToken);
+      // verifyToken(idToken);
     } else {
       console.error('Kakao login failed');
     }
